@@ -20,6 +20,18 @@
  *= require material_icons
  */
 
+/* Menu */
+
+.menu-container{
+	background-color: #000;
+	padding: 10px;
+	color: #fff;
+}
+
+.menu-container a{
+	color: #fff;
+}
+
 /*Payment Page */
 
 .quote-item{
