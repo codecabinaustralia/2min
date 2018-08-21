@@ -1,0 +1,59 @@
+<div>  
+  <div class="grid-x">
+    <div class="cell small-12 medium-4 medium-offset-4 inner-form">
+      <div class="text-center"><h2>Let me take a selfie!</h2> </div>
+
+      	<div class="selfie-photo text-center">
+      		<% if @personal_profile.avatar.attached? %>
+      		<div class="about-avatar">
+      			<%= image_tag @personal_profile.avatar, height: '300', width: '300' %>
+      		</div>
+      		<% else %>
+      		<div class="about-avatar">
+      			<img src="https://www.thekpes.com/down/placeholder.png" alt="selfie image">
+      		</div>
+      		<% end %>
+      		
+      	</div>     
+		<%= form_for @personal_profile do |form| %>
+		  <% if @personal_profile.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@personal_profile.errors.count, "error") %> prohibited this personal_profile from being saved:</h2>
+
+		      <ul>
+		      <% @personal_profile.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+
+		   <div class="file-upload-box">
+		    Upload a selfie, I wan't to see your ugly mug!<hr />
+		    <%= form.file_field :avatar %>
+		  </div>
+
+		  <div class="field" style="margin-top: 20px;">
+		    <%= form.text_field :full_name, placeholder: "What's your name" %>
+		  </div>
+
+		  <div class="field" style="margin-top: 20px;">
+		    What's your role in the business
+		    <%= form.text_field :role, placeholder: "CEO" %>
+		  </div>
+
+		 
+
+		  <div class="field">
+		    Tell me more about yourself, how long have you been in the industry etc..
+		    <%= form.text_area :bio, rows: 5, placeholder: "Keep it short and sweet ;)" %>
+		  </div>
+
+		  <div class="actions text-right">
+		    <%= form.submit "You're Done! Let's see it...", class: "button large success expanded" %>
+		  </div>
+		<% end %>
+
+    </div>
+  </div>
+</div>

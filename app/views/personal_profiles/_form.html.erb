@@ -1,0 +1,36 @@
+<%= form_with(model: personal_profile, local: true) do |form| %>
+  <% if personal_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(personal_profile.errors.count, "error") %> prohibited this personal_profile from being saved:</h2>
+
+      <ul>
+      <% personal_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" style="margin-top: 20px;">
+    <%= form.text_field :full_name, placeholder: "What's your name" %>
+  </div>
+
+  <div class="field" style="margin-top: 20px;">
+    What's your role in the business
+    <%= form.text_field :role, placeholder: "CEO" %>
+  </div>
+
+  <div class="file-upload-box" style="display: none;">
+    Upload a selfie, I wan't to see your ugly mug!<hr />
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div class="field" style="display: none">
+    Tell me more about yourself, how long have you been in the industry etc..
+    <%= form.text_area :bio, rows: 5 %>
+  </div>
+
+  <div class="actions text-right">
+    <%= form.submit "You're Done! Let's see it...", class: "button large success expanded" %>
+  </div>
+<% end %>

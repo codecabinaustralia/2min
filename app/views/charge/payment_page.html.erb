@@ -1,0 +1,52 @@
+<div>  
+  <div class="grid-x">
+    <div class="cell small-12 medium-4 medium-offset-4 inner-form">
+      <h2>I've just applied that 50% discount</h2>
+      <h3>You lucky bugger!</h3>
+
+      <table class="stack">
+      	<tr>
+      		<td class="quote-item">Website</td>
+      		<td class="quote-cost text-right">FREE</td>
+      	</tr>
+      	<tr>
+      		<td class="quote-item">Search engine optimised</td>
+      		<td class="quote-cost text-right">FREE</td>
+      	</tr>
+      	<tr>
+      		<td class="quote-item">Hosting per month</td>
+      		<td class="quote-cost text-right">$60</td>
+      	</tr>
+       	<tr style="background-color: #19935c; color: #fff;">
+      		<td class="quote-item-discount">DISCOUNT</td>
+      		<td class="quote-cost-discount">50% ish..</td>
+      	</tr>
+
+      	<tr>
+      		<td colspan="2" style="font-size: 40px; text-align: center; font-weight: bold;">
+      			$29.00<small style="font-size: 18px;">/month</small>
+
+      			<h3>Pay first month now!</h3>
+
+      			<form action="<%= charge_create_charge_path %>" method="POST">
+      			  <script
+      			    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      			    data-key= "<%= ENV['STRIPE_PUBLISHABLE_KEY']%>"
+      			    data-amount="2900"
+      			    data-name="2min"
+      			    data-description="2 Min Websites"
+      			    data-email= "<%= current_user.email %>"
+      			    data-locale= "auto"
+      			    data-zip-code="false">
+      			  </script>
+      			</form>
+
+      		</td>
+
+      	</tr>
+
+      </table>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Site Trades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Site</th>
+      <th>Trade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @site_trades.each do |site_trade| %>
+      <tr>
+        <td><%= site_trade.site %></td>
+        <td><%= site_trade.trade %></td>
+        <td><%= link_to 'Show', site_trade %></td>
+        <td><%= link_to 'Edit', edit_site_trade_path(site_trade) %></td>
+        <td><%= link_to 'Destroy', site_trade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site Trade', new_site_trade_path %>

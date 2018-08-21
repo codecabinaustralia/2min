@@ -1,0 +1,44 @@
+<div class="grid-container" style="margin-top: 50px;">
+  <div class="grid-x">
+    <div class="cell small-12 inner-form">
+      <div class="grid-x">
+        <div class="cell small-12 medium-6 medium-text-left text-center">
+          <h1 style="line-height: 40px;">Services </h1>
+          <br />
+        </div>
+        <div class="cell small-12 medium-6 medium-text-right text-center" style="margin-top: 10px;">
+            <%= link_to 'Add More Services', new_additional_service_path, class: "button large success" %>
+        </div>
+      </div>
+      
+
+      <table class="table stack">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <% @additional_services.each do |additional_service| %>
+            <tr>
+              <td width="80%"><%= additional_service.title %></td>
+              <td><%= link_to 'Destroy', additional_service, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert expanded", style: "margin-bottom:0;" %></td>
+            </tr>
+          <% end %>
+          <% @services = SiteService.all %>
+          <% @services.each do |service| %>
+            <tr>
+              <td width="80%"><%= service.service.title %></td>
+              <td><%= link_to 'Destroy', service.service, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert expanded", style: "margin-bottom:0;" %></td>
+            </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

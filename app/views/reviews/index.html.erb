@@ -1,0 +1,43 @@
+<div class="grid-container" style="margin-top: 50px;">
+  <div class="grid-x">
+    <div class="cell small-12 inner-form">
+      <div class="grid-x">
+        <div class="cell small-12 medium-6 medium-text-left text-center">
+          <h1 style="line-height: 30px;">Reviews</h1>
+                <i class="fa fa-star" style="color: #ffc700"></i>
+                <i class="fa fa-star" style="color: #ffc700"></i>
+                <i class="fa fa-star" style="color: #ffc700"></i>
+                <i class="fa fa-star" style="color: #ffc700"></i>
+                <i class="fa fa-star" style="color: #ffc700"></i><br />
+        </div>
+        <div class="cell small-12 medium-6 medium-text-right text-center" style="margin-top: 10px;">
+            <%= link_to 'Add New Review', new_review_path, class: "button large success" %>
+        </div>
+      </div>
+      
+
+      <table class="table stack">
+        <thead>
+          <tr>
+            <th width="50%">Review</th>
+            <th width="30%">Name</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @reviews.each do |review| %>
+            <tr class="medium-text-left text-center">
+              <td><i><%= review.content %></i> </td>
+              <td><strong><%= review.name %></strong> </td>
+              <td><%= link_to 'Edit', edit_review_path(review), class: "button warning expanded", style: "margin-bottom:0;" %></td>
+              <td><%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert expanded", style: "margin-bottom:0;" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

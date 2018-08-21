@@ -1,0 +1,35 @@
+<div class="grid-container" style="margin-top: 50px;">
+  <div class="grid-x">
+    <div class="cell small-12 inner-form">
+      <div class="grid-x">
+        <div class="cell small-12 medium-8 medium-text-left text-center">
+          <h1 style="line-height: 40px;">Service Locations </h1>
+          <br />
+        </div>
+        <div class="cell small-12 medium-4 medium-text-right text-center" style="margin-top: 10px;">
+            <%= link_to 'Add More Locations', new_service_location_path, class: "button large success" %>
+        </div>
+      </div>
+      
+
+      <table class="table stack">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+    <% @service_locations.each do |service_location| %>
+      <tr>
+        <td width="80%"><%= service_location.city %></td>
+        <td><%= link_to 'Destroy', service_location, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert expanded" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,48 @@
+
+
+<%= form_with(model: service_location, local: true) do |form| %>
+  <% if service_location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service_location.errors.count, "error") %> prohibited this service_location from being saved:</h2>
+
+      <ul>
+      <% service_location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :city, placeholder: "Add a location which you service" %>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="cell small-6">
+      <%= form.submit "Add location", class: "button success large expanded" %>  </div>
+    <div class="cell small-6 text-right">
+      <%= link_to "Next!", new_color_path, class: "button primary large expanded"%>
+    </div>
+    
+    
+  </div>
+
+  <ul class="menu vertical inner-list">
+  <% @service_locations.each do |location| %>
+  <li>
+    <div class="grid-x">
+      <div class="cell shrink"><i class="fa fa-check"></i></div>
+      <div class="cell auto"><%= location.city %></div>
+      <div class="cell shrink">
+        <%= link_to location, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert expanded" do %>
+        <i class="fa fa-times" style="margin-right: 0; color: #fff; font-size:18px;"></i>
+        <% end %>
+      </div>
+    </div>
+     
+
+  </li>
+  <% end %>
+</ul>
+
+<% end %>

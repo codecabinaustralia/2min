@@ -1,0 +1,23 @@
+<div>  
+  <div class="grid-x">
+    <div class="cell small-12 medium-4 medium-offset-4 inner-form">
+      <h2>And that's a wrap!</h2>
+      <h3>Well nearly, you could keep your site as is. However, it's probably best you add a domain name to it. For example if <strong>www.<%= @site.company_name %>.com.au</strong> is available you should probably snap it up.</h3>
+		<hr>
+      <p>Do you aleady have a domain name?</p>
+      <duv class="grid-x grid-margin-x">
+      	
+      	<div class="cell small-7">
+      		<%= link_to "NO I NEED ONE", charge_need_domain_path, class: "button success expanded large" %>
+      	</div>
+      	<div class="cell small-5">
+      		<%= link_to "YES I DO!", charge_already_have_domain_path, class: "button primary expanded large" %>
+      	</div>
+      </duv>
+     
+
+      
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Accreditation And Licences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Reference number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accreditation_and_licences.each do |accreditation_and_licence| %>
+      <tr>
+        <td><%= accreditation_and_licence.name %></td>
+        <td><%= accreditation_and_licence.reference_number %></td>
+        <td><%= link_to 'Show', accreditation_and_licence %></td>
+        <td><%= link_to 'Edit', edit_accreditation_and_licence_path(accreditation_and_licence) %></td>
+        <td><%= link_to 'Destroy', accreditation_and_licence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accreditation And Licence', new_accreditation_and_licence_path %>

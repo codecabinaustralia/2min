@@ -1,0 +1,10 @@
+
+<%= form_tag(site_services_path, method: 'post') do %>
+  <%= hidden_field_tag :site_id, @my_site.id %>
+  <% @trade_services.each do |service| %>
+    <%= check_box_tag "service_ids[]", service.id %> <%= service.title %><br />
+  <% end %><br />
+  <div class="float-right">
+  <%= submit_tag "Next!", class: "button primary large" %>
+  	</div>
+<% end %>

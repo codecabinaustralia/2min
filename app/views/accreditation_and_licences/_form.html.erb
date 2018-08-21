@@ -1,0 +1,56 @@
+<ul class="vertical menu inner-list">
+  <% @my_licences.each do |licence| %>
+    <li>
+      <div class="grid-x">
+        <div class="cell shrink">
+          <i class="fa fa-check"> </i>
+        </div>
+        <div class="cell auto">
+          <%= licence.name %> <br /><small><%= licence.reference_number %></small>
+        </div>
+        <div class="cell shrink" style="padding-top: 10px;">
+          <%= link_to accreditation_and_licence, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert" do %>
+           <i class="fa fa-times" style="padding: 0; text-align: center; color: white; margin-right: 0; font-size: 12px; line-height: 0;"></i>
+          <% end %>
+        </div>
+      </div>
+        </li>
+  <% end %>
+</ul>
+
+<%= form_with(model: accreditation_and_licence, local: true) do |form| %>
+  <% if accreditation_and_licence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(accreditation_and_licence.errors.count, "error") %> prohibited this accreditation_and_licence from being saved:</h2>
+
+      <ul class="vertical">
+      <% accreditation_and_licence.errors.full_messages.each do |message| %>
+        <li><%= message %> 
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="grid-x grid-margin-x" style="margin-top: 20px;">  
+  <div class="cell small-6">
+    <%= form.text_field :name, placeholder: "Licence title" %>
+  </div>
+
+  <div class="cell small-6">
+    <%= form.text_field :reference_number, placeholder: "reference #" %>
+  </div>
+  </div>
+
+  <div class="grid-x">
+    <div class="cell small-6"> 
+        <%= form.submit "Add", class: "button large primary" %>
+    </div>
+
+    <div class="cell small-6 text-right"> 
+        <%= link_to "I'm Finished!", site_path(@my_site), class: "button success large" %>
+    </div>
+
+
+  </div>
+<% end %>

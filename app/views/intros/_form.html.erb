@@ -1,0 +1,35 @@
+<%= form_with(model: intro, local: true) do |form| %>
+  <% if intro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(intro.errors.count, "error") %> prohibited this intro from being saved:</h2>
+
+      <ul>
+      <% intro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="temp-logo-bg">
+    <div class="temp-logo text-center">
+      <div class="company-letter-logo" style="margin:auto; background-color: <%= @color.color_1 %>">
+        <div class="company-letter-logo-inner"><%= @company_name.split(//).first%></div>
+      </div>
+      <div class="company-name-logo" style="color: <%= @color.color_1 %>"><%= @company_name %></div> 
+    </div>
+  </div>
+
+  <div class="field" style="margin-top: 20px; display: none;">
+    <%= form.text_area :content, rows: 8, value: "Welcome to our site, here you can find everything you need about #{session[:company]}. As you scroll down the page you'll see all we have to offer including our contact details, service locations and samples of our work. We are eagerly waiting your call so please, don't hesitate to contact us when you're ready." %>
+  </div>
+
+  <div class="file-upload-box">
+    Oh, almost forgot. Let's add your logo. If you don't have it I'll just add a placeholder for now.<hr />
+    <%= form.file_field :logo %>
+  </div>
+
+  <div class="actions float-right">
+    <%= form.submit "Super close now", class: "button large primary" %>
+  </div>
+<% end %>

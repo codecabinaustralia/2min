@@ -1,0 +1,40 @@
+<%= form_with(model: additional_service, local: true) do |form| %>
+  <% if additional_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(additional_service.errors.count, "error") %> prohibited this additional_service from being saved:</h2>
+
+      <ul>
+      <% additional_service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+  <div class="field" style="margin-top: 20px;">
+    <%= form.text_field :title, placeholder: "Add a new service" %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :trade_id, value: @my_site.trade_id %>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="cell small-6">    
+        <%= form.submit "Add", class: "button success large expanded" %>
+    </div>
+    <div class="cell small-6 text-right"> 
+       <%= link_to "Continue", new_service_location_path, class: "button Primary large expanded" %>
+    </div>
+  </div>
+
+  <ul class="menu vertical inner-list">
+    <% @my_services.each do |my_service| %>
+      <li><i class="fa fa-check"></i> <%= my_service.service.title %></li>
+    <% end %>
+    <% @my_new_services.each do |new_service| %>
+      <li><i class="fa fa-check"></i> <%= new_service.title %></li>
+    <% end %>
+  </ul>
+<% end %>

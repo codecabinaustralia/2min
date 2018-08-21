@@ -1,0 +1,2 @@
+module AccreditationAndLicencesHelper
+end

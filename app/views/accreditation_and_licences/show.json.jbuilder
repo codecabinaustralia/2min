@@ -1,0 +1,1 @@
+json.partial! "accreditation_and_licences/accreditation_and_licence", accreditation_and_licence: @accreditation_and_licence

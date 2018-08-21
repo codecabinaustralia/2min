@@ -1,0 +1,2 @@
+class AccreditationAndLicence < ApplicationRecord
+end
