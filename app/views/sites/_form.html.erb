@@ -24,6 +24,12 @@
       <%= form.hidden_field :company_name, value: session[:company] %>
     </div>
 
+
+    <div class="field">
+      <label>Name your site</label>
+      <%= form.text_field :site_name, placeholder: "give your site a name" %>
+    </div>
+
     <div class="grid-x" style="display: none;">
       <div class="cell small-12"> 
       ABN <i><small>if you have it handy.. you can add it later</small></i>
