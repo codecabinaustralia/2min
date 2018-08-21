@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :service_locations
   resources :additional_services
   resources :sites
+  get 'tenant' => 'sites#tenant'
   resources :services
   resources :trades
   devise_for :users, controllers: { registrations: "registrations" }

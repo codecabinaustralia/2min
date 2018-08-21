@@ -2,6 +2,6 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    new_site_path
+    tenant_path
   end
 end

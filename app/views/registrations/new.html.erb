@@ -13,8 +13,7 @@
         </div>
 
         <div class="field">
-          <label>Name your site</label>
-          <%= f.text_field :site_name, placeholder: "give your site a name" %>
+          <%= f.hidden_field :site_name, value: session[:company].parameterize %>
         </div>
 
         <div class="field" style="display: none;">
