@@ -14,17 +14,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-        <div class="grid-x">
-          <div class="small-12 menu-container">
-            <ul class="menu"> 
-                <li><a href="<%= current_user.site_name %>.2min.co" class="button primary"><%= current_user.site_name %>.2min.co</a></li>
-                <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-
-            </ul>
-          </div>
-        </div>
-    <% end %>
+    
     <%= yield %>
   </body>
 </html>
