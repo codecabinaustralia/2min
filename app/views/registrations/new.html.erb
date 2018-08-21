@@ -12,7 +12,10 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "Email address" %>
         </div>
 
-
+        <div class="field">
+          <label>Name your site</label>
+          <%= form.text_field :site_name, placeholder: "give your site a name" %>
+        </div>
 
         <div class="field" style="display: none;">
           <%= f.label :password %>
