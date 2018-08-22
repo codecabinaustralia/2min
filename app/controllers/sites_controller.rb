@@ -194,7 +194,9 @@ class SitesController < ApplicationController
     Service.create(title: 'Timber Pests', trade_id: 10)
     Service.create(title: 'General Pests', trade_id: 10)
 
-    Apartment::Tenant.switch! current_user.site_name
+    Apartment::Tenant.switch('tenant_name') do
+      current_user.site_name
+    end
     redirect_to new_site_url(subdomain: "#{current_user.site_name}.2min")
   end
 
