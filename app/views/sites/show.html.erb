@@ -83,11 +83,6 @@
 				<% end %>
 			</div>
 
-			<div class="cell shrink preview-buttons">
-				<%= link_to('Logout', destroy_user_session_path, method: :delete), class: "button alert" %>
-			</div>
-
-
 			
 			<% if @progress_bar != "100%"  %>
 			<div class="cell auto show-for-medium">
