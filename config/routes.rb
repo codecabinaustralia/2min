@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  constraints subdomain: /^(?!www)(\w+)/ do
+  SubdomainConstraint
+  def self.matches?(request)
+    subdomains = %w{www admin public test tenant_name}
+    request.subdomain.present? && !subdomains.include?(request.subdomain)
+  end
+
+  constraints SubdomainConstraint do
     get 'charge/payment_page'
     post 'charge/create_charge'
     get 'charge/create_charge'
