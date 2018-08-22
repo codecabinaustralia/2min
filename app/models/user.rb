@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  validates :site_name, presence: true,
+  validates :subdomain, presence: true,
                             uniqueness: { case_sensitive: false},
                             format: { with: /\A[\w\-]+\Z/i, message: 'contains invalid characters' }
                         end
