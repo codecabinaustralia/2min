@@ -191,8 +191,8 @@ class SitesController < ApplicationController
     Service.create(title: 'Timber Pests', trade_id: 10)
     Service.create(title: 'General Pests', trade_id: 10)
 
-  
-    redirect_to new_site_url(subdomain: "#{current_user.subdomain}.2min")
+    
+    redirect_to root_url(subdomain: resource_or_scope.subdomain)
   end
 
   # GET /sites
