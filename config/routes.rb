@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
 
-  class Subdomain
-    def self.matches?(request)
-      subdomains = %w{www admin public test tenant_name}
-      request.subdomain.present? && !subdomains.include?(request.subdomain)
-    end
-  end
 
-  constraints Subdomain do
+
     get 'charge/payment_page'
     post 'charge/create_charge'
     get 'charge/create_charge'
@@ -26,7 +20,6 @@ Rails.application.routes.draw do
     resources :service_locations
     resources :additional_services
     resources :sites
-  end
 
   
   get 'tenant' => 'sites#tenant'
