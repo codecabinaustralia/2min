@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_071746) do
+ActiveRecord::Schema.define(version: 2018_08_22_080535) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -165,7 +165,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_071746) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "site_name"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.string "subdomain"
+    t.index ["email", "subdomain"], name: "index_users_on_email_and_subdomain", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
