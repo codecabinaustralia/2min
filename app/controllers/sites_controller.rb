@@ -2,10 +2,7 @@ class SitesController < ApplicationController
   before_action :set_site, only: [:show, :edit, :update, :destroy]
   
 
-  def tenant
- 
-    Apartment::Tenant.create(current_user.site_name)
-    
+  def tenant    
 
     Trade.create(title: 'Bricklayer')
     Trade.create(title: 'Builder')
@@ -194,9 +191,7 @@ class SitesController < ApplicationController
     Service.create(title: 'Timber Pests', trade_id: 10)
     Service.create(title: 'General Pests', trade_id: 10)
 
-    Apartment::Tenant.switch(current_user.site_name) do
-      
-    end
+  
     redirect_to new_site_url(subdomain: "#{current_user.site_name}.2min")
   end
 
