@@ -3,7 +3,7 @@ require 'apartment/elevators/subdomain'
 
 Apartment.configure do |config|
 
-  config.excluded_models = ["User", "Customer"]
+  config.excluded_models = []
   config.tenant_names = lambda { User.pluck :site_name }
 
 
