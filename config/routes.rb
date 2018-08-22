@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  SubdomainConstraint
-  def self.matches?(request)
-    subdomains = %w{www admin public test tenant_name}
-    request.subdomain.present? && !subdomains.include?(request.subdomain)
+  class SubdomainConstraint
+    def self.matches?(request)
+      subdomains = %w{www admin public test tenant_name}
+      request.subdomain.present? && !subdomains.include?(request.subdomain)
+    end
   end
 
   constraints SubdomainConstraint do
