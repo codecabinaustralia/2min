@@ -6,14 +6,13 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <% @random_string = SecureRandom.hex %>
-
         <h3><%= session[:company] %> is going to kill it! I can tell.</h3> 
         <div class="field">
           <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "Email address" %>
         </div>
 
         <div class="field">
-          <%= f.hidden_field :subdomain, value: session[:company].parameterize %>
+          <%= f.hidden_field :subdomain, value: session[:company] %>
         </div>
 
         <div class="field" style="display: none;">

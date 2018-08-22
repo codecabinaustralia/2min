@@ -192,7 +192,7 @@ class SitesController < ApplicationController
     Service.create(title: 'General Pests', trade_id: 10)
 
     
-    redirect_to root_url(subdomain: resource_or_scope.subdomain)
+    redirect_to subdomain: current_user.subdomain, :controller => 'sites', :action => "new"
   end
 
   # GET /sites
