@@ -22,13 +22,14 @@
 
 /* Menu */
 
-.menu-container{
-	background-color: #000;
+.top-menu-bar{
 	padding: 5px;
 	color: #fff;
+	position: absolute;
+	z-index: 99999999;
 }
 
-.menu-container a{
+.top-menu-bar a{
 	color: #fff;
 }
 

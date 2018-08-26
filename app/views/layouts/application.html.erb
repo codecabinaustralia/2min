@@ -14,15 +14,15 @@
   </head>
 
   <body>
-   <div class="text-right">
-     <ul class="">
+   <div class="top-menu-bar">
+     <ul class="menu align-right">
        <% if user_signed_in? %>
   <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'button primary') %>        
   </li>
 <% else %>
   <li>
-  <%= link_to('Login', new_user_session_path)  %>  
+  <%= link_to('Login', new_user_session_path, class: 'button primary')  %>  
   </li>
 <% end %>
      </ul>
