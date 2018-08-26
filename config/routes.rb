@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get 'charge/already_have_domain'
     get 'charge/need_domain'
 
-    contraints SubdomainContraint do
+    constraints SubdomainContraint do
       resources :messages
       resources :reviews
       resources :site_services
