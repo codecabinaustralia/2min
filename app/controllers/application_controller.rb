@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 	protected
 
       def after_sign_in_path_for(resource)
-        sites_url(:subdomain => resource.subdomain)
+        stored_location_for(resource) || request.referer || sites_url(:subdomain => resource.subdomain)
       end
 
 	  def configure_permitted_parameters
