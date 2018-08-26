@@ -15,17 +15,15 @@
 
   <body>
    <div class="top-menu-bar">
-     <ul class="menu align-right">
-       <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'button primary') %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path, class: 'button primary')  %>  
-  </li>
-<% end %>
-     </ul>
+    <div class="grid-x">
+      <div class="cell small-12 text-right">
+        <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'button primary') %>   
+        <% else %>
+          <%= link_to('Login', new_user_session_path, class: 'button primary')  %>     
+        <% end %>
+      </div>
+    </div>
    </div>
     <%= yield %>
   </body>
