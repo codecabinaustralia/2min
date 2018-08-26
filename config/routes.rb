@@ -1,6 +1,13 @@
+class SubdomainContraint
+
+  def self.matches?(request)
+    subdomains = %w{www admin }
+    request.subdomain.present? && !subdomains.include?(request.subdomain)
+  end
+
+end
+
 Rails.application.routes.draw do
-
-
 
     get 'charge/payment_page'
     post 'charge/create_charge'
@@ -8,18 +15,21 @@ Rails.application.routes.draw do
     get 'charge/thank_you'
     get 'charge/already_have_domain'
     get 'charge/need_domain'
-    resources :messages
-    resources :reviews
-    resources :site_services
-    resources :site_trades
-    resources :accreditation_and_licences
-    resources :personal_profiles
-    resources :portfolios
-    resources :intros
-    resources :colors
-    resources :service_locations
-    resources :additional_services
-    resources :sites
+
+    contraints Subdomain do
+      resources :messages
+      resources :reviews
+      resources :site_services
+      resources :site_trades
+      resources :accreditation_and_licences
+      resources :personal_profiles
+      resources :portfolios
+      resources :intros
+      resources :colors
+      resources :service_locations
+      resources :additional_services
+      resources :sites
+    end
 
   
   get 'tenant' => 'sites#tenant'

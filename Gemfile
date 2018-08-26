@@ -32,14 +32,12 @@ gem 'jquery-minicolors-rails'
 
 gem 'material_icons'
 gem 'icomoon-rails'
-
-gem 'apartment'
-
 gem 'cloudinary', require: false
 gem 'activestorage-cloudinary-service'
 gem "font-awesome-rails"
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'apartment'
 
 group :production do
   gem 'pg', '~> 0.18'

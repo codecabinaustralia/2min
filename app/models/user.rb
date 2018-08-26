@@ -1,26 +1,19 @@
 class User < ApplicationRecord
-  
-  after_create :create_tenant
-  after_destroy :delete_tenant
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, request_keys: [:subdomain]
+         :recoverable, :rememberable, :trackable, :validatable
 
+  after_create :create_tenant
   validates :email, uniqueness: true
-
+  validates :subdomain, uniqueness: true
 
   private
-  
+
   def create_tenant
     Apartment::Tenant.create(subdomain)
-  end
 
-  def delete_tenant
-    Apartment::Tenant.drop(subdomain)
-  end
-
-  def self.find_for_authentication(warden_conditions)
-    where(:email => warden_conditions[:email], :subdomain => warden_conditions[:subdomain]).first
+    Apartment::Tenant.switch(subdomain) do
+    end
   end
 
 end
