@@ -199,6 +199,8 @@ class SitesController < ApplicationController
   # GET /sites.json
   def index
     @sites = Site.all
+    @site = Site.last
+    redirect_to site_path(@site)
   end
 
   # GET /sites/1
