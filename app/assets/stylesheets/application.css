@@ -23,10 +23,11 @@
 /* Menu */
 
 .top-menu-bar{
-	padding: 5px;
+	padding: 10px;
 	color: #fff;
 	position: absolute;
 	z-index: 99999999;
+	width: 100%;
 }
 
 .top-menu-bar a{
