@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
   def home
-  	cookies.delete["_powerhouse_session"]
+  	
   end
 
   def session_placeholder
