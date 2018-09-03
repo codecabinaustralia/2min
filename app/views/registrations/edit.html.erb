@@ -27,18 +27,19 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :password %>
+          <label>Select a password</label>
+
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
 
         <div class="field">
-          <label>Select a password</label>
+         <label>Repeat password</label>
+
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
         
         <% if params[:pkey].present? %>
         <div class="field">
-          <label>Repeat password</label>
           <%= f.hidden_field :current_password, autocomplete: "off", value: session[:pkey] %>
         </div>
         <% else %>

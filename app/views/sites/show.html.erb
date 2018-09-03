@@ -82,6 +82,14 @@
 				<i class="fa fa-user"></i> Account Settings
 				<% end %>
 			</div>
+			<div class="cell shrink preview-buttons">
+
+			<% if user_signed_in? %>
+			  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'button primary') %>   
+			<% else %>
+			  <%= link_to('Sign In', new_user_session_path, class: 'button primary')  %>     
+			<% end %>
+			</div>
 
 			
 			<% if @progress_bar != "100%"  %>
