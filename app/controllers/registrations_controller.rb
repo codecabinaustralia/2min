@@ -1,4 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
+
+def update
+	sign_in(current_user, :bypass => true)
+end
+
   protected
 
 
@@ -7,6 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def update_resource(resource, params)
+
     resource.update_without_password(params)
   end
 
