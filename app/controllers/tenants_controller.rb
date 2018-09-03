@@ -6,7 +6,7 @@ class TenantsController < ApplicationController
 
   def drop_tenant
     @user = User.find(params[:user_id])
-
+    @user.update_attributes(subdomain: nil)
     if @user.subdomain.present?
     Apartment::Tenant.drop(@user.subdomain)
     @user.update_attributes(subdomain: nil)
