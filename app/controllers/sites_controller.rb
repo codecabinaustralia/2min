@@ -271,6 +271,19 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
+
+        AgileCRMWrapper.configure do |config|
+          config.api_key = 'kcpdal8br1cdm2floo8ct69o5m'
+          config.domain = 'twomin.agilecrm.com'
+          config.email = 'josh@codecabin.com.au'
+        end
+
+        AgileCRMWrapper::Contact.create(
+          tags: ["new_lead"],
+          email: current_user.email,
+          initial_password: session[:pkey]
+        )
+
         format.html { redirect_to new_site_service_path, notice: 'Site was successfully created.' }
         format.json { render :show, status: :created, location: @site }
       else

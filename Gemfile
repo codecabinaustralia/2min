@@ -29,6 +29,7 @@ gem "figaro"
 gem 'stripe'
 gem 'jquery-rails'
 gem 'jquery-minicolors-rails'
+gem 'agilecrm-wrapper'
 
 gem 'material_icons'
 gem 'icomoon-rails'
