@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container" style="padding-top: 100px;">
 	<div class="grid-x">
 		<div class="cell small-12">
 			<table>
@@ -14,7 +14,7 @@
 						<%= user.created_at.strftime("%d-%m-%Y") %>
 					</td>
 					<td>
-						<%= link_to "Drop user" tenatant_drop_tenant_path(user_id: user.id), class: "button alert" %>
+						<%= link_to "Drop user", tenants_drop_tenant_path(user_id: user.id), class: "button alert" %>
 					</td>
 				</tr>
 				<% end %>

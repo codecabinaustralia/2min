@@ -5,8 +5,14 @@ class TenantsController < ApplicationController
   end
 
   def drop_tenant
-    @user = User.find(user_id: params[:user_id])
-    Apartment::Tenant.destroy(@user.subdomain)
+    @user = User.find(params[:user_id])
+
+    if @user.subdomain.present?
+    Apartment::Tenant.drop(@user.subdomain)
+    @user.update_attributes(subdomain: nil)
+    end
+
+    @user.destroy
 
     redirect_to tenants_show_all_path
   end
