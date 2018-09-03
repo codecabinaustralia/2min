@@ -28,7 +28,7 @@ class PersonalProfilesController < ApplicationController
     @site = Site.last
     respond_to do |format|
       if @personal_profile.save
-        format.html { redirect_to site_path(@site), notice: 'Personal profile was successfully created.' }
+        format.html { redirect_to edit_user_registration_path(:pkey => session[:pkey]), notice: 'Personal profile was successfully created.' }
         format.json { render :show, status: :created, location: @personal_profile }
       else
         format.html { render :new }

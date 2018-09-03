@@ -1,6 +1,9 @@
 class StaticController < ApplicationController
   def home
-  	
+  	if user_signed_in?
+  		@site = Site.last
+  		redirect_to site_path(@site.id)
+  	end
   end
 
   def session_placeholder
