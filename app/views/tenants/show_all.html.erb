@@ -1,0 +1,24 @@
+<div class="grid-container">
+	<div class="grid-x">
+		<div class="cell small-12">
+			<table>
+				<% @users.each do |user| %>
+				<tr>
+					<td>
+						<%= user.email %>
+					</td>
+					<td>
+						<%= user.subdomain %>
+					</td>
+					<td>
+						<%= user.created_at.strftime("%d-%m-%Y") %>
+					</td>
+					<td>
+						<%= link_to "Drop user" tenatant_drop_tenant_path(user_id: user.id), class: "button alert" %>
+					</td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

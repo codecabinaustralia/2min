@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get 'charge/thank_you'
     get 'charge/already_have_domain'
     get 'charge/need_domain'
+    get 'tenants/show_all' => 'tenants#show_all'
+    get 'tenants/drop_tenant' => 'tenants#drop_tenant'
 
     constraints SubdomainContraint do
       resources :messages
