@@ -1,11 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
 
 def update
-  if current_user.update_with_password(params[:user])
-    sign_in(current_user, :bypass => true)
-    redirect_to root_url(:subdomain => resource.subdomain)
+  if current_user.update_with_password(params[:user_params])
+    bypass_sign_in current_user
+    redirect_to root_path, notice: "Password updated successfully!"
   else
-    render :action => :show
+    redirect_back(fallback_location: root_path, alert: current_user.errors.full_messages.join(" ").html_safe)
   end
 end
 
