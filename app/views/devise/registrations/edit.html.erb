@@ -32,13 +32,13 @@
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br />
+          <label>Select a password</label>
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
         
         <% if params[:pkey].present? %>
         <div class="field">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <label>Repeat password</label>
           <%= f.hidden_field :current_password, autocomplete: "off", value: session[:pkey] %>
         </div>
         <% else %>
@@ -47,8 +47,8 @@
         </div>
         <% end %>
 
-        <div class="actions">
-          <%= f.submit "Update" %>
+        <div class="actions text-right">
+          <%= f.submit "Save Login Details", class: "button large success expanded" %>
         </div>
       <% end %>
 
