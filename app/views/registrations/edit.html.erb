@@ -43,7 +43,8 @@
           <%= f.hidden_field :current_password, autocomplete: "off", value: session[:pkey] %>
         </div>
         <% else %>
-          <%= f.label :current_password %><br />
+        <div style="background-color: #f5f5f5; border: 1px solid #ccc; padding: 20px;">
+          <%= f.label :current_password %>
           <%= f.password_field :current_password, autocomplete: "off" %>
         </div>
         <% end %>
