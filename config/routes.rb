@@ -32,13 +32,6 @@ Rails.application.routes.draw do
       resources :additional_services
       resources :sites
       get 'tenant' => 'sites#tenant'
-
-      resource :user, only: [:edit] do
-        collection do
-          patch 'update_password'
-        end
-      end
-      
     end
 
   
