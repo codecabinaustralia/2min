@@ -37,9 +37,11 @@
   margin-bottom: 10px
 }
 #error_explanation li:before {    
-font-family: 'FontAwesome';
-content: '\f5b3';
-margin:0 5px 0 -15px;
+position: absolute;
+  top: 0;
+  left: 0;
+  font-family: FontAwesome;
+  content: "\f00d";
 color: #930004;
 font-size: 20px;
 }
