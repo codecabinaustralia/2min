@@ -20,6 +20,24 @@
  *= require material_icons
  */
 
+ /* Validation */
+
+ .error_explanation li:before {    
+font-family: 'FontAwesome';
+content: '\f5b3';
+margin:0 5px 0 -15px;
+color: #930004;
+font-size: 20px;
+}
+
+.error_explanation{
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #f4d9db;
+	color: #930004;
+	font-size: 14px;
+}
+
 /* Menu */
 
 .top-menu-bar{
