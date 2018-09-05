@@ -15,16 +15,12 @@
  *= require foundation_and_overrides
  *= require foundation
  *= require jquery.minicolors
+ *= require font-awesome
  *= require icomoon-free/style
  *= require material_icons
  */
 
  /* Validation */
-
-#error_explanation h2{
-	color: #930004;
-	font-size: 14px;
-}
 
 #error_explanation ul {
   list-style-type: none;
