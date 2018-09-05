@@ -4,14 +4,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   after_create :create_tenant
-  validates :email, uniqueness: true
-  validates :subdomain, uniqueness: true
+  validates :email, uniqueness: { message: 'Sorry this email has already been taken, try the forgotten password when you login in.' }
+  validates :email, presence:{ message: 'Silly! You must add an email.' }
+  validates :subdomain, uniqueness: { message: 'Unfortunately someone already has your website name, try to name it slightly different' }
+  validates :subdomain, presence:{ message: 'Oh man, you need to enter a company name.' }
+  validates :subdomain, format: { with: /\A[a-zA-Z]+\z/,
+    message: "Sorry you're only allowed to use letters" }
 
   private
 
   def create_tenant
     Apartment::Tenant.create(subdomain)
-
     Apartment::Tenant.switch(subdomain) do
     end
 
