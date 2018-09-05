@@ -11,10 +11,16 @@
         <div class="field">
           <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "Email address" %>
         </div>
-
+        
+        <% if session[:company].blank? %>
+        <div class="field">
+          <%= f.text_field :subdomain, value: session[:company],placeholder: "What's your company name" %>
+        </div>
+        <% else %>
         <div class="field">
           <%= f.hidden_field :subdomain, value: session[:company] %>
         </div>
+        <% end %>
 
         <div class="field" style="display: none;">
           <%= f.label :password %>
