@@ -22,6 +22,10 @@
 
  /* Validation */
 
+#error_explanation h2{
+	font-size: 14px;
+}
+
 #error_explanation ul {
   list-style-type: none;
   padding-left: 20px;
@@ -34,7 +38,7 @@
 }
 #error_explanation li:before {    
 position: absolute;
-  top: 0;
+  top: -5px;
   left: 0;
   font-family: FontAwesome;
   content: "\f00d";
