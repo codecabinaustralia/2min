@@ -24,9 +24,19 @@
 
 #error_explanation h2{
 	color: #930004;
-	font-size: 20px;
+	font-size: 14px;
 }
 
+#error_explanation ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#error_explanation li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px
+}
 #error_explanation li:before {    
 font-family: 'FontAwesome';
 content: '\f5b3';
