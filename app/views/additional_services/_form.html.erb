@@ -13,7 +13,7 @@
   
 
   <div class="field" style="margin-top: 20px;">
-    <%= form.text_field :title, placeholder: "Add a new service" %>
+    <%= form.text_field :title, placeholder: "Add a new service", class: "objective" %>
   </div>
 
   <div class="field">
@@ -25,7 +25,7 @@
         <%= form.submit "Add", class: "button success large expanded" %>
     </div>
     <div class="cell small-6 text-right"> 
-       <%= link_to "Continue", new_service_location_path, class: "button Primary large expanded" %>
+       <%= link_to "Continue", new_service_location_path, class: "objective_next button primary large expanded" %>
     </div>
   </div>
 
@@ -38,3 +38,19 @@
     <% end %>
   </ul>
 <% end %>
+
+
+<script>
+ 
+  
+
+  $('input.objective').blur(function(){
+    tmpval = $(this).val();
+    if(tmpval == '') {
+        $(".objective_next").show
+    } else {
+        $(".objective_next").hide
+    }
+});
+
+</script>
