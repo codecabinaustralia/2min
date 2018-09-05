@@ -17,6 +17,10 @@ class SiteServicesController < ApplicationController
     @site_service = SiteService.new
     @my_site = Site.last
     @trade_services = Service.where(trade_id: @my_site.trade_id).all
+
+    if @trade_services.blank?
+      redirect_to new_additional_service_path
+    end
   end
 
   # GET /site_services/1/edit

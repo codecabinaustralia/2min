@@ -16,6 +16,7 @@ class SitesController < ApplicationController
     Trade.create(title: 'Pest Control')
     Trade.create(title: 'Tilers')
     Trade.create(title: 'Plumber')
+    Trade.create(title: 'Other')
     Service.create(title: 'Brick & Block Supply', trade_id: 1)
     Service.create(title: 'Brick & Block Laying', trade_id: 1)
     Service.create(title: 'Commercial Work', trade_id: 1)
