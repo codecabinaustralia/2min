@@ -12,8 +12,8 @@
   <% end %>
   
 
-  <div class="objective" style="margin-top: 20px;">
-    <%= form.text_field :title, placeholder: "Add a new service" %>
+  <div class="" style="margin-top: 20px;">
+    <%= form.text_field :title, placeholder: "Add a new service",class: "objective" %>
   </div>
 
   <div class="field">
@@ -43,11 +43,13 @@
 <script>
  
 
-  $(".objective input").each(function () {
+  $(".objective").each(function () {
   if $(this.value == "")
+    alert("Show");
     $(".objective_next").show();
   else
     $(".objective_next").hide();
+  alert("Hide");
 });
 
 </script>
