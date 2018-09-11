@@ -9,8 +9,8 @@ module Apartment
 			end
 
 			def by_domain(request)
-				website = Website.find_by(domain: request.host)
-				website && website.slug
+				website = User.find_by(domain: request.host)
+				website && website.subdomain
 			end
 
 			def call(env)
