@@ -1,1 +1,1 @@
-Apartment::Elevators::Subdomain.excluded_subdomains = ['www', 'admin', 'mdoz']
+Apartment::Elevators::Subdomain.excluded_subdomains = ['www', 'admin', 'mdoz', 'public', 'mytest']
