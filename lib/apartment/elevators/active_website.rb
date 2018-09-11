@@ -7,6 +7,7 @@ module Apartment
 				tenant = super(request)
 				by_domain(request) || tenant
 			end
+			
 
 			def by_domain(request)
 				website = User.find_by(domain: request.host)
