@@ -1,6 +1,8 @@
 class StaticController < ApplicationController
   def home
-  	
+  	if user_signed_in?
+  		redirect_to destroy_user_session_path, method: :delete
+  	end
   end
 
   def session_placeholder
