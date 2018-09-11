@@ -1,7 +1,7 @@
 class SubdomainContraint
 
   def self.matches?(request)
-    subdomains = %w{www admin}
+    subdomains = %w{www admin mdoz}
     request.subdomain.present? && !subdomains.include?(request.subdomain)
   end
 
