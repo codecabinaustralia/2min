@@ -14,7 +14,7 @@
         
         <% if session[:company].blank? %>
         <div class="field">
-          <%= f.text_field :subdomain, value: session[:company],placeholder: "What's your company name" %>
+          <%= f.text_field :subdomain, value: session[:company], placeholder: "What's your company name" %>
         </div>
         <% else %>
         <div class="field">
