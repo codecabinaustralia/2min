@@ -6,10 +6,10 @@
 			<%= link_to "GO BACK", templates_path, class: "button large primary" %>
 		</div>
 		<div class="cell auto text-center">
-			<h3 style="color: white;" style="margin-top: 20px;">Like this template? Click next to continue >> </h3>
+			<h3 style="color: white;" style="margin-top: 20px;">Like this template?<br /> Click "love it" to continue >> </h3>
 		</div>
 		<div class="cell auto text-left">
-			<%= link_to "NEXT", templates_chosen_template_path(template_id: @template.id), class: "button large success" %>
+			<%= link_to "LOVE IT", templates_chosen_template_path(template_id: @template.id), class: "button large success" %>
 		</div>
 	</div>
 </div>
