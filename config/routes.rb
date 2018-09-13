@@ -9,7 +9,7 @@ end
 
 Rails.application.routes.draw do
 
-    resources :templates
+  resources :templates
     get 'charge/payment_page'
     post 'charge/create_charge'
     get 'charge/create_charge'
@@ -19,7 +19,8 @@ Rails.application.routes.draw do
     get 'tenants/show_all' => 'tenants#show_all'
     get 'tenants/drop_tenant' => 'tenants#drop_tenant'
 
-
+    get 'templates/chosen_template' => 'templates#chosen_template'
+    get 'templates/apply_template' => 'templates#apply_template'
 
     constraints SubdomainContraint do
       resources :messages
