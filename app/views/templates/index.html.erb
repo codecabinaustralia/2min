@@ -1,14 +1,22 @@
-<div class="grid-container">
+<div class="grid-container" style="margin-top: 100px;">
 <div class="grid-x grid-margin-x grid-margin-y">
-    <% @templates.each do |template| %>
-    <div class="cell small-12 medium-4">
-	    <div class="template-image-container">
-	      <%= image_tag template.image, height: '400', width: '400' %>
-	    </div>
-	    <div class="template-image-container-bottom">
-	    	Preview the <%= template.title %> template
-	    </div>
+
+	<div class="cell small-12 medium-4 medium-offset-4 inner-form">
+      <h2>Start by choosing a template</h2>     
+      <h3>You can preview each template by clicking on them. </h3> 
+		<% @templates.each do |template| %>
+	    	<div class="cell small-12 medium-3">
+			    <div class="template-image-container">
+			      <%= image_tag template.image, height: '400', width: '400' %>
+			    </div>
+			    <div class="template-image-container-bottom">
+			    	Preview the <%= template.title %> template
+			    </div>
+	    	</div>
+		<% end %>
+
     </div>
-    <% end %>
+
+    
 </div>
 </div>
