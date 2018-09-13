@@ -16,6 +16,7 @@
 //= require jquery.minicolors
 //= require activestorage
 //= require turbolinks
+//= require swiper
 //= require_tree .
 
 
