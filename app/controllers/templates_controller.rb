@@ -7,6 +7,11 @@ class TemplatesController < ApplicationController
     @templates = Template.all
   end
 
+  def chosen_template
+    session[:template] = params[:template].downcase.gsub(/\s+/, "")
+    redirect_to new_user_registration_path
+  end
+
   # GET /templates/1
   # GET /templates/1.json
   def show

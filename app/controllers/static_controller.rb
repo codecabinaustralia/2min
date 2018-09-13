@@ -7,7 +7,7 @@ class StaticController < ApplicationController
   	reset_session
   	session[:company] = params[:company_name].downcase.gsub(/\s+/, "")
   	
-  	redirect_to new_user_registration_path
+  	redirect_to templates_path
   end
 
 end
