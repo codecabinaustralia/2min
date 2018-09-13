@@ -1,7 +1,7 @@
 <div id='slider' class='swipe'>
   <div class='swipe-wrap'>
     <% @templates.each do |template| %>
-       <div><%= template.body.html_saf %></div> 
+       <div><%= template.body.html_safe %></div> 
     <% end %>
   </div>
 </div>
