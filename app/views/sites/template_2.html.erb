@@ -1,88 +1,302 @@
-<% if user_signed_in? && current_user.id == @site.user_id && @site.activated != true %>
-	<%= render 'pay_footer' %>
-<% end %>
+<div class="light-gray-bg" style="background-image: url('https://www.mmcoakridge.com/wp-content/uploads/sites/14/2018/03/Construction-Worker-Background-iStock-669200520-300x200.jpg')">
 
-<div class="temp-2-header">
-	<div class="top-bar">
-	  <div class="top-bar-left">
-	    <ul class="dropdown menu" data-dropdown-menu>
-	      <li><a href="#">Home</a></li>
-	      <li><a href="#">About Us</a></li>
-	      <li><a href="#">Portfolio</a></li>
-	    </ul>
-	  </div>
-	  <div class="top-bar-middle">
-	  	<ul class="menu">
-	  		<li class="menu-text">Site Title</li>
-	  	</ul>
-	  </div>
-	  <div class="top-bar-right">
-	    <ul class="dropdown menu" data-dropdown-menu>
-	      <li><a href="#">Services</a></li>
-	      <li><a href="#">Locations</a></li>
-	      <li><a href="#">Contact Us</a></li>
-	    </ul>
-	  </div>
-	</div>
-</div>
+<div class="off-canvas-content" data-off-canvas-content>
 
-<div class="temp-2-header-slider">
-	<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-	  <div class="orbit-wrapper">
-	    <div class="orbit-controls">
-	      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-	      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-	    </div>
-	    <ul class="orbit-container">
-	      <li class="is-active orbit-slide">
-	        <figure class="orbit-figure">
-	          <img class="orbit-image" src="https://placehold.it/1200x600/999?text=Slide-1" alt="Space">
-	          <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-	        </figure>
-	      </li>
-	    </ul>
-	  </div>
-	</div>
-</div>
-
-<div class="temp-2-color-row" background-color: green; color:#fff; >
-	<div class="grid-container">
-		<div class="grid-x">
-			<div class="small-12 medium-6 medium-offset-3">
-				<h2>Your general work station</h2>
-				<h1>All your general needs</h1>
-				<button class="large button">GET A QUOTE</button>
+		<div style="background-color: #000">
+			<div class="grid-x header-image" style="background-color: rgba(17,23,30,0.9);">
 			</div>
+
 		</div>
+
+		<div class="canvas-overlap">
+				
+			<div class="grid-container show-for-medium">		
+				<div class="quick-call text-center float-right" style="background-color: #8e000e">
+					<i class="fa fa-phone"></i> <a href="tel: 04000000000" style="
+						color: #fff;"><strong>CALL NOW 0400 000 000</strong></a>
+				</div>
+			</div>
+
+			<div class="grid-container canvas-content">
+
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-12 medium-4 text-center medium-text-left">
+						<div class="temp-logo-bg">
+						  <div class="temp-logo text-center">
+						    <div class="company-letter-logo" style="margin:auto; background-color: #8e000e;">
+						      <div class="company-letter-logo-inner">A</div>
+						    </div>
+						    <div class="company-name-logo" style="color: #8e000e">ABC COMPANY</div> 
+						  </div>
+						</div>
+					</div>
+					<div class="cell small-12 medium-8"  >
+						<div class="bubble" style="background-color: #8e000e; border-color: #ccc; color: #fff; width: 100px; text-align: center;">Hello!
+						
+						</div>
+						<div class="bubble-after" style="border-top: 10px solid #8e000e; "></div>
+						<h1><span>I'm</span> Stan,</h1>
+						<h2>CEO</h2>
+						<p>Hi welome to my website, feel free to browse my recent work, services and locations. If you're happy with what I have to offer please don't hesitate to contact me for a free quote.</p>
+						<button type="button" class="button primary" data-toggle="offCanvas" style="background-color:#1C1313">Read more about me</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- CTA Panel -->
+			<div class="grid-container" style="padding: 0;">
+				<div class="cta-panel" style="background-color:#8e000e">
+					<div class="grid-x">
+						
+						<div class="cell small-6 text-center" data-open="MessageMe" style="border-right: 2px solid white; border-left: 2px solid white; cursor: pointer;">
+							<i class="fa fa-envelope"></i> <strong>EMAIL US</strong>
+						</div>
+						<div class="cell small-6 text-center" style="border-left: 2px solid white;">
+							<i class="fa fa-phone"></i> <a href="tel: 04000000" style="
+								color: #fff;"><strong>0400 000 000</strong></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Site Services Panel -->
+			<div class="grid-container">
+				<div class="site-services-container">
+					<div class="grid-x">
+						<div class="cell small-12">
+							<div class="text-center">
+								<h2>Our Trades &amp; Services
+							</h2>
+								<div class="site-services-inner">
+									<div class="grid-x">
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Brick & Block Supply
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Brick & Block Laying
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Commercial Work
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Domestic Work
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Extensions
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Renovations
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Retaining wall work
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Maintenance
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> New Homes
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Heritage Work
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Additions and Extension
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Renovations
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Commercial Projects
+										</div>
+										<div class="cell small-12 medium-4">
+											<i class="fa fa-check" style="color: #19935c"></i> Maintenance
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Site Services Panel -->
+			<div class="grid-container">
+				<div class="text-center">
+					<h2>Servicing <span style="color: #8e000e">Sydney</span> Areas</h2>
+				</div>
+				<div class="site-locations-container">
+					<div class="grid-x grid-margin-x">
+						<!-- Map -->
+						<div class="cell small-12 medium-12">
+							<div class="map-responsive">
+							    <iframe src="https://maps.google.com/maps?q=sydney=&z=13&ie=UTF8&iwloc=&output=embed" width="1920" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Portfolio Panel -->
+			<div class="grid-container" style="margin-top:70px;">
+				<div class="text-center">
+					<h2>Our Showcase</h2>
+				</div>
+				<div class="site-portfolio-container">
+					<div class="grid-x">
+						<div class="cell small-6 medium-3" style="padding: 1px;">
+							<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" width="400" height="400">
+						</div>
+						<div class="cell small-6 medium-3" style="padding: 1px;">
+							<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" width="400" height="400">
+						</div>
+						<div class="cell small-6 medium-3" style="padding: 1px;">
+							<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" width="400" height="400">
+						</div>
+						<div class="cell small-6 medium-3" style="padding: 1px;">
+							<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" width="400" height="400">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Reviews Panel -->
+
+			<div class="grid-container" style="margin-top:70px;">
+				<div class="site-reviews-inner">
+						
+							<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+							  <div class="orbit-wrapper">
+							    <div class="orbit-controls">
+							      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+							      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+							    </div>
+							    <ul class="orbit-container">
+							      
+							      <li class="orbit-slide review-content">
+							        <figure class="orbit-figure">
+							          <p>How many languages do you think a dog can learn. I mean, do japanese dogs understand english commands?</p>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i> Fake User</i>
+							        </figure>
+							      </li>
+
+							      <li class="orbit-slide review-content">
+							        <figure class="orbit-figure">
+							          <p>Does anyone else like pringles... Why did they make them smaller. I just don't understand! </p>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i class="fa fa-star" style="color: #ffc700"></i>
+							          <i> Fake User</i>
+							        </figure>
+							      </li>
+							  
+							    
+							    </ul>
+							  </div>
+							  
+							</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<div class="grid-container" style="margin-top:70px; margin-bottom: 150px;">
+				<hr>
+				<div class="site-footer-container">
+					<div class="grid-x">
+						<div class="cell small-12 medium-4" >
+							<h4 style="font-size: 18px;">Accreditations and licences</h4>
+							
+								<p><strong>Whitecard</strong>
+								123321123</p><br />
+								<p><strong>Bluecard</strong>
+								123321123</p><br />
+								<p><strong>Rainbowcard</strong>
+								123321123</p><br />
+
+							
+						</div>
+						<div class="cell small-12 medium-4"></div>
+						<div class="cell small-12 medium-4 text-right">
+							All rights reserved<br />Copyright CodeCabin Pty Ltd <%= Time.now.strftime("%Y") %><br />
+							<strong>ABN:</strong> 123456789
+							ABC Company<br />
+							<strong>Located:</strong> Sydney<br /><br />
+							Website developed by <a href="http://www.codecabin.com.au" target="_blank">CodeCabin Pty Ltd</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		
+		
+</div>	
+
+
+<!-- Email -->
+<div class="reveal" id="MessageMe" data-reveal style="padding:40px;">
+  
+	
+	<div class="message-form">
+		<h2>Leave me a message.</h2>
+		<p class="lead">As this is a template, we've hidden the form. Try to use your imagination here.. try to imagine a beautiful form below. This form will capture any enquiries and send them straign to your email.
+
+	<div class="thanks text-center">
+		<i class="fa fa-check-circle"></i>
+		<p>Thanks! your message has been submitted. We'll respond shortly, sit tight.</p>
 	</div>
+
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 
-<div class="grid-container">
-	<div class="grid-x grid-margin-x">
-		<div class="small-12 medium-6">
-			<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" alt="placeholder">
-		</div>
-		<div class="small-12 medium-6 temp2-intro-txt" style="padding: 40px;">
-			<h2><span>DON’T SETTLE FOR LESS</span></h2>
-			<h2>Get the right assistance from the start on your next project.</h2>
-		</div>
+
+<!-- Off Canvas About Me -->
+<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="push" style="background-color: #101111">
+	
+	<div class="my-details">
+		<h2>Stan the man</h2>
+
+			<p>Hi and welcome to my site. Let me start by introducing myself. My name is Stan the man, I've been in the building industry for a few years now and over the years I've earned some very valuable experience. </p>
+			<p>My work ethic is on point, puncuality second to none. I'll literally bend over backwards for my clients and my attention to detail is unlike you've ever seen.</p>
 	</div>
+	
+	<button class="close-button" aria-label="Close menu" type="button" data-close>
+		<span aria-hidden="true" style="color: #fff;">&times;</span>
+	</button>
 </div>
 
-<div class="grid-container">
-	<div class="grid-x grid-margin-x">
-		<div class="small-12 medium-6">
-			<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" alt="placeholder">
-		</div>
-		<div class="small-12 medium-6 temp2-intro-txt" style="padding: 40px;">
-			<p>
-				Our owner builder assist services will give you the knowledge and skill of a professional carpenter onsite with you from the start to completion.
 
-				We have the license to build so you have the security and peace of mind that it’s built to the highest standard from the start.
-
-				We are here to help you.
-			</p>
-		</div>
-	</div>
 </div>
 
+<script>
+
+$(function() {
+
+$('.list-close').click(function () {
+    $(".list-panel").animate({"left" : "-=300px"}, "fast");
+    $(".list-panel-open").animate({"left" : "300px"}, "slow");
+    
+});
+
+$('.list-panel-open').click(function () {
+    $(".list-panel-open").animate({"left" : "-300px"}, "fast");
+    $(".list-panel").animate({"left" : "0"}, "slow");
+    
+});
+
+});
+
+
+
+</script>
