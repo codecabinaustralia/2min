@@ -1,508 +1,88 @@
-<style>
-	.tem_2_bg{
-		height: 100vh;
-		width: 100%;
-		background-size: cover;
-		position: fixed;
-		overflow-y: hidden;
-		overflow-x: hidden;
-	}
-</style>
-
 <% if user_signed_in? && current_user.id == @site.user_id && @site.activated != true %>
-<div class="footer-paid-banner">
-	<span>50% Discount for today only!</span> Launch your tradie site for just $29/month. 
-	<%= link_to "LAUNCH NOW!", charge_payment_page_path, class: "button primary", style: "margin-top:10px; " %>
-</div>
+	<%= render 'pay_footer' %>
 <% end %>
 
-
-
-
-
-
-<% if user_signed_in? && current_user.id == @site.user_id %>
-	
-	<% if @progress_bar != "100%" %>
-	<div class="list-panel-open">
-	
-			<i class="fa fa-close"></i>
-
+<div class="temp-2-header">
+	<div class="top-bar">
+	  <div class="top-bar-left">
+	    <ul class="dropdown menu" data-dropdown-menu>
+	      <li><a href="#">Home</a></li>
+	      <li><a href="#">About Us</a></li>
+	      <li><a href="#">Portfolio</a></li>
+	    </ul>
+	  </div>
+	  <div class="top-bar-middle">
+	  	<ul class="menu">
+	  		<li class="menu-text">Site Title</li>
+	  	</ul>
+	  </div>
+	  <div class="top-bar-right">
+	    <ul class="dropdown menu" data-dropdown-menu>
+	      <li><a href="#">Services</a></li>
+	      <li><a href="#">Locations</a></li>
+	      <li><a href="#">Contact Us</a></li>
+	    </ul>
+	  </div>
 	</div>
-	<div class="list-panel">
-		<h3>What's left?</h3>
-		<div class="list-close">
-			<i class="fa fa-close"></i>
-		</div>
-		
-		<ul>
-			<% if !@intro.logo.attached? %>
-			<li><%= link_to "Add your logo", edit_intro_path(@intro) %></li>
-			<% end %>
-			<% if !@site.featured_image.attached? %>
-			<li><%= link_to "Add hero image", edit_site_path(@site) %></li>
-			<% end %>
-			<% if @profile.bio.blank? %>
-			<li><%= link_to "Write your profile", edit_personal_profile_path(@profile) %></li>
-			<% end %>
-			<% if !@profile.avatar.attached? %>
-			<li><%= link_to "Add a selfie", edit_personal_profile_path(@profile) %></li>
-			<% end %>
-			<% if @portfolios.blank? %>
-			<li><%= link_to "Add portfolio", new_portfolio_path %></li>
-			<% end %>
-			<% if @reviews.blank? %>
-			<li><%= link_to "Add reviews", new_review_path %></li>
-			<% end %>
-			<% if @accreditations.blank? %>
-			<li><%= link_to "Accreditations & licences", new_accreditation_and_licence_path %></li>
-			<% end %>
-			<% if @site.abn.blank? %>
-			<li><%= link_to "Add your ABN", edit_site_path(@site) %></li>
-			<% end %>
-		</ul>
-	</div>
-	<% end %>
-
-
-	
-	<div class="grid-container" style="background-color: #1f2c3d; -webkit-border-bottom-right-radius: 10px; -webkit-border-bottom-left-radius: 10px; -moz-border-radius-bottomright: 10px; -moz-border-radius-bottomleft: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; color: #fff; padding: 15px 10px 0 10px;">
-		<div class="grid-x grid-margin-x">
-			
-
-			<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] != "true" %>
-
-
-					<div class="cell shrink preview-buttons">
-						<%= link_to site_path(@site, :edit_mode => "true"), class: "button success" do %>
-						<i class="fa fa-pencil"></i> Edit Mode
-						<% end %>
-					</div>
-
-
-			<% else %>
-				<div class="cell shrink preview-buttons">
-					<%= link_to site_path(@site), class: "button success" do %>
-					<i class="fa fa-desktop"></i> Preview Mode
-					<% end %>
-				</div>
-			<% end %>
-
-			<div class="cell shrink preview-buttons">
-				<%= link_to edit_user_registration_path, class: "button warning" do %>
-				<i class="fa fa-user"></i> Account Settings
-				<% end %>
-			</div>
-
-			
-			<% if @progress_bar != "100%"  %>
-			<div class="cell auto show-for-medium">
-				<div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100" style="border-radius: 5px; height: 35px;">
-				  <div class="progress-meter" style="width: <%= @progress_bar %>; border-radius: 5px;">
-				  	<p class="progress-meter-text">Welcome add some final touches: <%= @progress_bar %> FINSIHED</p>
-				  </div>
-
-				</div>
-			</div>
-			<% else %>
-			<% if @site.activated != true %>
-			<div class="cell auto preview-buttons"></div>
-			<div class="cell auto preview-buttons">
-				<%= link_to "LAUNCH NOW 50% OFF!", charge_payment_page_path, class: "button primary expanded"%>
-			</div>
-			<% end %>
-			<% end %>
-		</div>
-	</div>
-<% end %>
-
-
-
-<div class="off-canvas-content" data-off-canvas-content>
-	
-		 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-		<div class="grid-container" style="padding:0;">
-		<div style="background-color: #19935c;" class="text-center medium-text-left">
-			<%=link_to edit_user_registration_path do %>
-				<span class="button success large" style="margin-top:10px; margin-left: 10px;">
-					<i class="fa fa-pencil  " ></i> <strong>Edit Account Settings</strong>
-				</span>
-			<% end %>
-		</div>
-		</div>
-		<% end %>
-
-	<div class="canvas-overlap">
-		
-		
-<% if !@site.featured_image.attached? %>
-<div class="tem_2_bg" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1534820859/11727-wood-hd-wallpaper.jpg');">
-
-<% else %>
-<div class="tem_2_bg" style="background-image: url('<%= url_for(@site.featured_image) %>');">
-<% end %>
-				
-		<div class="grid-container show-for-medium">		
-			<div class="quick-call text-center float-right" style="background-color: <%= @color.color_1 %>">
-				<i class="fa fa-phone"></i> <a href="tel: <%= @site.phone %>" style="
-					color: #fff;"><strong>CALL NOW <%= @site.phone %></strong></a>
-			</div>
-		</div>
-
-			<div class="grid-container canvas-content">
-
-				<div class="grid-x grid-margin-x">
-					<div class="cell small-12 medium-4 text-center medium-text-left">
-						<% if @intro.logo.attached? %>
-						<%= image_tag @intro.logo, height: '300', width: '300', alt: "#{@site.company_name} logo" %>
-						<% else %>
-						<div class="temp-logo-bg">
-						  <div class="temp-logo text-center">
-						    <div class="company-letter-logo" style="margin:auto; background-color: <%= @color.color_1 %>">
-						      <div class="company-letter-logo-inner"><%= @company_name.split(//).first%></div>
-						    </div>
-						    <div class="company-name-logo" style="color: <%= @color.color_1 %>"><%= @company_name %></div> 
-						  </div>
-						</div>
-						<% end %>
-
-						 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%=link_to edit_intro_path(@intro) do %>
-								<span class="button success expanded" style=" font-size: 16px;">
-									<i class="fa fa-pencil"></i> <strong>Change Intro &amp; Logo</strong>
-								</span>
-							<% end %>
-						<% end %>
-
-					</div>
-					<div class="cell small-12 medium-8"  >
-						<div class="bubble" style="background-color: <%= @color.color_1 %>; border-color: #ccc; color: #fff; width: 100px; text-align: center;">Hello!
-						
-						</div>
-						<div class="bubble-after" style="border-top: 10px solid <%= @color.color_1 %>; "></div>
-						<h1><span>I'm</span> <%= @profile.full_name %>,</h1>
-						<h2><%= @profile.role %></h2>
-						<p><%= @intro.content %></p>
-						<button type="button" class="button primary" data-toggle="offCanvas" style="background-color:#1C1313">Read more about me</button>
-					</div>
-				</div>
-			</div>
-
-			<!-- CTA Panel -->
-			<div class="grid-container" style="padding: 0;">
-				<div class="cta-panel" style="background-color:<%= @color.color_1 %>">
-					<div class="grid-x">
-						
-						<div class="cell small-6 text-center" data-open="MessageMe" style="border-right: 2px solid white; border-left: 2px solid white; cursor: pointer;">
-							<i class="fa fa-envelope"></i> <strong>EMAIL US</strong>
-							 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-								<%=link_to edit_user_registration_path do %>
-									<span class="button success" style="padding:0 10px; margin-top:10px; font-size: 14px;">
-										<i class="fa fa-pencil  " ></i> <strong>Edit</strong>
-									</span>
-								<% end %>
-							<% end %>
-						</div>
-						<div class="cell small-6 text-center" style="border-left: 2px solid white;">
-							<i class="fa fa-phone"></i> <a href="tel: <%= @site.phone %>" style="
-								color: #fff;"><strong><%= @site.phone %></strong></a>
-							 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-								<%= link_to edit_site_path(@site) do %>
-									<span class="button success" style="padding:0 10px; margin-top:10px; font-size: 14px;">
-										<i class="fa fa-pencil  " ></i> <strong>Edit</strong>
-									</span>
-								<% end %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-			<!-- Site Services Panel -->
-			<div class="grid-container">
-				<div class="site-services-container">
-					<div class="grid-x">
-						<div class="cell small-12">
-							<div class="text-center">
-								<h2>Our Trades &amp; Services
-								 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-									<%= link_to additional_services_path do %>
-										<span class="button success" style=" font-size: 16px;">
-											<i class="fa fa-pencil  " ></i> <strong>Manage Services</strong>
-										</span>
-									<% end %>
-								<% end %>
-							</h2>
-								<div class="site-services-inner">
-									<div class="grid-x">
-										<% @site_services.each do |service| %>
-										<div class="cell small-12 medium-4">
-											<i class="fa fa-check" style="color: #19935c"></i> <%= service.service.title %>	
-										</div>
-										<% end %>
-										<% @additional_services.each do |service| %>
-										<div class="cell small-12 medium-4">
-											<i class="fa fa-check" style="color: #19935c"></i> <%= service.title %>	
-										</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Site Services Panel -->
-			<div class="grid-container">
-				<div class="text-center">
-					<h2>Servicing <span style="color: <%= @color.color_1 %>"><%= @site.home_town %></span> Areas
-					 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-						<%=link_to service_locations_path do %>
-							<span class="button success" style=" font-size: 16px;">
-								<i class="fa fa-pencil  " ></i> <strong>Manage Locations</strong>
-							</span>
-						<% end %>
-					<% end %>
-					</h2>
-				</div>
-				<div class="site-locations-container">
-					<div class="grid-x grid-margin-x">
-						<!-- Map -->
-						<div class="cell small-12 medium-6">
-							<div class="map-responsive">
-							    <iframe src="https://maps.google.com/maps?q=<%= @site.home_town%>=&z=13&ie=UTF8&iwloc=&output=embed" width="600" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
-							</div>
-						</div>
-						
-						<!-- List of areas -->
-						<div class="cell small-12 medium-6">
-							<div class="text-center">
-								
-								<div class="site-services-inner">
-									<div class="grid-x">
-										<% @locations.each do |location| %>
-										<div class="cell small-12 text-left">
-											<i class="fa fa-check" style="color: #19935c; margin-right: 20px;"></i> <%= location.city %>	
-										</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<!-- Portfolio Panel -->
-			<div class="grid-container" style="margin-top:70px;">
-				<div class="text-center">
-					<h2>Our Showcase
-					 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-						<%=link_to new_portfolio_path do %>
-							<span class="button success" style=" font-size: 16px;">
-								<i class="fa fa-pencil  " ></i> Manage Portfolio
-							</span>
-						<% end %>
-					<% end %>
-				</h2>
-				</div>
-				<div class="site-portfolio-container">
-					<div class="grid-x">
-						
-						<% if @portfolios.present? %>
-						<% @portfolios.each do |portfolio| %>
-							
-								<div class="cell small-6 medium-3" style="padding: 1px;">
-									<%= image_tag portfolio.image, height: '400', width: '400' %>
-								</div>
-						<% end %>
-						<% else %>
-						<div class="cell small-6 medium-3" style="padding: 1px;">
-							<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" width="400" height="400">
-						</div>
-						<div class="cell small-6 medium-3" style="padding: 1px;">
-							<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" width="400" height="400">
-						</div>
-						<div class="cell small-6 medium-3" style="padding: 1px;">
-							<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" width="400" height="400">
-						</div>
-						<div class="cell small-6 medium-3" style="padding: 1px;">
-							<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" width="400" height="400">
-						</div>
-						<% end %>
-					</div>
-				</div>
-			</div>
-
-			<!-- Reviews Panel -->
-
-			<% if user_signed_in? && @reviews.blank? && current_user.id == @site.user_id %>
-			<div class="grid-container" style="margin-top:70px;">
-				<div class="text-center">
-					<h2>You have 0 Reviews - add some!</h2>
-					<%= link_to "ADD REVIEWS", new_review_path, class: "button large", style: "background-color: #{@color.color_1}" %>
-				</div>
-			</div>
-			<% elsif @reviews.present? %>
-			<div class="grid-container" style="margin-top:70px;">
-				<div class="text-center">
-					<h2>Reviews
-					 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-						<%=link_to reviews_path do %>
-							<span class="button success" style=" font-size: 16px;">
-								<i class="fa fa-pencil  " ></i> Manage Reviews
-							</span>
-						<% end %>
-					<% end %>
-					</h2> 
-				</div>
-				<div class="site-reviews-inner">
-						
-							<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-							  <div class="orbit-wrapper">
-							    <div class="orbit-controls">
-							      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-							      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-							    </div>
-							    <ul class="orbit-container">
-							      <% @reviews.each do |review| %>
-							      <li class="orbit-slide review-content">
-							        <figure class="orbit-figure">
-							          <p><%= review.content %></p>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i> <%= review.name %></i>
-							        </figure>
-							      </li>
-							      <% end %>
-							    
-							    </ul>
-							  </div>
-							  
-							</div>
-				</div>
-			</div>
-			<% end %>
-
-			<!-- Footer -->
-			<div class="grid-container" style="margin-top:70px; margin-bottom: 150px;">
-				<hr>
-				<div class="site-footer-container">
-					<div class="grid-x">
-						<div class="cell small-12 medium-4" >
-							<h4 style="font-size: 18px;">Accreditations and licences</h4>
-							<% @accreditations.each do |credit| %>
-								<p><strong><%= credit.name %></strong>
-								<%= credit.reference_number %></p><br />
-							<% end %>
-
-							 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-								<%=link_to new_accreditation_and_licence_path do %>
-									<span class="button success" style=" font-size: 14px;">
-										<i class="fa fa-pencil"></i> <strong>Edit Accreditations</strong>
-									</span>
-								<% end %>
-							<% end %>
-
-						</div>
-						<div class="cell small-12 medium-4"></div>
-						<div class="cell small-12 medium-4 text-right">
-							All rights reserved<br />Copyright CodeCabin Pty Ltd <%= Time.now.strftime("%Y") %><br />
-							<strong>ABN:</strong> <%= @site.abn %>
-							<%= @site.company_name %><br />
-							<strong>Located:</strong> <%= @site.home_town %><br /><br />
-							Website developed by <a href="http://www.codecabin.com.au" target="_blank">CodeCabin Pty Ltd</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		
-		
-		
-</div>	
-
-
-<!-- Email -->
-<div class="reveal" id="MessageMe" data-reveal style="padding:40px;">
-  
-	
-	<div class="message-form">
-		<h2>Leave me a message.</h2>
-		<p class="lead">I'll get back to you as soon as I can?</p>
-		<%= render 'messages/form', message: @message, color: @color %>
-	</div>
-
-	<div class="thanks text-center">
-		<i class="fa fa-check-circle"></i>
-		<p>Thanks! your message has been submitted. We'll respond shortly, sit tight.</p>
-	</div>
-
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
 </div>
 
-
-<!-- Off Canvas About Me -->
-<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="push" style="background-color: #101111">
-	<% if @profile.avatar.attached? %>
-	<div class="about-avatar">
-		<%= image_tag @profile.avatar, height: '300', width: '300' %>
+<div class="temp-2-header-slider">
+	<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+	  <div class="orbit-wrapper">
+	    <div class="orbit-controls">
+	      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+	      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+	    </div>
+	    <ul class="orbit-container">
+	      <li class="is-active orbit-slide">
+	        <figure class="orbit-figure">
+	          <img class="orbit-image" src="https://placehold.it/1200x600/999?text=Slide-1" alt="Space">
+	          <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+	        </figure>
+	      </li>
+	    </ul>
+	  </div>
 	</div>
-	<% end %>
-	<div class="my-details">
-		<h2><%= @profile.full_name %></h2>
-		<% if @profile.bio.present? %>
-			<p><%= @profile.bio %></p>
-		<% else %>
-			<p>Hi and welcome to my site. Let me start by introducing myself. My name is <%= @profile.full_name %>, I've been in the <%= @trade.title %> for a few years now and over the years I've earned some very valuable experience. </p>
-			<p>My work ethic is on point, puncuality second to none. I'll literally bend over backwards for my clients and my attention to detail is unlike you've ever seen.</p>
-		<% end %>
-
-		 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-			<%=link_to edit_personal_profile_path(@profile) do %>
-				<span class="button success expanded" style=" font-size: 16px; margin-top: 20px;">
-					<i class="fa fa-pencil"></i> <strong>Manage About Me</strong>
-				</span>
-			<% end %>
-		<% end %>
-
-	</div>
-	
-	<button class="close-button" aria-label="Close menu" type="button" data-close>
-		<span aria-hidden="true" style="color: #fff;">&times;</span>
-	</button>
 </div>
 
-
+<div class="temp-2-color-row" background-color: green; color:#fff; >
+	<div class="grid-container">
+		<div class="grid-x">
+			<div class="small-12 medium-6 medium-offset-3">
+				<h2>Your general work station</h2>
+				<h1>All your general needs</h1>
+				<button class="large button">GET A QUOTE</button>
+			</div>
+		</div>
+	</div>
 </div>
 
-<script>
+<div class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="small-12 medium-6">
+			<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" alt="placeholder">
+		</div>
+		<div class="small-12 medium-6 temp2-intro-txt" style="padding: 40px;">
+			<h2><span>DON’T SETTLE FOR LESS</span></h2>
+			<h2>Get the right assistance from the start on your next project.</h2>
+		</div>
+	</div>
+</div>
 
-$(function() {
+<div class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="small-12 medium-6">
+			<img src="https://carepharmaceuticals.com.au/wp-content/uploads/sites/19/2018/02/placeholder-600x400.png" alt="placeholder">
+		</div>
+		<div class="small-12 medium-6 temp2-intro-txt" style="padding: 40px;">
+			<p>
+				Our owner builder assist services will give you the knowledge and skill of a professional carpenter onsite with you from the start to completion.
 
-$('.list-close').click(function () {
-    $(".list-panel").animate({"left" : "-=300px"}, "fast");
-    $(".list-panel-open").animate({"left" : "300px"}, "slow");
-    
-});
+				We have the license to build so you have the security and peace of mind that it’s built to the highest standard from the start.
 
-$('.list-panel-open').click(function () {
-    $(".list-panel-open").animate({"left" : "-300px"}, "fast");
-    $(".list-panel").animate({"left" : "0"}, "slow");
-    
-});
+				We are here to help you.
+			</p>
+		</div>
+	</div>
+</div>
 
-});
-
-
-
-</script>

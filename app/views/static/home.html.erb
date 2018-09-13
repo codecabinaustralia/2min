@@ -12,16 +12,21 @@
 			<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1534542509/logo_2_min.png" width="250">
 	<h1><span>tradie</span> websites</h1>
 	<h2>finished faster than you can...</h2>
-			<%= form_tag session_placeholder_path, method: :get do %>
-				<div class="grid-x grid-margin-x" style="margin-top: 40px;">
-				<div class="cell medium-12 large-7">
-					<%= text_field_tag :company_name, nil, placeholder: "What's your business name?" %>
-				</div>
-				<div class="cell medium-12 large-5">
-					<%= submit_tag "Give it a go", class: "button large primary expanded" %>
-				</div>
-				</div>
+
+			<% if user_signed_in? %>
+				
+			<% else %>
+				<%= form_tag session_placeholder_path, method: :get do %>
+					<div class="grid-x grid-margin-x" style="margin-top: 40px;">
+					<div class="cell medium-12 large-7">
+						<%= text_field_tag :company_name, nil, placeholder: "What's your business name?" %>
+					</div>
+					<div class="cell medium-12 large-5">
+						<%= submit_tag "Give it a go", class: "button large primary expanded" %>
+					</div>
+					</div>
 				<% end %>
+			<% end %>
 			
 		</div>
 	</div>
