@@ -48,9 +48,18 @@
 .template-image-container-bottom{
 	background-color: #2b343a;
 	color: #fff;
-	font-weight: 700;
+	font-weight: 400;
 	text-align: center;
 	padding: 10px;
+	transition: all ease 0.2s;
+}
+
+.template-image-container-bottom:hover{
+	background-color: #19935c;
+}
+
+.template-whole:hover{
+	cursor: pointer;
 }
 
  /* Validation */
