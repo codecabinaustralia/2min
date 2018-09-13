@@ -22,6 +22,14 @@
 
  /* Template */
 
+ .template-arrow-banner{
+ 	background-color: #2b343a;
+ 	padding: 10px;
+ 	color: #fff;
+ 	bottom: 0;
+ 	position: fixed;
+ }
+
  .template-image-container{
  	-webkit-border-top-left-radius: 10px;
  	-webkit-border-top-right-radius: 10px;
@@ -59,7 +67,7 @@
 }
 
 .template-whole:hover{
-	cursor: pointer;
+	cursor: pointer !important;
 }
 
  /* Validation */

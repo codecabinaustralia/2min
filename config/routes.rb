@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get 'tenants/show_all' => 'tenants#show_all'
     get 'tenants/drop_tenant' => 'tenants#drop_tenant'
 
-    get 'sites/template_2' => 'sites#template_2'
+    get 'templates/chosen_template' => 'templates#chosen_template'
 
     constraints SubdomainContraint do
       resources :messages
