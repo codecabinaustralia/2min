@@ -13,7 +13,7 @@ end
 
 
   def after_sign_up_path_for(resource)
-    tenant_url(:subdomain => resource.subdomain)
+    templates_apply_template_path
   end
 
   def update_resource(resource, params)

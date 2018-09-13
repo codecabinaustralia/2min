@@ -2,14 +2,14 @@
 
 <div class="template-arrow-banner">
 	<div class="grid-x">
-		<div class="cell auto text-left">
+		<div class="cell auto text-right">
 			<%= link_to "GO BACK", templates_path, class: "button large primary" %>
 		</div>
 		<div class="cell auto text-center">
-			<h3 style="color: white;">Like this template?</h3>
+			<h3 style="color: white;" style="margin-top: 20px;">Like this template? Click next to continue >> </h3>
 		</div>
-		<div class="cell auto text-right">
-			<%= link_to "GO BACK", templates_chosen_template_path, class: "button large success" %>
+		<div class="cell auto text-left">
+			<%= link_to "NEXT", templates_chosen_template_path(template_id: @template.id), class: "button large success" %>
 		</div>
 	</div>
 </div>

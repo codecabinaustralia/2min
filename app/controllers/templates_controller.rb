@@ -8,8 +8,20 @@ class TemplatesController < ApplicationController
   end
 
   def chosen_template
-    session[:template] = params[:template].downcase.gsub(/\s+/, "")
+    reset_session
+    session[:template_id] = params[:template_id].downcase.gsub(/\s+/, "")
+    
     redirect_to new_user_registration_path
+  end
+
+  def apply_template
+    Site.create(
+      user_id: current_user.id,
+      company_name: session[:company],
+      template_id: session[:template_id]
+      )
+
+    redirect_to tenant_url(:subdomain => current_user.subdomain)
   end
 
   # GET /templates/1
