@@ -22,6 +22,36 @@
 
  /* Template */
 
+ .template-image-container{
+ 	-webkit-border-top-left-radius: 10px;
+ 	-webkit-border-top-right-radius: 10px;
+ 	-moz-border-radius-topleft: 10px;
+ 	-moz-border-radius-topright: 10px;
+ 	border-top-left-radius: 10px;
+ 	border-top-right-radius: 10px;
+ 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+ }
+
+.template-image-container img{
+	width: 400px;
+	height: 400px;
+	object-fit: cover;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+}
+
+.template-image-container-bottom{
+	background-color: #2b343a;
+	color: #fff;
+	font-weight: 700;
+	text-align: center;
+	padding: 10px;
+}
 
  /* Validation */
 

@@ -9,6 +9,8 @@
 <% else %>
 <div class="light-gray-bg" style="background-image: url('<%= url_for(@site.featured_image) %>');">
 <% end %>
+
+
 <% if user_signed_in? && current_user.id == @site.user_id %>
 	
 	<% if @progress_bar != "100%" %>
