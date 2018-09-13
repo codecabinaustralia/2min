@@ -27,7 +27,14 @@
  	padding: 10px;
  	color: #fff;
  	bottom: 0;
+ 	width: 100%;
  	position: fixed;
+ 	z-index: 9999999999999;
+ }
+
+ .template-arrow-banner h3{
+ 	font-weight: 400;
+ 	font-size: 20px;
  }
 
  .template-image-container{
