@@ -11,7 +11,6 @@ class StaticController < ApplicationController
   end
 
   def chosen_template
-    reset_session
     session[:template_id] = params[:template_id].downcase.gsub(/\s+/, "")
     
     redirect_to new_user_registration_path
