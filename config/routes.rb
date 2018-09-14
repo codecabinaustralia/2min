@@ -18,8 +18,8 @@ Rails.application.routes.draw do
     get 'charge/need_domain'
     get 'tenants/show_all' => 'tenants#show_all'
     get 'tenants/drop_tenant' => 'tenants#drop_tenant'
-    get 'templates/chosen_template' => 'templates#chosen_template'
-    get 'templates/apply_template' => 'templates#apply_template'
+    
+
 
     constraints SubdomainContraint do
       resources :messages
@@ -45,6 +45,8 @@ Rails.application.routes.draw do
 
   get 'static/home'
   get 'session_placeholder' => 'static#session_placeholder'
+  get 'chosen_template' => 'static#chosen_template'
+  get 'apply_template' => 'static#apply_template'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "static#home"

@@ -13,7 +13,7 @@ end
 
 
   def after_sign_up_path_for(resource)
-    templates_apply_template_path
+    apply_template_path
   end
 
   def update_resource(resource, params)
