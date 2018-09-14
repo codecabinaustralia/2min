@@ -13,7 +13,7 @@ end
 
 
   def after_sign_up_path_for(resource)
-    apply_template_path
+    new_site_path
   end
 
   def update_resource(resource, params)

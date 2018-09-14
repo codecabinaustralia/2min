@@ -330,7 +330,7 @@ class SitesController < ApplicationController
           #initial_password: session[:pkey]
         #)
 
-        format.html { redirect_to new_site_service_path, notice: 'Site was successfully created.' }
+        format.html { redirect_to site_path(@site), notice: 'Site was successfully created.' }
         format.json { render :show, status: :created, location: @site }
       else
         format.html { render :new }
