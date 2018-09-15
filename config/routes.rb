@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :service_locations
       resources :additional_services
       resources :sites
+      get 'create_temp_site' => 'site#create_temp_site'
       get 'tenant' => 'sites#tenant'
     end
 
@@ -47,6 +48,8 @@ Rails.application.routes.draw do
   get 'session_placeholder' => 'static#session_placeholder'
   get 'chosen_template' => 'static#chosen_template'
   get 'apply_template' => 'static#apply_template'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "static#home"

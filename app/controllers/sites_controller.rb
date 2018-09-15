@@ -241,6 +241,32 @@ class SitesController < ApplicationController
     redirect_to new_site_path
   end
 
+  def create_temp_site
+    @site = Site.new(
+      company_name: session[:company],
+      template_id: session[:template_id],
+      site_name: session[:company].paramaterize,
+      home_town: Geocoder.search(current_user.current_sign_in_ip).first.city,
+      phone: "0400 000 000"
+      )
+
+    @site.save
+
+    @color = Color.new(
+      color_1: "#bf0101"
+      )
+    @color.save
+
+    @profile = PersonalProfile.new(
+      full_name: "Your Name",
+      role: "CEO"
+      )
+
+    @profile.save
+
+    redirect_to site_path(@site)
+  end
+
   # GET /sites
   # GET /sites.json
   def index

@@ -23,7 +23,7 @@ class StaticController < ApplicationController
       template_id: session[:template_id]
       )
 
-    redirect_to tenant_url(:subdomain => current_user.subdomain)
+    redirect_to create_temp_site_url(:subdomain => current_user.subdomain)
   end
 
 end
