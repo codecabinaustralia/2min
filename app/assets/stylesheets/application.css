@@ -548,26 +548,44 @@ color: #19935c;
 /* Home */
 
 
-.home-header{
-	background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1536806086/2minute/iStock-184976409-stretched-small.jpg');
+.home-bg{
+	background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1536989734/monkey_bg.jpg');
 	background-size: cover;
 	height: 100vh;
 }
 
+.home-content{
+      padding-top: 60px;
+      text-align: left;
+   }
+
+   .home-content h1{
+      font-weight: 800;
+      letter-spacing: -2px;
+      color: #161616;
+      font-size: 60px;
+      line-height: 50px;
+      margin-top: 20px;
+   }
+
+   .home-content h1 span{
+      color: #f30033;
+   }
+
+   .home-content h2{
+      font-weight: 300;
+      letter-spacing: -1px;
+      color: #0E304A;
+      font-size: 30px;
+   }
+
 .home-header h1{
-	color: #161616;
+	color: #0E304A;
 	font-weight: 300;
 	font-size: 60px;
 	line-height: 50px;
 }
 
-.home-hero-overlay{
-	width: 100%;
-	height: 100%;}
-
-.hero-title-text h1{
-	padding: 40px 0;
-}
 
 
 /* Inner form */
