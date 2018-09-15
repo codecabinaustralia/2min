@@ -201,7 +201,7 @@ class SitesController < ApplicationController
       company_name: session[:company],
       template_id: session[:template_id],
       site_name: session[:company].paramaterize,
-      home_town: Geocoder.search(current_user.current_sign_in_ip).first.city,
+      home_town: "Sydney",
       phone: "0400 000 000"
       )
 
