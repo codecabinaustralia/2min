@@ -38,8 +38,6 @@ Rails.application.routes.draw do
       get 'tenant' => 'sites#tenant'
     end
 
-  
-  
   resources :services
   resources :trades
   devise_for :users, controllers: { registrations: "registrations" }

@@ -1,51 +1,6 @@
 class SitesController < ApplicationController
   before_action :set_site, only: [:show, :edit, :update, :destroy]
-  
-  def template_2
-    @color = Color.last
-    @profile = PersonalProfile.last
-    @intro = Intro.last
-    @site_services = SiteService.all
-    @additional_services = AdditionalService.all
-    @locations = ServiceLocation.all
-    @portfolios = Portfolio.all
-    @accreditations = AccreditationAndLicence.all
-    @reviews = Review.all
-    @trade = Trade.find(@site.trade_id)
-    @message = Message.new
 
-    @company = Site.last
-    @company_name = @company.company_name
-
-     @progress_bar = 84
-
-     if @intro.logo.attached?
-      @progress_bar = @progress_bar + 2
-     end
-    if @site.featured_image.attached?
-      @progress_bar = @progress_bar + 2
-     end
-     if @profile.bio.present?
-      @progress_bar = @progress_bar + 2
-     end
-     if @profile.avatar.attached?
-      @progress_bar = @progress_bar + 2
-     end
-     if @portfolios.present?
-      @progress_bar = @progress_bar + 2
-     end
-     if @reviews.present?
-      @progress_bar = @progress_bar + 2
-     end
-     if @accreditations.present?
-      @progress_bar = @progress_bar + 2
-     end
-     if @site.abn.present?
-      @progress_bar = @progress_bar + 2
-     end
-
-     @progress_bar = @progress_bar.to_s + "%"
-  end
 
   def tenant    
 

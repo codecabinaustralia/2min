@@ -13,7 +13,7 @@ end
 
 
   def after_sign_up_path_for(resource)
-    create_temp_site_path
+    create_temp_site_url(:subdomain => resource.subdomain)
   end
 
   def update_resource(resource, params)
