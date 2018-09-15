@@ -145,8 +145,9 @@
 										</div>
 										<% end %>
 										<% if user_signed_in? && current_user.id == @site.user_id && @additional_services.count == 0 %>
-											<h3>You're services will be listed here.. </h3><br />
-											<%= link_to additional_services_path do %>
+											<h3>You're services will be listed here.. </h3>
+											<p>&nbsp;</p>
+											<%= link_to additional_services_path, class: "button large", style: "background-color: #{@color.color_1}" do %>
 												<span class="button success" style=" font-size: 16px;">
 													<strong>Let's Add Some</strong>
 												</span>
