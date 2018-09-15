@@ -1,5 +1,6 @@
 class Site < ApplicationRecord
   belongs_to :user
+  belongs_to :template
   has_many :trades
   has_one_attached :featured_image
 
