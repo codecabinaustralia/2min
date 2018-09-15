@@ -38,7 +38,11 @@
 		<div class="canvas-overlap">
 			
 				
-		<div class="grid-container show-for-medium">		
+		<div class="grid-container show-for-medium">
+		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] != "true" %>
+			<div class="off-canvas-content-spacer"></div>
+		<% end %>
+				
 			<div class="quick-call text-center float-right" style="background-color: <%= @color.color_1 %>">
 				<i class="fa fa-phone"></i> <a href="tel: <%= @site.phone %>" style="
 					color: #fff;"><strong>CALL NOW <%= @site.phone %></strong></a>
