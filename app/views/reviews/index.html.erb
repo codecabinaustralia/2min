@@ -13,7 +13,7 @@
         <div class="cell auto"></div>
         <div class="cell shrink medium-text-right text-center" style="margin-top: 10px;">
             <% @site = Site.last %>
-            <%= link_to "I'm Finished Here", site_path(@site), class: "button large primary" %>
+            <%= link_to "I'm Finished Here", site_path(@site, :edit_mode => true), class: "button large primary" %>
           </div>
         <div class="cell shrink medium-text-right text-center" style="margin-top: 10px;">
             <%= link_to 'Add New Review', new_review_path, class: "button large success" %>
