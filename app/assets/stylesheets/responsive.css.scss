@@ -1,9 +1,6 @@
 
 
 @media only screen and (max-width: 768px) {
-   .home-bg {
-         display: none;
-   }
 
    .home-bg-mobile{
       background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1536990310/iphone_monkey.jpg');
@@ -14,15 +11,15 @@
 
    .home-content{
       padding-top: 60px;
-      text-align: center;
+      text-align: center !important;
    }
 
    .home-content h1{
       font-weight: 800;
       letter-spacing: -2px;
       color: #161616;
-      font-size: 40px;
-      line-height: 40px;
+      font-size: 36px;
+      line-height: 34px;
       margin-top: 20px;
    }
 
