@@ -219,6 +219,11 @@ class SitesController < ApplicationController
 
     @profile.save
 
+    @intro = Intro.new(
+      content: "Welcome to our site, here you can find everything you need about #{session[:company]}. As you scroll down the page you'll see all we have to offer including our contact details, service locations and samples of our work. We are eagerly waiting your call so please, don't hesitate to contact us when you're ready."
+      )
+    @intro.save
+
     redirect_to site_path(@site)
   end
 
@@ -236,13 +241,11 @@ class SitesController < ApplicationController
     @color = Color.last
     @profile = PersonalProfile.last
     @intro = Intro.last
-    @site_services = SiteService.all
     @additional_services = AdditionalService.all
     @locations = ServiceLocation.all
     @portfolios = Portfolio.all
     @accreditations = AccreditationAndLicence.all
     @reviews = Review.all
-    @trade = Trade.find(@site.trade_id)
     @message = Message.new
 
     @company = Site.last
