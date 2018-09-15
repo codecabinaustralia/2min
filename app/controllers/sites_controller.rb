@@ -201,7 +201,8 @@ class SitesController < ApplicationController
       company_name: session[:company],
       template_id: session[:template_id],
       home_town: "Sydney",
-      phone: "0400 000 000"
+      phone: "0400 000 000",
+      user_id: current_user.id
       )
 
     @site.save
