@@ -16,6 +16,8 @@
     <%= form.text_field :title %>
   </div>
 
+
+
   <div class="file-upload-box">
     You can upload your images from your phone or camera now if you like.<hr />
     <%= form.file_field :image %>
@@ -24,6 +26,11 @@
   <div class="field">
     <%= form.label :body %>
     <%= form.text_field :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body_with_data %>
+    <%= form.text_area :body_with_data %>
   </div>
 
   <div class="actions">
