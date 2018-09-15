@@ -1,6 +1,8 @@
 class StaticController < ApplicationController
   def home
-    
+    if user_signed_in?
+      sign_out_and_redirect(current_user)
+    end
   end
 
   def session_placeholder
