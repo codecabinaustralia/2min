@@ -183,7 +183,7 @@
 			</div>
 
 			<!-- Portfolio Panel -->
-			<% if @portfolios.blank? && !user_signed_in? || @portfolios.blank? && params[:edit_mode] == "true" %>
+			<% if @portfolios.blank? && !user_signed_in? || @portfolios.blank? && params[:edit_mode] != "true" %>
 			<% else %>
 			<div class="grid-container" style="margin-top:70px;">
 				<div class="text-center">
