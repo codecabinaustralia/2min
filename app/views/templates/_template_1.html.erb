@@ -7,7 +7,7 @@
 
 <div class="off-canvas-content" data-off-canvas-content>
 	
-		 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 		<div class="grid-container" style="padding:0;">
 		<div style="background-color: #19935c;" class="text-center medium-text-left">
 			<%=link_to edit_user_registration_path do %>

@@ -224,7 +224,7 @@ class SitesController < ApplicationController
       )
     @intro.save
 
-    redirect_to site_path(@site)
+    redirect_to site_path(@site, :edit_mode => true)
   end
 
   # GET /sites
