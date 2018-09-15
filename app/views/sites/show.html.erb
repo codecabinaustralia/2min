@@ -46,7 +46,7 @@
 	<% end %>
 
 
-	
+
 	
 	<div class="edit-site-bar">
 		<div class="grid-x grid-margin-x">
@@ -107,6 +107,9 @@
 	</div>
 <% end %>
 
+<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] != "true" %>
+	<div class="off-canvas-content-spacer"></div>
+<% end %>
 
 <% if @site.template_id == 1 %>
 <%= render 'templates/template_1' %>
