@@ -34,7 +34,7 @@ Rails.application.routes.draw do
       resources :service_locations
       resources :additional_services
       resources :sites
-      get 'create_temp_site' => 'site#create_temp_site'
+      get 'create_temp_site' => 'sites#create_temp_site'
       get 'tenant' => 'sites#tenant'
     end
 

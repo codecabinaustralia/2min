@@ -16,14 +16,5 @@ class StaticController < ApplicationController
     redirect_to new_user_registration_path
   end
 
-  def apply_template
-    Site.create(
-      user_id: current_user.id,
-      company_name: session[:company],
-      template_id: session[:template_id]
-      )
-
-    redirect_to create_temp_site_url(:subdomain => current_user.subdomain)
-  end
 
 end
