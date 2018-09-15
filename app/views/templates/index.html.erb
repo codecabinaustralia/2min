@@ -10,16 +10,19 @@
       	 
 		<div class="grid-x grid-margin-x grid-margin-y" style="margin-top: 20px;">
 			<% @templates.each do |template| %>
-				<%= link_to template_path(template) do %>
-		    	<div class="cell small-12 medium-4 template-whole">
-				    <div class="template-image-container">
-				      <%= image_tag template.image, height: '250', width: '400' %>
+		    	<div class="cell small-12 medium-4">
+		    		<%= link_to template_path(template) do %>
+		    		<div class="template-whole">
+					    <div class="template-image-container">
+					      <%= image_tag template.image, height: '250', width: '400' %>
+					    </div>
+					    <div class="template-image-container-bottom">
+					    	<i class="fas fa-desktop"></i> Preview template
+					    </div>
 				    </div>
-				    <div class="template-image-container-bottom">
-				    	<i class="fas fa-desktop"></i> Preview template
-				    </div>
+				    <% end %>
 		    	</div>
-		    	<% end %>
+		    	
 			<% end %>
 		</div>
 
