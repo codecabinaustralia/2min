@@ -120,6 +120,9 @@
 
 
 			<!-- Site Services Panel -->
+			<% if @additional_services.blank? && !user_signed_in? || @additional_services.blank? && params[:edit_mode] != "true" %>
+			<% else %>
+
 			<div class="grid-container">
 				<div class="site-services-container">
 					<div class="grid-x">
@@ -142,7 +145,7 @@
 										</div>
 										<% end %>
 										<% if user_signed_in? && current_user.id == @site.user_id && @additional_services.count == 0 %>
-											<h3>You're services will be listed here.. </h3>
+											<h3>You're services will be listed here.. </h3><br />
 											<%= link_to additional_services_path do %>
 												<span class="button success" style=" font-size: 16px;">
 													<strong>Let's Add Some</strong>
@@ -156,6 +159,7 @@
 					</div>
 				</div>
 			</div>
+			<% end %>
 
 			<!-- Site Services Panel -->
 			<div class="grid-container">
@@ -227,56 +231,60 @@
 			<% end %>
 
 			<!-- Reviews Panel -->
+			
+			<% if @reviews.blank? && !user_signed_in? || @reviews.blank? && params[:edit_mode] != "true" %>
+			<% else %>
 
-			<% if user_signed_in? && @reviews.blank? && current_user.id == @site.user_id %>
-			<div class="grid-container" style="margin-top:70px;">
-				<div class="text-center">
-					<h2>You have 0 Reviews - add some!</h2>
-					<%= link_to "ADD REVIEWS", new_review_path, class: "button large", style: "background-color: #{@color.color_1}" %>
+				<% if user_signed_in? && @reviews.blank? && current_user.id == @site.user_id %>
+				<div class="grid-container" style="margin-top:70px;">
+					<div class="text-center">
+						<h2>You have 0 Reviews - add some!</h2>
+						<%= link_to "ADD REVIEWS", new_review_path, class: "button large", style: "background-color: #{@color.color_1}" %>
+					</div>
 				</div>
-			</div>
-			<% elsif @reviews.present? %>
-			<div class="grid-container" style="margin-top:70px;">
-				<div class="text-center">
-					<h2>Reviews
-					 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-						<%=link_to reviews_path do %>
-							<span class="button success" style=" font-size: 16px;">
-								<i class="fas fa-pencil-alt  " ></i> Manage Reviews
-							</span>
+				<% elsif @reviews.present? %>
+				<div class="grid-container" style="margin-top:70px;">
+					<div class="text-center">
+						<h2>Reviews
+						 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<%=link_to reviews_path do %>
+								<span class="button success" style=" font-size: 16px;">
+									<i class="fas fa-pencil-alt  " ></i> Manage Reviews
+								</span>
+							<% end %>
 						<% end %>
-					<% end %>
-					</h2> 
+						</h2> 
+					</div>
+					<div class="site-reviews-inner">
+							
+								<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+								  <div class="orbit-wrapper">
+								    <div class="orbit-controls">
+								      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+								      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+								    </div>
+								    <ul class="orbit-container">
+								      <% @reviews.each do |review| %>
+								      <li class="orbit-slide review-content">
+								        <figure class="orbit-figure">
+								          <p><%= review.content %></p>
+								          <i class="fa fa-star" style="color: #ffc700"></i>
+								          <i class="fa fa-star" style="color: #ffc700"></i>
+								          <i class="fa fa-star" style="color: #ffc700"></i>
+								          <i class="fa fa-star" style="color: #ffc700"></i>
+								          <i class="fa fa-star" style="color: #ffc700"></i>
+								          <i> <%= review.name %></i>
+								        </figure>
+								      </li>
+								      <% end %>
+								    
+								    </ul>
+								  </div>
+								  
+								</div>
+					</div>
 				</div>
-				<div class="site-reviews-inner">
-						
-							<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-							  <div class="orbit-wrapper">
-							    <div class="orbit-controls">
-							      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-							      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-							    </div>
-							    <ul class="orbit-container">
-							      <% @reviews.each do |review| %>
-							      <li class="orbit-slide review-content">
-							        <figure class="orbit-figure">
-							          <p><%= review.content %></p>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i class="fa fa-star" style="color: #ffc700"></i>
-							          <i> <%= review.name %></i>
-							        </figure>
-							      </li>
-							      <% end %>
-							    
-							    </ul>
-							  </div>
-							  
-							</div>
-				</div>
-			</div>
+				<% end %>
 			<% end %>
 
 			<!-- Footer -->
@@ -287,8 +295,8 @@
 						<div class="cell small-12 medium-4" >
 							<h4 style="font-size: 18px;">Accreditations and licences</h4>
 							<% @accreditations.each do |credit| %>
-								<p><strong><%= credit.name %></strong>
-								<%= credit.reference_number %></p><br />
+								<strong><%= credit.name %></strong>
+								<%= credit.reference_number %><br />
 							<% end %>
 
 							 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
