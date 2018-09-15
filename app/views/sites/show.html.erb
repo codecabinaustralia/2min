@@ -77,8 +77,8 @@
 <% end %>
 
 
-
-<%= @site.template.body_with_data.html_safe %>
+<% if @site.template_id == 1 %>
+<%= render 'templates/template_1' %>
 
 
 
