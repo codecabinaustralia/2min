@@ -77,9 +77,22 @@
 			<div class="cell shrink preview-buttons">
 
 			<% if user_signed_in? %>
-			  <%= link_to destroy_user_session_path, method: :delete, class: 'button primary' do %>  
+			  <button class="button" data-open="exit_modal">
 			  <i class="fas fa-door-open"></i>
-			  <% end %> 
+			  </button> 
+
+			  <div class="reveal" id="exit_modal" data-reveal>
+			    <h1>ARE YOU'RE ATTEMPTING TO LOG OUT?</h1>
+			    <p class="lead"></p>
+			    <%= link_to destroy_user_session_path, method: :delete, class: 'button primary large' do %>
+    			  YES LOG ME OUT
+    			<% end %> 
+    			<button class="button large success" data-close aria-label="Close modal" type="button">NO STAY SIGNED IN</button>
+			    <button class="close-button" data-close aria-label="Close modal" type="button">
+			      <span aria-hidden="true">&times;</span>
+			    </button>
+			  </div>
+
 			<% else %>
 			  <%= link_to('Sign In', new_user_session_path, class: 'button primary')  %>     
 			<% end %>

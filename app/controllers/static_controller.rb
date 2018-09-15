@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
   def home
-
+    
   end
 
   def session_placeholder
