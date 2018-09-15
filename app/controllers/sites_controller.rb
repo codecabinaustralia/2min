@@ -200,7 +200,6 @@ class SitesController < ApplicationController
     @site = Site.new(
       company_name: session[:company],
       template_id: session[:template_id],
-      site_name: session[:company].paramaterize,
       home_town: "Sydney",
       phone: "0400 000 000"
       )
