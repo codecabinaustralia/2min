@@ -107,7 +107,7 @@
 	</div>
 <% end %>
 
-<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] != "true" %>
+<% if user_signed_in? && current_user.id == @site.user_id %>
 	<div class="off-canvas-content-spacer"></div>
 <% end %>
 
