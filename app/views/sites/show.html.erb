@@ -71,13 +71,15 @@
 
 			<div class="cell shrink preview-buttons">
 				<%= link_to edit_user_registration_path, class: "button warning" do %>
-				<i class="fa fa-user"></i> Account Settings
+				<i class="fa fa-user"></i> Settings
 				<% end %>
 			</div>
 			<div class="cell shrink preview-buttons">
 
 			<% if user_signed_in? %>
-			  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'button primary') %>   
+			  <%= link_to destroy_user_session_path, method: :delete, class: 'button primary' do %>  
+			  <i class="fas fa-door-open"></i>
+			  <% end %> 
 			<% else %>
 			  <%= link_to('Sign In', new_user_session_path, class: 'button primary')  %>     
 			<% end %>
