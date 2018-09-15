@@ -12,7 +12,7 @@
 		<div style="background-color: #19935c;" class="text-center medium-text-left">
 			<%=link_to edit_user_registration_path do %>
 				<span class="button success large" style="margin-top:10px; margin-left: 10px;">
-					<i class="fa fa-pencil  " ></i> <strong>Edit Account Settings</strong>
+					<i class="fas fa-pencil-alt  " ></i> <strong>Edit Account Settings</strong>
 				</span>
 			<% end %>
 		</div>
@@ -69,7 +69,7 @@
 						 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 							<%=link_to edit_intro_path(@intro) do %>
 								<span class="button success expanded" style=" font-size: 16px;">
-									<i class="fa fa-pencil"></i> <strong>Change Intro &amp; Logo</strong>
+									<i class="fas fa-pencil-alt"></i> <strong>Change Intro &amp; Logo</strong>
 								</span>
 							<% end %>
 						<% end %>
@@ -98,7 +98,7 @@
 							 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 								<%=link_to edit_user_registration_path do %>
 									<span class="button success" style="padding:0 10px; margin-top:10px; font-size: 14px;">
-										<i class="fa fa-pencil  " ></i> <strong>Edit</strong>
+										<i class="fas fa-pencil-alt  " ></i> <strong>Edit</strong>
 									</span>
 								<% end %>
 							<% end %>
@@ -109,7 +109,7 @@
 							 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 								<%= link_to edit_site_path(@site) do %>
 									<span class="button success" style="padding:0 10px; margin-top:10px; font-size: 14px;">
-										<i class="fa fa-pencil  " ></i> <strong>Edit</strong>
+										<i class="fas fa-pencil-alt  " ></i> <strong>Edit</strong>
 									</span>
 								<% end %>
 							<% end %>
@@ -129,7 +129,7 @@
 								 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 									<%= link_to additional_services_path do %>
 										<span class="button success" style=" font-size: 16px;">
-											<i class="fa fa-pencil  " ></i> <strong>Manage Services</strong>
+											<i class="fas fa-pencil-alt  " ></i> <strong>Manage Services</strong>
 										</span>
 									<% end %>
 								<% end %>
@@ -156,7 +156,7 @@
 					 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 						<%=link_to service_locations_path do %>
 							<span class="button success" style=" font-size: 16px;">
-								<i class="fa fa-pencil  " ></i> <strong>Manage Locations</strong>
+								<i class="fas fa-pencil-alt  " ></i> <strong>Manage Locations</strong>
 							</span>
 						<% end %>
 					<% end %>
@@ -198,7 +198,7 @@
 					 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 						<%=link_to new_portfolio_path do %>
 							<span class="button success" style=" font-size: 16px;">
-								<i class="fa fa-pencil  " ></i> Manage Portfolio
+								<i class="fas fa-pencil-alt  " ></i> Manage Portfolio
 							</span>
 						<% end %>
 					<% end %>
@@ -248,7 +248,7 @@
 					 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 						<%=link_to reviews_path do %>
 							<span class="button success" style=" font-size: 16px;">
-								<i class="fa fa-pencil  " ></i> Manage Reviews
+								<i class="fas fa-pencil-alt  " ></i> Manage Reviews
 							</span>
 						<% end %>
 					<% end %>
@@ -300,7 +300,7 @@
 							 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 								<%=link_to new_accreditation_and_licence_path do %>
 									<span class="button success" style=" font-size: 14px;">
-										<i class="fa fa-pencil"></i> <strong>Edit Accreditations</strong>
+										<i class="fas fa-pencil-alt"></i> <strong>Edit Accreditations</strong>
 									</span>
 								<% end %>
 							<% end %>
@@ -365,7 +365,7 @@
 		 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 			<%=link_to edit_personal_profile_path(@profile) do %>
 				<span class="button success expanded" style=" font-size: 16px; margin-top: 20px;">
-					<i class="fa fa-pencil"></i> <strong>Manage About Me</strong>
+					<i class="fas fa-pencil-alt"></i> <strong>Manage About Me</strong>
 				</span>
 			<% end %>
 		<% end %>
