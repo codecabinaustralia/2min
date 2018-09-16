@@ -16,6 +16,7 @@
     <%= form.text_field :title, placeholder: "Add a new service",class: "objective" %>
   </div>
 
+
   <div class="grid-x grid-margin-x">
     <div class="cell small-6">    
         <%= form.submit "Add", class: "button success large expanded" %>
@@ -25,5 +26,12 @@
     </div>
   </div>
 
-  
+  <ul class="menu vertical inner-list">
+    <% @my_services.each do |my_service| %>
+      <li><i class="fa fa-check"></i> <%= my_service.service.title %></li>
+    <% end %>
+    <% @my_new_services.each do |new_service| %>
+      <li><i class="fa fa-check"></i> <%= new_service.title %></li>
+    <% end %>
+  </ul>
 <% end %>
