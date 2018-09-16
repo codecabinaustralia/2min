@@ -28,7 +28,7 @@ class PersonalProfilesController < ApplicationController
     @site = Site.last
     respond_to do |format|
       if @personal_profile.save
-        format.html { redirect_to site_path(@site), notice: 'Personal profile was successfully created.' }
+        format.html { redirect_to site_path(@site, :edit_mode => "true"), notice: 'Personal profile was successfully created.' }
         format.json { render :show, status: :created, location: @personal_profile }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PersonalProfilesController < ApplicationController
     @site = Site.last
     respond_to do |format|
       if @personal_profile.update(personal_profile_params)
-        format.html { redirect_to site_path(@site), notice: 'Personal profile was successfully updated.' }
+        format.html { redirect_to site_path(@site, :edit_mode => "true"), notice: 'Personal profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @personal_profile }
       else
         format.html { render :edit }
