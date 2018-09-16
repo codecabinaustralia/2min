@@ -251,12 +251,15 @@ class SitesController < ApplicationController
     @company = Site.last
     @company_name = @company.company_name
 
-     @progress_bar = 84
+     @progress_bar = 82
 
      if @intro.logo.attached?
       @progress_bar = @progress_bar + 2
      end
     if @site.featured_image.attached?
+      @progress_bar = @progress_bar + 2
+     end
+     if @additional_services.present?
       @progress_bar = @progress_bar + 2
      end
      if @profile.bio.present?

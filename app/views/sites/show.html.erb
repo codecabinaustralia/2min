@@ -20,6 +20,9 @@
 			<% if !@intro.logo.attached? %>
 			<li><%= link_to "Add your logo", edit_intro_path(@intro) %></li>
 			<% end %>
+			<% if @additional_services.blank? %>
+			<li><%= link_to "Customise your site", new_additional_service_path %></li>
+			<% end %>
 			<% if !@site.featured_image.attached? %>
 			<li><%= link_to "Add hero image", edit_site_path(@site) %></li>
 			<% end %>
