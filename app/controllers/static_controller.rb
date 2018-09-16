@@ -9,8 +9,7 @@ class StaticController < ApplicationController
   	reset_session
   	session[:company] = params[:company_name].downcase.gsub(/\s+/, "")
   	
-    
-
+  
   	redirect_to templates_path
   end
 
