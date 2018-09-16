@@ -13,7 +13,7 @@
   
 
   <div class="" style="margin-top: 20px;">
-    <%= form.text_field :title, placeholder: "Add a new service",class: "objective" %>
+    <%= form.text_field :title, placeholder: "Add a new service", class: "objective" %>
   </div>
 
 
@@ -37,10 +37,10 @@
 <% end %>
 
 <script>
-  if(!$('.objective').val()){
+  if(!$('input.objective').val("")){
     $('.objective_next').show();
 }
 else {
-    $('objective_next').hide();
+    $('.objective_next').hide();
 }
 </script>
