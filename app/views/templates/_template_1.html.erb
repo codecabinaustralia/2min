@@ -10,9 +10,9 @@
 		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 		<div class="grid-container" style="padding:0;">
 		<div style="background-color: #19935c;" class="text-center medium-text-left">
-			<%=link_to edit_user_registration_path do %>
+			<%=link_to new_additional_services_path do %>
 				<span class="button success large" style="margin-top:10px; margin-left: 10px;">
-					<i class="fas fa-pencil-alt  " ></i> <strong>Edit Account Settings</strong>
+					<i class="fas fa-pencil-alt  " ></i> <strong>Customise your site</strong>
 				</span>
 			<% end %>
 		</div>
