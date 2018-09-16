@@ -13,7 +13,7 @@
   
 
   <div class="" style="margin-top: 20px;">
-    <%= form.text_field :title, placeholder: "Add a new service", class: "objective" %>
+    <%= form.text_field :title, placeholder: "Add a new service", id: "objective" %>
   </div>
 
 
@@ -22,7 +22,7 @@
         <%= form.submit "Add", class: "button success large expanded" %>
     </div>
     <div class="cell small-6 text-right"> 
-       <%= link_to "Continue", new_service_location_path, class: "objective_next button primary large expanded" %>
+       <%= link_to "Continue", new_service_location_path, id: "objective_next button primary large expanded" %>
     </div>
   </div>
 
@@ -37,12 +37,13 @@
 <% end %>
 
 <script>
-  $( document ).ready(function() {
-  if($('.objective').val()){
-    $('.objective_next').show();
-  }
-  else {
-      $('.objective_next').hide();
-  }
+
+  $("#objective").keyup(function(){
+    if($(this).val() == "") {
+        $("#objective_next").show();
+    } else {
+        $("#objective_next").hide();
+    }
 });
+
 </script>
