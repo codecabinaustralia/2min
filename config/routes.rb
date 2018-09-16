@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get 'charge/payment_page'
     post 'charge/create_charge'
     get 'charge/create_charge'
-    get 'charge/thank_you'
+    
 
     get 'tenants/show_all' => 'tenants#show_all'
     get 'tenants/drop_tenant' => 'tenants#drop_tenant'
@@ -40,6 +40,7 @@ Rails.application.routes.draw do
       resources :sites
       get 'create_temp_site' => 'sites#create_temp_site'
       get 'tenant' => 'sites#tenant'
+      get 'charge/thank_you'
     end
 
   resources :services
