@@ -16,10 +16,6 @@
     <%= form.text_field :title, placeholder: "Add a new service",class: "objective" %>
   </div>
 
-  <div class="field">
-    <%= form.hidden_field :trade_id, value: @my_site.trade_id %>
-  </div>
-
   <div class="grid-x grid-margin-x">
     <div class="cell small-6">    
         <%= form.submit "Add", class: "button success large expanded" %>
