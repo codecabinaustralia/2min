@@ -42,7 +42,7 @@ class ChargeController < ApplicationController
 
   def thank_you
     @site = Site.last
-    psuedo_domain = @site.company_name.downcase.gsub(/\s+/, "") + ".com.au"
+    psuedo_domain = "googamsdmaklsdale.com.au"
     
     require 'whois-parser'
 
