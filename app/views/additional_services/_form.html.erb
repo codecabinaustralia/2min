@@ -37,10 +37,12 @@
 <% end %>
 
 <script>
-  if($('.objective').val("Add a new service")){
+  $( document ).ready(function() {
+  if($('.objective').val()){
     $('.objective_next').show();
-}
-else {
-    $('.objective_next').hide();
-}
+  }
+  else {
+      $('.objective_next').hide();
+  }
+});
 </script>
