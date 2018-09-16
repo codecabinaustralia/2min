@@ -22,4 +22,13 @@
 $(document).on('turbolinks:load', function() {
     $(function(){ $(document).foundation(); });
     $('.color_el').minicolors();
+
+      $("#objective").keyup(function(){
+        if($(this).val() == "") {
+            $("#objective_next").show();
+        } else {
+            $("#objective_next").hide();
+        }
+    });
+
 });
