@@ -16,6 +16,7 @@ class AdditionalServicesController < ApplicationController
   def new
     @my_site = Site.last
     @my_new_services = AdditionalService.all
+    @my_services = SiteService.all
     @additional_service = AdditionalService.new
   end
 
