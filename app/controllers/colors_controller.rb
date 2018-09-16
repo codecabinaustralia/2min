@@ -42,8 +42,9 @@ class ColorsController < ApplicationController
   # PATCH/PUT /colors/1.json
   def update
     respond_to do |format|
+      @intro = Intro.last
       if @color.update(color_params)
-        format.html { redirect_to @color, notice: 'Color was successfully updated.' }
+        format.html { redirect_to edit_intro_path(@intro), notice: 'Color was successfully updated.' }
         format.json { render :show, status: :ok, location: @color }
       else
         format.html { render :edit }
