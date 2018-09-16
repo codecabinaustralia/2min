@@ -44,10 +44,6 @@ class ChargeController < ApplicationController
   	@site = Site.last
   end
 
-  def already_have_domain
-  end
-
-  def need_domain
-  end
+ 
   
 end

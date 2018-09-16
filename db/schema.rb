@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_050413) do
+ActiveRecord::Schema.define(version: 2018_09_16_013737) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(version: 2018_09_15_050413) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "subscription_id"
+  end
+
+  create_table "domains", force: :cascade do |t|
+    t.string "domain_name"
+    t.string "dns_simple_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "intros", force: :cascade do |t|

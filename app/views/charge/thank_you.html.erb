@@ -2,21 +2,34 @@
   <div class="grid-x">
     <div class="cell small-12 medium-4 medium-offset-4 inner-form">
       <h2>And that's a wrap!</h2>
-      <h3>Well nearly, you could keep your site as is. However, it's probably best you add a domain name to it. For example if <strong>www.<%= @site.company_name %>.com.au</strong> is available you should probably snap it up.</h3>
-		<hr>
-      <p>Do you aleady have a domain name?</p>
-      <div class="grid-x grid-margin-x">
-      	
-      	<div class="cell small-7">
-      		<%= link_to "NO I NEED ONE", charge_need_domain_path, class: "button success expanded large" %>
-      	</div>
-      	<div class="cell small-5">
-      		<%= link_to "YES I DO!", charge_already_have_domain_path, class: "button primary expanded large" %>
-      	</div>
-      </div>
+      <h3>Well nearly, you could keep your site as is. However, it's probably best you add a domain name to it. <h3>
 
-      <a href="<%= current_user.site_name%>.lvh.me:3000/sites/1">Visit your new site</a>
-     
+
+        <%= if session[:initial_domain_available] == true %>
+        <% @site = Site.last %>
+
+        <div class="grid-x">
+          <div class="cell small-12 medium-6 medium-offset-3">
+            <div class="domain-card text-center">
+              <h2 style="color: #0E304A; font-size: 18px;">GREAT NEWS</h2>
+              <h4 style="color: #0088F1; font-size: 14px;"><%= site.company_name.downcase.gsub(/\s+/, "") %>.com.au</h4>
+              <h2 style="color: #F30033; font-size: 26px;">DOMAIN IS AVAILABLE</h2>
+
+              <div style="margin-top: 20px;">
+                I can purchase it on your behalf if you like... It's currently <span style="color: #F30033; font-weight: bold;">$25 per year</span>, I'll also set up an email address and take care of all the nerdy stuff for you.<br />
+                <%= link_to "YES PLEASE! ADD THIS DOMAIN NAME", add_default_domain_path, class: "button large primary" %><br />
+                <strong>Or you may want to choose from the following options</strong><br />
+                <%= link_to "Choose a different domain", need_domain_path %><br />
+                Or <%= link_to "Connect a domain you already own", already_have_domain_path %>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+        <% end %>
+
+
+		
 
       
 

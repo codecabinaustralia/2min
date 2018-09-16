@@ -30,6 +30,7 @@ gem 'stripe'
 gem 'jquery-rails'
 gem 'jquery-minicolors-rails'
 gem 'agilecrm-wrapper'
+gem 'whois-parser'
 
 gem 'material_icons'
 gem 'icomoon-rails'

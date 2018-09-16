@@ -9,13 +9,17 @@ end
 
 Rails.application.routes.draw do
 
+  resources :domains
+  get 'already_have_domain' => 'domains#already_have_domain'
+  get 'need_domain' => 'domains#need_domain'
+
+
   resources :templates
     get 'charge/payment_page'
     post 'charge/create_charge'
     get 'charge/create_charge'
     get 'charge/thank_you'
-    get 'charge/already_have_domain'
-    get 'charge/need_domain'
+
     get 'tenants/show_all' => 'tenants#show_all'
     get 'tenants/drop_tenant' => 'tenants#drop_tenant'
     

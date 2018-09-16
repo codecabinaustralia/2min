@@ -9,6 +9,13 @@ class StaticController < ApplicationController
   	reset_session
   	session[:company] = params[:company_name].downcase.gsub(/\s+/, "")
   	
+    #Check domain
+    whois = Whois::Client.new
+    record =  whois.lookup("#{session[:company]}.com.au")
+    parser = record.parser
+
+    session[:initial_domain_available] = parser.available?
+
   	redirect_to templates_path
   end
 
