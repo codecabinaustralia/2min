@@ -14,7 +14,7 @@
   <div class="field">
     <% @color_exists = Color.last %>
     <% if @color_exists.present? %>
-    <%= form.text_field :color_1, class: "color_el", style: "width:100%;" %>
+    <%= form.text_field :color_1, class: "color_el", style: "width:100%;", value: "#{@color_exists.color_1}" %>
     <% else %>
     <%= form.text_field :color_1, class: "color_el", style: "width:100%;", value: "#bf0707" %>
     <% end %>

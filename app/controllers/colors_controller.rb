@@ -14,6 +14,7 @@ class ColorsController < ApplicationController
 
   # GET /colors/new
   def new
+    @color_last = Color.last
     @color = Color.new
   end
 
