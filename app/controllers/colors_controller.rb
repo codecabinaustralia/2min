@@ -26,10 +26,10 @@ class ColorsController < ApplicationController
   # POST /colors.json
   def create
     @color = Color.new(color_params)
-
+    @intro = Intro.last
     respond_to do |format|
       if @color.save
-        format.html { redirect_to new_intro_path, notice: 'Color was successfully created.' }
+        format.html { redirect_to edit_intro_path(@intro), notice: 'Color was successfully created.' }
         format.json { render :show, status: :created, location: @color }
       else
         format.html { render :new }

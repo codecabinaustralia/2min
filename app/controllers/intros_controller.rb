@@ -47,10 +47,10 @@ class IntrosController < ApplicationController
   # PATCH/PUT /intros/1.json
   def update
     @site = Site.last
-
+    @personal_profile = PersonalProfile.last
     respond_to do |format|
       if @intro.update(intro_params)
-        format.html { redirect_to site_path(@site), notice: 'Intro was successfully updated.' }
+        format.html { redirect_to edit_personal_profile_path(@personal_profile), notice: 'Intro was successfully updated.' }
         format.json { render :show, status: :ok, location: @intro }
       else
         format.html { render :edit }

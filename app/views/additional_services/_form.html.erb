@@ -22,7 +22,12 @@
         <%= form.submit "Add", class: "button success large expanded" %>
     </div>
     <div class="cell small-6 text-right"> 
+      <% @mycolor = Color.last %>
+      <% if @mycolor.present? %>
+       <%= link_to "Continue", edit_color_path(@mycolor), id: "objective_next", class: "button primary large expanded" %>
+       <% else %>
        <%= link_to "Continue", new_color_path, id: "objective_next", class: "button primary large expanded" %>
+       <% end %>
     </div>
   </div>
 

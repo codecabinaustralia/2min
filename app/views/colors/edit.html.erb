@@ -1,6 +1,11 @@
-<h1>Editing Color</h1>
+<div>  
+  <div class="grid-x">
+    <div class="cell small-12 medium-4 medium-offset-4 inner-form">
+      <h2>Not too keen onthis color?</h2>      
+		<%= render 'form', color: @color %>
+		
 
-<%= render 'form', color: @color %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Show', @color %> |
-<%= link_to 'Back', colors_path %>
