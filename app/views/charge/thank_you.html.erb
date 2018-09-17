@@ -6,7 +6,7 @@
 
         <%= @domain_available %>
 
-        <% if @domain_available == "true" %>
+        <% if @domain_available == true %>
 
         <div class="grid-x">
           <div class="cell small-12 medium-6 medium-offset-3">
@@ -17,10 +17,9 @@
 
               <div style="margin-top: 20px;">
                 I can purchase it on your behalf if you like... It's currently <span style="color: #F30033; font-weight: bold;">$25 per year</span>, I'll also set up an email address and take care of all the nerdy stuff for you.<br />
-                <%= link_to "YES PLEASE! ADD THIS DOMAIN NAME", add_default_domain_path, class: "button large primary" %><br />
+                
                 <strong>Or you may want to choose from the following options</strong><br />
-                <%= link_to "Choose a different domain", need_domain_path %><br />
-                Or <%= link_to "Connect a domain you already own", already_have_domain_path %>
+                
               </div>
             </div>
           </div>
