@@ -2,9 +2,6 @@
   <div class="grid-x">
     <div class="cell small-12 medium-4 medium-offset-4 inner-form">
 
-
-        <%= @domain_available %>
-
         <% if @domain_available == true %>
 
         <div class="grid-x">
@@ -15,13 +12,17 @@
               <h2 style="color: #F30033; font-size: 26px;">DOMAIN IS AVAILABLE</h2>
 
               <div style="margin-top: 20px;">
-                I can purchase it on your behalf if you like, using your credit card:
+                I can purchase it on your behalf if you like:
                 <div class="credit-card-scenario">
                   <div class="grid-x">
-                    <div class="cell shrink credit-card-scenario-left"></div>
-                    <div class="cell auto credit-card-scenario-right"></div>
+                    <div class="cell shrink credit-card-scenario-left">
+                      <i class="fab fa-cc-visa"></i>
+                    </div>
+                    <div class="cell auto credit-card-scenario-right">
+                      XXXX-XXXX-XXXX-0147  <strong>EXP:</strong> 01/12
+                    </div>
                   </div>
-                  <i class="fab fa-cc-visa"></i> XXXX-XXXX-XXXX-0147  <strong>EXP:</strong> 01/12
+                   
                 </div>
                 It's currently <span style="color: #F30033; font-weight: bold;">$25 per year</span>, I'll also set up an email address and take care of all the nerdy stuff for you.<br />
                 
