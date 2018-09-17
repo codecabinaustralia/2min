@@ -343,9 +343,9 @@ color: #19935c;
 		border-bottom-left-radius: 15px;
 		background-color: #2b343a;
 		color: #fff;
-		font-size: 20px;
+		font-size: 50px;
 		height: 70px;
-		padding-left: 10px;
+		padding: 25px;
 	}
 
 	.credit-card-scenario-right{
@@ -357,10 +357,9 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;
 		background-color: #e5e5e5;
 		color: #70767a;
-		font-size: 20px;
+		font-size: 16px;
 		height: 70px;
-		padding-top: 10px;
-		padding-left: 10px;
+		padding:25px;
 	}
 
 	.thanks{
