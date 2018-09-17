@@ -41,6 +41,8 @@ class ChargeController < ApplicationController
   end
 
   def thank_you
+    require 'whois-parser'
+    
     @site = Site.last
 
     #Check domain
