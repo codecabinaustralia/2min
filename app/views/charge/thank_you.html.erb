@@ -1,22 +1,29 @@
 <div>  
   <div class="grid-x">
     <div class="cell small-12 medium-4 medium-offset-4 inner-form">
-      <h2>And that's a wrap!</h2>
-      <h3>Well nearly, you could keep your site as is. However, it's probably best you add a domain name to it. <h3>
+
 
         <%= @domain_available %>
 
         <% if @domain_available == true %>
 
         <div class="grid-x">
-          <div class="cell small-12 medium-6 medium-offset-3">
+          <div class="cell small-12">
             <div class="domain-card text-center">
-              <h2 style="color: #0E304A; font-size: 18px;">GREAT NEWS</h2>
+              <h2 style="color: #0E304A;">GREAT NEWS</h2>
               <h4 style="color: #0088F1; font-size: 14px;">.com.au</h4>
               <h2 style="color: #F30033; font-size: 26px;">DOMAIN IS AVAILABLE</h2>
 
               <div style="margin-top: 20px;">
-                I can purchase it on your behalf if you like... It's currently <span style="color: #F30033; font-weight: bold;">$25 per year</span>, I'll also set up an email address and take care of all the nerdy stuff for you.<br />
+                I can purchase it on your behalf if you like, using your credit card:
+                <div class="credit-card-scenario">
+                  <div class="grid-x">
+                    <div class="cell shrink credit-card-scenario-left"></div>
+                    <div class="cell auto credit-card-scenario-right"></div>
+                  </div>
+                  <i class="fab fa-cc-visa"></i> XXXX-XXXX-XXXX-0147  <strong>EXP:</strong> 01/12
+                </div>
+                It's currently <span style="color: #F30033; font-weight: bold;">$25 per year</span>, I'll also set up an email address and take care of all the nerdy stuff for you.<br />
                 
                 <strong>Or you may want to choose from the following options</strong><br />
                 

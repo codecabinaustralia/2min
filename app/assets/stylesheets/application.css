@@ -20,6 +20,8 @@
  *= require material_icons
  */
 
+
+/
 /* Edit bar*/
 
 .edit-site-bar{
@@ -326,6 +328,39 @@ color: #19935c;
 		margin-top: 10px;
 		color: #3d4451;
 		font-weight: 400;
+	}
+
+	.credit-card-scenario{
+		margin: 20px 0;
+	}
+
+	.credit-card-scenario-left{
+		-webkit-border-top-left-radius: 15px;
+		-webkit-border-bottom-left-radius: 15px;
+		-moz-border-radius-topleft: 15px;
+		-moz-border-radius-bottomleft: 15px;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+		background-color: #2b343a;
+		color: #fff;
+		font-size: 20px;
+		height: 70px;
+		padding-left: 10px;
+	}
+
+	.credit-card-scenario-right{
+		-webkit-border-top-left-radius: 15px;
+		-webkit-border-bottom-left-radius: 15px;
+		-moz-border-radius-topleft: 15px;
+		-moz-border-radius-bottomleft: 15px;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+		background-color: #e5e5e5;
+		color: #2b343a;
+		font-size: 16px;
+		height: 70px;
+		padding-top: 10px;
+		padding-left: 10px;
 	}
 
 	.thanks{
