@@ -42,12 +42,13 @@ class ChargeController < ApplicationController
 
   def thank_you
     require 'whois-parser'
-    
+
     @site = Site.last
+    @suggested_domain = @site.company_name.downcase.gsub(/\s+/, "")
 
     #Check domain
     whois = Whois::Client.new
-    record =  whois.lookup("kajsdlkaqqqq.com")
+    record =  whois.lookup("#{@suggested_domain}.com.au")
     parser = record.parser
 
     @domain_available = parser.available?
