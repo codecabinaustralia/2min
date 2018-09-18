@@ -1,4 +1,5 @@
 <style>	
+.body{background-color: #fff;}
 .load{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
   /*change these sizes to fit into your project*/
   width:100px;
@@ -6,10 +7,10 @@
 }
 .load hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
 
-.load :first-child{background:#19A68C;animation-delay:-1.5s}
-.load :nth-child(2){background:#F63D3A;animation-delay:-1s}
-.load :nth-child(3){background:#FDA543;animation-delay:-0.5s}
-.load :last-child{background:#193B48}
+.load :first-child{background:#f30033;animation-delay:-1.5s}
+.load :nth-child(2){background:#0e304a;animation-delay:-1s}
+.load :nth-child(3){background:#0088f1;animation-delay:-0.5s}
+.load :last-child{background:#2b343a}
 
 @keyframes spin{
   0%,100%{transform:translate(0)}
@@ -21,4 +22,26 @@
 
 <div class="load">
   <hr/><hr/><hr/><hr/>
+  <div class="label-1 text-center" style="width: 100%; display: none;">
+  	<span style="color: #f30033; font-weight: bold; font-size: 16px;">Currently building your habitat</span>
+  </div>
+  <div class="label-2 text-center" style="width: 100%; display: none;">
+  	<span style="color: #0e304a; font-weight: bold; font-size: 16px;">Working on keeping predators out</span>
+  </div>
+  <div class="label-3 text-center" style="width: 100%; display: none;">
+  	<span style="color: #0e304a; font-weight: bold; font-size: 16px;">Final touches</span>
+  </div>
 </div>
+
+<script>	
+$(".label-1").show().delay(3000).queue(function(n) {
+  $(this).hide(); n();
+  $(".label-2").show().delay(3000).queue(function(n) {
+  $(this).hide(); n();
+  $(".label-3").show().delay(3000).queue(function(n) {
+  $(this).hide(); n();
+  
+});
+  });
+});
+</script>
