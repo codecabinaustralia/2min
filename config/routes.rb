@@ -41,6 +41,7 @@ Rails.application.routes.draw do
       post 'charge/create_charge'
       get 'charge/create_charge'
       get 'charge/thank_you'
+      get 'charge/building'
       
     end
 
