@@ -10,7 +10,7 @@ StripeEvent.configure do |events|
   		charge = event.data.object
   		user = User.find_by(stripe_customer_id: charge.customer)
 
-	    if user
+	    if user.present?
 	        new_charge = Charge.new(
 	          user_id: user.id,
 	          stripe_id: charge.id,
@@ -24,7 +24,7 @@ StripeEvent.configure do |events|
 	          )
 	        new_charge.save
 	    end
-	    
+
 	end
     # Handle all event types - logging, etc.
   end

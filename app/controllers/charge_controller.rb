@@ -33,11 +33,11 @@ class ChargeController < ApplicationController
   		)
   	new_customer.save!
 
-    current_user.update_attributes(stripe_customer_id: customer.id)
-
   	@site = Site.last
   	@site.update_attributes(activated: true)
 
+    @user = User.find(@site.user_id)
+    @user.update_attributes(stripe_customer_id: customer.id)
 
   	redirect_to charge_thank_you_path
 
@@ -54,8 +54,9 @@ class ChargeController < ApplicationController
     parser = record.parser
 
     @domain_available = parser.available?
+      
 
-    @charge = Charge.where(user_id: current_user.id).last
+    @charge = Charge.where(user_id: @site.user_id).last
   	
   end
 
