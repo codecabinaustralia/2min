@@ -54,6 +54,8 @@ class ChargeController < ApplicationController
     parser = record.parser
 
     @domain_available = parser.available?
+
+    @charge = Charge.where(user_id: current_user.id).last
   	
   end
 

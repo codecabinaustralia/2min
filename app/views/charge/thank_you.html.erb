@@ -16,24 +16,24 @@
                 <div class="credit-card-scenario">
                   <div class="grid-x">
                     <div class="cell shrink credit-card-scenario-left">
-                      <% if charge.credit_brand == "Visa" %>
+                      <% if @charge.credit_brand == "Visa" %>
                       <i class="fab fa-cc-visa"></i>
-                      <% elsif charge.credit_brand == "MasterCard" %>
+                      <% elsif @charge.credit_brand == "MasterCard" %>
                       <i class="fab fa-cc-mastercard"></i>
-                      <% elsif charge.credit_brand == "American Express" %>
+                      <% elsif @charge.credit_brand == "American Express" %>
                       <i class="fab fa-cc-amex"></i>
-                      <% elsif charge.credit_brand == "Discover" %>
+                      <% elsif @charge.credit_brand == "Discover" %>
                       <i class="fab fa-cc-discover"></i>
-                      <% elsif charge.credit_brand == "JCB" %>
+                      <% elsif @charge.credit_brand == "JCB" %>
                       <i class="fab fa-cc-jcb"></i>
-                      <% elsif charge.credit_brand == "Diners Club" %>
+                      <% elsif @charge.credit_brand == "Diners Club" %>
                       <i class="fab cc-diners-club"></i>
                       <% else %>
                       <i class="fab credit-card"></i>
                       <% end %>
                     </div>
                     <div class="cell auto credit-card-scenario-right">
-                      XXXX-XXXX-XXXX-<%= charge.credit_last_4 %>
+                      XXXX-XXXX-XXXX-<%= @charge.credit_last_4 %>
                     </div>
                   </div>
                    
