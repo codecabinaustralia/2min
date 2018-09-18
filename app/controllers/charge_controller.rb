@@ -47,7 +47,7 @@ class ChargeController < ApplicationController
     domain = @site.company_name + ".com.au"
     #Check domain
     whois = Whois::Client.new
-    record =  whois.lookup(domain)
+    record =  whois.lookup(domain.to_s)
     parser = record.parser
 
     @domain_available = parser.available?
