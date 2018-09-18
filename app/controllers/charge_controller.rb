@@ -33,8 +33,11 @@ class ChargeController < ApplicationController
   		)
   	new_customer.save!
 
+    current_user.update_attributes(stripe_customer_id: customer.id)
+
   	@site = Site.last
   	@site.update_attributes(activated: true)
+
 
   	redirect_to charge_thank_you_path
 
@@ -44,10 +47,10 @@ class ChargeController < ApplicationController
     require 'whois-parser'
 
     @site = Site.last
-    domain = @site.company_name + ".com.au"
+    @domain = @site.company_name + ".com"
     #Check domain
     whois = Whois::Client.new
-    record =  whois.lookup(domain.to_s)
+    record =  whois.lookup(@domain.to_s)
     parser = record.parser
 
     @domain_available = parser.available?

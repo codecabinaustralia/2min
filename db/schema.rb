@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_16_013737) do
+ActiveRecord::Schema.define(version: 2018_09_18_050729) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,21 @@ ActiveRecord::Schema.define(version: 2018_09_16_013737) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["trade_id"], name: "index_additional_services_on_trade_id"
+  end
+
+  create_table "charges", force: :cascade do |t|
+    t.string "credit_last_4"
+    t.string "credit_exp_month"
+    t.string "credit_exp_year"
+    t.string "credit_brand"
+    t.decimal "amount"
+    t.boolean "subscription"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "stripe_id"
+    t.string "order_title"
+    t.index ["user_id"], name: "index_charges_on_user_id"
   end
 
   create_table "colors", force: :cascade do |t|
@@ -184,6 +199,7 @@ ActiveRecord::Schema.define(version: 2018_09_16_013737) do
     t.string "site_name"
     t.string "subdomain"
     t.string "domain"
+    t.string "stripe_customer_id"
     t.index ["email", "subdomain"], name: "index_users_on_email_and_subdomain", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

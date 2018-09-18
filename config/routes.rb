@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   resources :services
   resources :trades
   devise_for :users, controllers: { registrations: "registrations" }
+  mount StripeEvent::Engine, at: '/webhooks'
 
   get 'static/home'
   get 'session_placeholder' => 'static#session_placeholder'

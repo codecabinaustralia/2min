@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'jquery-minicolors-rails'
 gem 'agilecrm-wrapper'
 gem 'whois-parser'
+gem 'stripe_event'
 
 gem 'material_icons'
 gem 'icomoon-rails'
