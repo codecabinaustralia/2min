@@ -47,7 +47,7 @@ class ChargeController < ApplicationController
 
     #Check domain
     whois = Whois::Client.new
-    record =  whois.lookup("#{@suggested_domain}.com.au")
+    record =  whois.lookup("testhajskjakw.com.au")
     parser = record.parser
 
     @domain_available = parser.available?
