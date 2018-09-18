@@ -44,11 +44,10 @@ class ChargeController < ApplicationController
     require 'whois-parser'
 
     @site = Site.last
-    @domain = "#{@site.company_name}.com.au"
-
+    @domain = @site.company_name + ".com.au"
     #Check domain
     whois = Whois::Client.new
-    record =  whois.lookup(@domain)
+    record =  whois.lookup("kajsdlkaqqqq.com")
     parser = record.parser
 
     @domain_available = parser.available?
