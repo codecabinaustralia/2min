@@ -44,8 +44,7 @@ class ChargeController < ApplicationController
   end
 
   def building
-    sleep(8)
-    redirect_to charge_thank_you_path
+    
   end
 
   def thank_you
