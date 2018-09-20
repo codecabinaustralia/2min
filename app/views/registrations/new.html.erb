@@ -27,12 +27,12 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, value: @random_string, autocomplete: "off" %>
+          <%= f.password_field :password, value: "Test123", autocomplete: "off" %>
         </div>
 
         <div class="field" style="display: none;">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, value: @random_string, autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, value: "Test123", autocomplete: "off" %>
         </div>
 
         <div class="actions float-right">
