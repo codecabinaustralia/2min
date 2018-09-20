@@ -410,13 +410,7 @@
 								<% end %>
 								<%= link_to "EDIT SERVICES", new_additional_service_path, class: "button large success" %>
 								</ul>
-								<% if user_signed_in? && current_user.id == @site.user_id && @additional_services.count == 0 %>
-									<h3>You're services will be listed here.. </h3>
-									<p>&nbsp;</p>
-									<%= link_to additional_services_path, class: "button large success" do %>
-											Let's Add Some
-									<% end %>
-								<% end %>
+								
 							</div>
 						</div>
 					</div>
