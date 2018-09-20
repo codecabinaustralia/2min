@@ -12,6 +12,9 @@
   <% end %>
   
   <% if params[:header_1] == "true" %>
+  <h2>Let's add a nice big header to your website?</h2>      
+  <h3>Choose an image and some catchy text.</h3>
+
   <div class="field">
     <%= form.label :header_1_overlay_color %>
     <%= form.text_field :header_1_overlay_color %>
@@ -34,6 +37,9 @@
   <% end %>
   
   <% if params[:quote_bar_1] == "true" %>
+  <h2>This is a call to action</h2>      
+  <h3>Make this snappy!</h3>
+
   <div class="field">
     <%= form.label :quotebar_1_subtxt %>
     <%= form.text_field :quotebar_1_subtxt %>
@@ -51,6 +57,9 @@
   <% end %>
 
   <% if params[:six_col_righttxt] == "true"%>
+  <h2>Ready to add a bit of content?</h2>      
+  <h3>This is a standard block of text we'll add some images to the left hand side too.</h3>
+
   <div class="field">
     <%= form.label :content_6col_righttxt %>
     <%= form.text_area :content_6col_righttxt %>
@@ -68,6 +77,8 @@
   <% end %>
   
   <% if params[:six_col_lefttxt] == "true"%>
+  <h2>Here's another block of text</h2>      
+  <h3>We've added the images to the right hand side</h3>
 
   <div class="field">
     <%= form.label :content_6col_lefttxt %>
@@ -86,6 +97,8 @@
   <% end %>
   
   <% if params[:quotebox_1] == "true"%>
+  <h2>This is your second quote box</h2>      
+  <h3>It's important to make this short and sweet</h3>
   <div class="field">
     <%= form.label :quotebox_1_subtxt %>
     <%= form.text_field :quotebox_1_subtxt %>
@@ -104,6 +117,7 @@
   <% end %>
 
   <% if params[:services_title] == "true"%>
+  <h2>Want to rename the services title?</h2>      
   <div class="field">
     <%= form.label :services_1_primarytxt %>
     <%= form.text_field :services_1_primarytxt %>
@@ -111,7 +125,8 @@
   <% end %>
   
   <% if params[:about_1] == "true"%>
-
+  <h2>Don't be modest!</h2>      
+  <h3>Right something nice about yourself</h3>
   <div class="field">
     <%= form.label :about_1_subtxt %>
     <%= form.text_field :about_1_subtxt %>

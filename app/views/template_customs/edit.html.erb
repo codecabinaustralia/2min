@@ -1,6 +1,7 @@
-<h1>Editing Template Custom</h1>
-
-<%= render 'form', template_custom: @template_custom %>
-
-<%= link_to 'Show', @template_custom %> |
-<%= link_to 'Back', template_customs_path %>
+<div>  
+  <div class="grid-x">
+    <div class="cell small-12 medium-4 medium-offset-4 inner-form">
+		<%= render 'form', template_custom: @template_custom %>
+    </div>
+  </div>
+</div>
