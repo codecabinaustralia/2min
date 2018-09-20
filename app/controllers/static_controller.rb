@@ -3,7 +3,6 @@ class StaticController < ApplicationController
     if user_signed_in?
       sign_out_and_redirect(current_user)
     end
-    redirect_to root_url
   end
 
   def session_placeholder

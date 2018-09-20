@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
 		  sites_url(:subdomain => resource.subdomain)
 		end
 
+		def after_sign_out_path_for(resource)
+		  root_url
+		end
+
 	  def configure_permitted_parameters
 	    devise_parameter_sanitizer.permit(:sign_up, keys: [:subdomain, :domain])
 	  end
