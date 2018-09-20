@@ -43,7 +43,6 @@ Rails.application.routes.draw do
       get 'charge/create_charge'
       get 'charge/thank_you'
       get 'charge/building'
-
       
     end
 
