@@ -287,7 +287,7 @@ color: #19935c;
 	}
 
  /* Input Fields */
-	input[type="text"], input[type="email"]{
+	input[type="text"], input[type="email"], input[type="password"]{
 		font-size: 18px;
 		padding: 20px;
 		border-radius: 5px;
@@ -296,7 +296,7 @@ color: #19935c;
 		color: #1f2c3d;
 		border: none;
 		height: 57px;
-		border: 3px solid #e5e5e5;
+		border: 3px solid #ccc;
 		box-shadow: 0 1px 6px rgba(0, 0, 0, 0), 0 1px 4px rgba(0, 0, 0, 0);
 	}
 
@@ -319,7 +319,7 @@ color: #19935c;
 		padding: 20px;
 		border-radius: 5px;
 		border: none;
-		border: 3px solid #e5e5e5;
+		border: 3px solid #ccc;
 		box-shadow: 0 1px 6px rgba(0, 0, 0, 0), 0 1px 4px rgba(0, 0, 0, 0);
 	}
 
