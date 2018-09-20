@@ -411,8 +411,12 @@
 				</div>
 			</div>
 		</div>
-
+		
+		<% if @custom.services_1_hero.attached? %>
+		<div class="t_2_services" id="services" style="background-image: url('<%= url_for(@custom.services_1_hero) %>'); background-size: cover;">
+		<% else %>
 		<div class="t_2_services" id="services" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
+		<% end %>
 
 			<div class="t2_services_dark_overlay">
 				<div class="grid-container">
