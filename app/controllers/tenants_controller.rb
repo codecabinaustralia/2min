@@ -5,13 +5,17 @@ class TenantsController < ApplicationController
   end
 
   def drop_tenant
-    @user = User.find(params[:user_id])
+    @users = User.where.not(email: "simon@shockwaveelectrical.com.au").all
 
+    @users.each do |user|
+      
     if @user.subdomain.present?
     Apartment::Tenant.drop(@user.subdomain)
     end
 
-    @user.destroy
+
+    user.destroy
+  end
 
     redirect_to tenants_show_all_path
   end
