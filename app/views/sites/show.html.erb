@@ -10,6 +10,7 @@
 			<i class="fa fa-close"></i>
 
 	</div>
+	<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 	<div class="list-panel">
 		<h3>What's left?</h3>
 		<div class="list-close">
@@ -46,6 +47,7 @@
 			<% end %>
 		</ul>
 	</div>
+	<% end %>
 	<% end %>
 
 
