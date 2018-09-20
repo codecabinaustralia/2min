@@ -44,7 +44,6 @@ Rails.application.routes.draw do
       get 'charge/thank_you'
       get 'charge/building'
 
-      root to: "sites#index"
       
     end
 
