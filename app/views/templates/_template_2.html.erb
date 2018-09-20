@@ -299,8 +299,9 @@
 					<div class="cell small-12 medium-6 medium-offset-6">
 						<h1><span><%= @custom.header_1_subtxt %></span></h1>
 						<h1><%= @custom.header_1_primarytxt %></h1><button class="button large primary" style="border: 2px solid white; background-color: rgba(0,0,0,0);"><%= @custom.header_1_btntxt %></button>
-
-						<%= link_to "EDIT HEADER", edit_template_custom_path(@custom, header_1: "true"), class: "button large success" %>
+						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<%= link_to "EDIT HEADER", edit_template_custom_path(@custom, header_1: "true"), class: "button large success" %>
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -310,7 +311,9 @@
 				<div class="cell small-12 medium-6 medium-offset-3 text-center">
 					<span><%= @custom.quotebar_1_subtxt %></span><br>
 					<h2><%= @custom.quote_bar_primarytxt %></h2><button class="primary button large" style="border: 2px solid white; background-color: rgba(0,0,0,0);"><%= @custom.quote_bar_btntxt %></button>
-					<%= link_to "EDIT QUOTE BAR", edit_template_custom_path(@custom, quote_bar_1: "true"), class: "button large success" %>
+					<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+						<%= link_to "EDIT QUOTE BAR", edit_template_custom_path(@custom, quote_bar_1: "true"), class: "button large success" %>
+					<% end %>
 				</div>
 			</div>
 		</div>
@@ -332,8 +335,9 @@
 						<h2><%= @custom.content_6col_rightprimarytxt %></h2>
 						<div class="t2_line"></div>
 						<p><%= @custom.content_6col_righttxt.html_safe %></p>
-
-						<%= link_to "EDIT THIS SECTION", edit_template_custom_path(@custom, six_col_righttxt: "true"), class: "button large success" %>
+						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<%= link_to "EDIT THIS SECTION", edit_template_custom_path(@custom, six_col_righttxt: "true"), class: "button large success" %>
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -346,7 +350,9 @@
 						<h2><%= @custom.content_6col_leftprimarytxt %></h2>
 						<div class="t2_line"></div>
 						<%= @custom.content_6col_lefttxt.html_safe %>
-						<%= link_to "EDIT THIS SECTION", edit_template_custom_path(@custom, six_col_lefttxt: "true"), class: "button large success" %>
+						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<%= link_to "EDIT THIS SECTION", edit_template_custom_path(@custom, six_col_lefttxt: "true"), class: "button large success" %>
+						<% end %>
 					</div>
 					<div class="cell small-12 medium-6">
 						<div class="grid-x grid-margin-x">
@@ -368,13 +374,17 @@
 								<h2><span><%= @custom.quotebox_1_subtxt %></span></h2>
 								<h2><%= @custom.quotebox_1_primarytxt %></h2>
 								<button class="primary button large" style="border: 2px solid white; background-color: rgba(0,0,0,0);"><%= @custom.quotebox_1_btntxt %></button>
-								<%= link_to "EDIT QUOTE BOX", edit_template_custom_path(@custom, quotebox_1: "true"), class: "button large success" %>
+								<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+									<%= link_to "EDIT QUOTE BOX", edit_template_custom_path(@custom, quotebox_1: "true"), class: "button large success" %>
+								<% end %>
 							</div>
 						</div>
 						<div class="cell small-12 medium-6">
 							<div class="t_2_services_box">
 								<h2><%= @custom.services_1_primarytxt %></h2>
+								<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 								<%= link_to "EDIT TITLE", edit_template_custom_path(@custom, services_title: "true"), class: "button large success" %>
+								<% end %>
 								<ul>
 								<% @additional_services.each do |service| %>
 									<li><%= service.title %></li>
@@ -403,7 +413,9 @@
 			<div class="grid-container">
 				<div class="grid-x">
 					<div class="cell small-12">
+						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 						<%= link_to "EDIT OUR WORK", new_portfolio_path, class: "button large success" %>
+						<% end %>
 
 						<div aria-label="Favorite Space Pictures" class="orbit" data-orbit="" role="region">
 							<div class="orbit-wrapper">
@@ -460,7 +472,9 @@
 						<h2><span><%= @custom.about_1_subtxt %></span></h2>
 						<h2><%= @custom.about_1_primarytxt %></h2>
 						<p><%= @custom.about_1_txt.html_safe %></p>
-						<%= link_to "EDIT ABOUT US", edit_template_custom_path(@custom, about_1: "true"), class: "button large success" %>
+						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<%= link_to "EDIT ABOUT US", edit_template_custom_path(@custom, about_1: "true"), class: "button large success" %>
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -477,7 +491,7 @@
 					<div class="grid-container" style="margin-top:70px;">
 						<div class="text-center">
 							<h2>You have 0 Reviews - add some!</h2>
-							<%= link_to "ADD REVIEWS", new_review_path, class: "button large", style: "background-color: #{@color.color_1}" %>
+							<%= link_to "ADD REVIEWS", new_review_path, class: "button large success" %>
 						</div>
 					</div>
 					<% elsif @reviews.present? %>
