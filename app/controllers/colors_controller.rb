@@ -43,8 +43,9 @@ class ColorsController < ApplicationController
   def update
     respond_to do |format|
       @intro = Intro.last
+      @site = Site.last
       if @color.update(color_params)
-        format.html { redirect_to edit_intro_path(@intro), notice: 'Color was successfully updated.' }
+        format.html { redirect_to site_path(@site), notice: 'Color was successfully updated.' }
         format.json { render :show, status: :ok, location: @color }
       else
         format.html { render :edit }

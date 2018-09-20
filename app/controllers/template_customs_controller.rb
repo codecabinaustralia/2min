@@ -40,9 +40,11 @@ class TemplateCustomsController < ApplicationController
   # PATCH/PUT /template_customs/1
   # PATCH/PUT /template_customs/1.json
   def update
+    @site = Site.last
+
     respond_to do |format|
       if @template_custom.update(template_custom_params)
-        format.html { redirect_to @template_custom, notice: 'Template custom was successfully updated.' }
+        format.html { redirect_to site_path(@site, :edit_mode => true), notice: 'Template custom was successfully updated.' }
         format.json { render :show, status: :ok, location: @template_custom }
       else
         format.html { render :edit }
