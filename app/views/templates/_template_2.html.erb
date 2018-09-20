@@ -404,9 +404,6 @@
 						<div class="cell small-12 medium-6">
 							<div class="t_2_services_box">
 								<h2><%= @custom.services_1_primarytxt %></h2>
-								<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-								<%= link_to "EDIT TITLE", edit_template_custom_path(@custom, services_title: "true"), class: "button large success" %>
-								<% end %>
 								<ul>
 								<% @additional_services.each do |service| %>
 									<li><%= service.title %></li>
