@@ -1,7 +1,6 @@
 class TenantsController < ApplicationController
   def show_all
     @users = User.where.not(subdomain: [nil, false]).all
-    
   end
 
   def drop_tenant
@@ -12,7 +11,7 @@ class TenantsController < ApplicationController
     #end
     @charges = Charge.where(user_id: @user.id).all
     @charges.destroy_all
-    
+
     @user.destroy
 
     redirect_to tenants_show_all_path
