@@ -16,23 +16,19 @@
   <h3>Choose an image and some catchy text.</h3>
 
   <div class="field">
-    <%= form.label :header_1_overlay_color %>
-    <%= form.text_field :header_1_overlay_color %>
+    <%= form.text_field :header_1_overlay_color, placeholder: "Header color overlay" %>
   </div>
 
   <div class="field">
-    <%= form.label :header_1_subtxt %>
-    <%= form.text_field :header_1_subtxt %>
+    <%= form.text_field :header_1_subtxt, placeholder: "Small text" %>
   </div>
 
   <div class="field">
-    <%= form.label :header_1_primarytxt %>
-    <%= form.text_field :header_1_primarytxt %>
+    <%= form.text_field :header_1_primarytxt, placeholder: "Large text" %>
   </div>
 
   <div class="field">
-    <%= form.label :header_1_btntxt %>
-    <%= form.text_field :header_1_btntxt %>
+    <%= form.text_field :header_1_btntxt, placeholder: "Button text" %>
   </div>
   <% end %>
   
@@ -41,18 +37,15 @@
   <h3>Make this snappy!</h3>
 
   <div class="field">
-    <%= form.label :quotebar_1_subtxt %>
-    <%= form.text_field :quotebar_1_subtxt %>
+    <%= form.text_field :quotebar_1_subtxt, placeholder: "Small text" %>
   </div>
 
   <div class="field">
-    <%= form.label :quote_bar_primarytxt %>
-    <%= form.text_field :quote_bar_primarytxt %>
+    <%= form.text_field :quote_bar_primarytxt, placeholder: "Large text" %>
   </div>
 
   <div class="field">
-    <%= form.label :quote_bar_btntxt %>
-    <%= form.text_field :quote_bar_btntxt %>
+    <%= form.text_field :quote_bar_btntxt, placeholder: "Button text" %>
   </div>
   <% end %>
 
@@ -61,18 +54,15 @@
   <h3>This is a standard block of text we'll add some images to the left hand side too.</h3>
 
   <div class="field">
-    <%= form.label :content_6col_righttxt %>
-    <%= form.text_area :content_6col_righttxt %>
+    <%= form.text_area :content_6col_righttxt, placeholder: "Paragraph text", rows: 8 %>
   </div>
 
   <div class="field">
-    <%= form.label :content_6col_rightsubtxt %>
-    <%= form.text_field :content_6col_rightsubtxt %>
+    <%= form.text_field :content_6col_rightsubtxt, placeholder: "Small text" %>
   </div>
 
   <div class="field">
-    <%= form.label :content_6col_rightprimarytxt %>
-    <%= form.text_field :content_6col_rightprimarytxt %>
+    <%= form.text_field :content_6col_rightprimarytxt, placeholder: "Large text" %>
   </div>
   <% end %>
   
@@ -81,18 +71,15 @@
   <h3>We've added the images to the right hand side</h3>
 
   <div class="field">
-    <%= form.label :content_6col_lefttxt %>
-    <%= form.text_area :content_6col_lefttxt %>
+    <%= form.text_area :content_6col_lefttxt, placeholder: "Paragraph text", rows: 8 %>
   </div>
 
   <div class="field">
-    <%= form.label :content_6col_leftsubtxt %>
-    <%= form.text_field :content_6col_leftsubtxt %>
+    <%= form.text_field :content_6col_leftsubtxt, placeholder: "Small text" %>
   </div>
 
   <div class="field">
-    <%= form.label :content_6col_leftprimarytxt %>
-    <%= form.text_field :content_6col_leftprimarytxt %>
+    <%= form.text_field :content_6col_leftprimarytxt, placeholder: "Large text" %>
   </div>
   <% end %>
   
@@ -100,27 +87,23 @@
   <h2>This is your second quote box</h2>      
   <h3>It's important to make this short and sweet</h3>
   <div class="field">
-    <%= form.label :quotebox_1_subtxt %>
-    <%= form.text_field :quotebox_1_subtxt %>
+    <%= form.text_field :quotebox_1_subtxt, placeholder: "Small text" %>
   </div>
   
   
   <div class="field">
-    <%= form.label :quotebox_1_primarytxt %>
-    <%= form.text_field :quotebox_1_primarytxt %>
+    <%= form.text_field :quotebox_1_primarytxt, placeholder: "Large text" %>
   </div>
 
   <div class="field">
-    <%= form.label :quotebox_1_btntxt %>
-    <%= form.text_field :quotebox_1_btntxt %>
+    <%= form.text_field :quotebox_1_btntxt, placeholder: "Button text" %>
   </div>
   <% end %>
 
   <% if params[:services_title] == "true"%>
   <h2>Want to rename the services title?</h2>      
   <div class="field">
-    <%= form.label :services_1_primarytxt %>
-    <%= form.text_field :services_1_primarytxt %>
+    <%= form.text_field :services_1_primarytxt, placeholder: "Title" %>
   </div>
   <% end %>
   
@@ -128,22 +111,19 @@
   <h2>Don't be modest!</h2>      
   <h3>Right something nice about yourself</h3>
   <div class="field">
-    <%= form.label :about_1_subtxt %>
-    <%= form.text_field :about_1_subtxt %>
+    <%= form.text_field :about_1_subtxt, placeholder: "Small text" %>
   </div>
 
   <div class="field">
-    <%= form.label :about_1_primarytxt %>
-    <%= form.text_field :about_1_primarytxt %>
+    <%= form.text_field :about_1_primarytxt, placeholder: "Large text" %>
   </div>
 
   <div class="field">
-    <%= form.label :about_1_txt %>
-    <%= form.text_area :about_1_txt %>
+    <%= form.text_area :about_1_txt, placeholder: "Paragraph text" %>
   </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" style="margin-top: 20px;">
+    <%= form.submit, class: "button large success" %>
   </div>
 <% end %>
