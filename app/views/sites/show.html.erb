@@ -129,8 +129,11 @@
 	<div class="off-canvas-content-spacer"></div>
 <% end %>
 
-<% if @site.template_id == 1 || @site.template_id == 2 || @site.template_id == 3 %>
+<div style="margin-top: 150px; font-size: 50px;">SITE ID<%= @site.template_id %></div>
+<% if @site.template_id == 1 || @site.template_id == 3 %>
 <%= render 'templates/template_1' %>
+<% elsif @site.template_id == 2 %>
+<%= render 'templates/template_2' %>
 <% end %>
 
 

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style>
+	.t_2_header{
+	   height: 500px;
+	}
+
+	.t_2_header h1{
+	   font-size: 50px;
+	   color: white;
+	   letter-spacing: -1px;
+	   line-height: 50px;
+	}
+
+	.t_2_header h1 span{
+	   font-size: 20px;
+	   color: #3FA9F5;
+	   letter-spacing: -1px;
+	   line-height: 20px;
+	}
+
+	.t2_dark_overlay{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	padding-top: 140px;
+	}
+
+
+
+	.t_2_quote{
+	   padding:50px 0;
+	   background-color: #002859;
+	   margin-bottom:20px;
+	}
+
+	.t_2_quote h2{
+	   padding: 10px 0;
+	   color: #fff;
+	   font-size: 24px;
+	   line-height: 24px;
+	}
+	.t_2_quote span{
+	   color: #3FA9F5;
+	   font-size: 18px;
+	   font-weight: bold;
+	   line-height: 18px;
+	}
+
+	.t_2_intro{
+	   margin:20px 0;
+	}
+
+	.t_2_intro img{
+	   padding-bottom: 40px;
+	   width: 100%;
+	   height: 350px;
+	   object-fit: cover;
+	}
+
+	.t_2_intro h2{
+	   padding: 10px 0;
+	   color: #1e1e1e;
+	   font-size: 40px;
+	   line-height: 40px;
+	}
+
+	.t_2_intro h2 span{
+	   color: #3FA9F5;
+	   font-size: 18px;
+	   font-weight: bold;
+	   line-height: 18px;
+	}
+
+
+	.t2_line{
+	   background-color: #3FA9F5;
+	   height: 5px;
+	   width: 60%;
+	   margin: 20px 0;
+	}
+
+	.t_2_intro p{
+	   font-size: 20px;
+	}
+
+	.t_2_services{
+	   background-color: #1e1e1e;
+	   margin-top: 100px;
+	}
+
+	.t2_services_dark_overlay{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	}
+
+	.t_2_services .t_2_quote_square{
+	   background-color: #002859;
+	   color: #fff;
+	   text-align: center;
+	   margin-top: -50px;
+	   padding: 40px;
+	}
+
+	.t_2_services .t_2_quote_square h2{
+	   padding: 10px 0;
+	   color: #fff;
+	   font-size: 24px;
+	   line-height: 24px;
+	}
+	.t_2_services .t_2_quote_square span{
+	   color: #3FA9F5;
+	   font-size: 18px;
+	   font-weight: bold;
+	   line-height: 18px;
+	}
+
+	.t_2_services .t_2_services_box{
+	   background-color: #3FA9F5;
+	   color: #fff;
+	   padding: 40px;
+	}
+
+	.t_2_services .t_2_services_box h2{
+	   padding: 10px 0;
+	   color: #fff;
+	   font-size: 24px;
+	   line-height: 24px;
+	}
+
+	.t_2_services .t_2_services_box ul {
+	 list-style: none;
+	 padding: 0;
+	}
+	.t_2_services .t_2_services_box li {
+	 padding-left: 1.3em;
+	}
+	.t_2_services .t_2_services_box li:before {
+	 content: "\f00c";
+	 font-family: FontAwesome;
+	 display: inline-block;
+	 margin-left: -1.3em;
+	 width: 1.3em;
+	 color: white;
+	}
+
+	.t_2_services_fake_box{
+	   background-color: #3FA9F5;
+	   height: 50px;
+	   margin-bottom: 20px; 
+	}
+
+	.t2_about_us{
+	   margin-bottom: 20px;
+	}
+
+	.t2_about_us img{
+	   padding-bottom: 40px;
+	   width: 100%;
+	   height: 300px;
+	   object-fit: cover;
+	}
+
+	.t2_about_us h2{
+	   padding: 10px 0;
+	   color: #1e1e1e;
+	   font-size: 40px;
+	   line-height: 40px;
+	}
+
+	.t2_about_us h2 span{
+	   color: #3FA9F5;
+	   font-size: 18px;
+	   font-weight: bold;
+	   line-height: 18px;
+	}
+
+	.t2_about_us p{
+	   font-size: 20px;
+	}
+
+	.t2_portfolio{
+	   margin-bottom: 20px
+	}
+
+	.t2_contact{
+	   margin-bottom: 150px;
+	   background-color: #e5e5e5;
+	   padding:40px;
+	}
+
+	.t2_contact h2{
+	   padding: 10px 0;
+	   color: #1e1e1e;
+	   font-size: 40px;
+	   line-height: 40px;
+	}
+
+	
+
+	.t2_contact h2 span{
+	   color: #3FA9F5;
+	   font-size: 18px;
+	   font-weight: bold;
+	   line-height: 18px;
+	}
+
+	.t_2_white_bg{
+	   background-color: white;
+	}
+
+	.t_2_white_bg .button:hover{
+	   color: white;
+	}
+
+	.t_2_cta_bar{
+	   background-color: #002859;
+	   color: white;
+	   font-size: 14px;
+	   font-weight: bold;
+	   padding: 10px;
+	}
+
+	.t_2_top_menu{
+	   background-color: white;
+	}
+
+	.t_2_top_menu .menu{
+	   margin-top: 45px;
+	   font-weight: bold;
+	   
+	}
+
+	.t_2_top_menu .menu a{
+	   color: #002859 !important;
+	}
+
+	.t2_reviews h2{
+	   padding: 10px 0;
+	   color: #1e1e1e;
+	   font-size: 40px;
+	   line-height: 40px;
+	}
+
+	</style>
+	<title></title>
+</head>
+<body>
+	<div class="t_2_cta_bar">
+		<div class="grid-x">
+			<div class="cell small-12 text-right">
+				<i class="fa fa-phone"></i> 0400000000 <i class="fa fa-envelope"></i> info@fakewebsite.com.au
+			</div>
+		</div>
+	</div>
+	<div class="t_2_top_menu" data-smooth-scroll="">
+		<div class="title-bar" data-hide-for="medium" data-responsive-toggle="example-animated-menu">
+			<button class="menu-icon" data-toggle="" type="button"></button>
+			<div class="title-bar-title">
+				Menu
+			</div>
+		</div>
+		<div class="grid-x grid-margin-x">
+			<div class="cell auto show-for-medium float-right">
+				<ul class="menu float-right">
+					<li>
+						<a href="#services">Services</a>
+					</li>
+					<li>
+						<a href="#about">About Us</a>
+					</li>
+				</ul>
+			</div>
+			<div class="cell shrink text-center logo"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537391808/templates/davinci/2014110601245722152.jpg" width="180"></div>
+			<div class="cell auto show-for-medium text-left">
+				<ul class="menu" data-dropdown-menu="">
+					<li>
+						<a href="#work">Our Work</a>
+					</li>
+					<li>
+						<a href="#contact">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="t_2_white_bg">
+		<div class="t_2_header" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
+			<div class="t2_dark_overlay">
+				<div class="grid-x grid-padding-x">
+					<div class="cell small-12 medium-6 medium-offset-6">
+						<h1><span>CARPENTRY AND MAINTENANCE SERVICES</span></h1>
+						<h1>ALL YOUR GENERAL CARPENTRY NEEDS!</h1><button class="button large primary" style="border: 2px solid white; background-color: rgba(0,0,0,0);">VIEW OUR SERVICES</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="t_2_quote">
+			<div class="grid-x">
+				<div class="cell small-12 medium-6 medium-offset-3 text-center">
+					<span>GET IN TOUCH TODAY</span><br>
+					<h2>FOR YOUR FREE – NO OBLIGATION QUOTE</h2><button class="primary button large" style="border: 2px solid white; background-color: rgba(0,0,0,0);">REQUEST A QUOTE</button>
+				</div>
+			</div>
+		</div>
+		<div class="t_2_intro">
+			<div class="grid-container">
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-12 medium-6">
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-6 medium-12"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537386293/templates/davinci/carousel_about_6_new.jpg"></div>
+							<div class="cell small-6 medium-12"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537386279/templates/davinci/carousel_about_3_new.jpg"></div>
+						</div>
+					</div>
+					<div class="cell small-12 medium-6">
+						<h2><span>DON’T SETTLE FOR LESS</span></h2>
+						<h2>Get the right assistance from the start on your next project.</h2>
+						<div class="t2_line"></div>
+						<p>Our owner builder assist services will give you the knowledge and skill of a professional carpenter onsite with you from the start to completion.</p>
+						<p>We have the license to build so you have the security and peace of mind that it’s built to the highest standard from the start.</p>
+						<p>We are here to help you.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="t_2_intro">
+			<div class="grid-container">
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-12 medium-6">
+						<h2><span>CARPENTRY SERVICES</span></h2>
+						<h2>Renovation Built Exactly To Your Needs</h2>
+						<div class="t2_line"></div>
+						<p>Create a home you love that fits your lifestyle If you’re looking to give your home a makeover or simply to change its layout or design, you’ve come to the right place.</p>
+						<p>At Dean Carpentry and Maintenance, we’ve developed a reputation across the Gold Coast since we started back in 1998 for our renovations, bringing life and character into your home.</p>
+						<p>Working with our clients listening to their needs has been the key, providing customised solutions to meet any project requirements. We also take pride in keeping projects on time and on budget while maintaining our highest level of quality – making the process enjoyable and stress-free for our clients.</p>
+					</div>
+					<div class="cell small-12 medium-6">
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-6 medium-12"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387083/templates/davinci/carousel_about_4.jpg"></div>
+							<div class="cell small-6 medium-12"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387092/templates/davinci/carousel_about_5.jpg"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="t_2_services" id="services" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
+			<div class="t2_services_dark_overlay">
+				<div class="grid-container">
+					<div class="grid-x">
+						<div class="cell small-12 medium-6">
+							<div class="t_2_quote_square">
+								<h2><span>OUR CARPENTRY SERVICES</span></h2>
+								<h2>GET IN TOUCH FOR A FREE CONSULTATION</h2><button class="primary button large" style="border: 2px solid white; background-color: rgba(0,0,0,0);">REQUEST A QUOTE</button>
+							</div>
+						</div>
+						<div class="cell small-12 medium-6">
+							<div class="t_2_services_box">
+								<h2>Services</h2>
+								<ul>
+									<li>NEW HOME BUILDS</li>
+									<li>OWNER BUILDER ASSIST</li>
+									<li>RENOVATIONS</li>
+									<li>EXTENSIONS</li>
+									<li>ADDITIONS</li>
+									<li>GRANNY FLATS</li>
+									<li>CUSTOM INTERIORS</li>
+									<li>DECKS + PATIOS</li>
+									<li>PERGOLAS</li>
+									<li>WARDROBES</li>
+									<li>BUILT INS</li>
+									<li>BATHROOMS</li>
+									<li>KITCHENS</li>
+									<li>CONCRETING</li>
+									<li>DRIVEWAYS</li>
+									<li>FENCING</li>
+									<li>WINDOWS</li>
+									<li>DOORS</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid-container">
+			<div class="grid-x">
+				<div class="cell small-12 medium-offset-6 medium-6 t_2_services_fake_box"></div>
+			</div>
+		</div>
+		<div class="t2_portfolio" id="work">
+			<div class="grid-container">
+				<div class="grid-x">
+					<div class="cell small-12">
+						<div aria-label="Favorite Space Pictures" class="orbit" data-orbit="" role="region">
+							<div class="orbit-wrapper">
+								<div class="orbit-controls">
+									<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button> <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+								</div>
+								<ul class="orbit-container">
+									<li class="is-active orbit-slide">
+										<figure class="orbit-figure">
+											<img alt="Space" class="orbit-image" src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537389008/templates/davinci/2_JCF7636-3-1005x675.jpg">
+											<figcaption class="orbit-caption">
+												One of our finest works.
+											</figcaption>
+										</figure>
+									</li>
+									<li class="orbit-slide">
+										<figure class="orbit-figure">
+											<img alt="Space" class="orbit-image" src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537389151/templates/davinci/3_TDOxGeorgeClarkeHR-56-1013x675.jpg">
+											<figcaption class="orbit-caption">
+												Let metake a selfie
+											</figcaption>
+										</figure>
+									</li>
+									<li class="orbit-slide">
+										<figure class="orbit-figure">
+											<img alt="Space" class="orbit-image" src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537389175/templates/davinci/5_JCF8124-3-1011x675.jpg">
+											<figcaption class="orbit-caption">
+												Encapsulating
+											</figcaption>
+										</figure>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="t2_about_us" id="about">
+			<div class="grid-container">
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-12 medium-3 show-for-medium"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388531/templates/davinci/1_JCF9098-1011x675.jpg"> <img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388518/templates/davinci/1_JCF5419-1012x675.jpg"> <img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388555/templates/davinci/1_JCF8252-1162x675.jpg"></div>
+					<div class="cell small-12 medium-9 small-text-center">
+						<h2><span>EXCEPTIONAL RESULTS THROUGH EXPERT CRAFTSMANSHIP</span></h2>
+						<h2>About Us</h2>
+						<p>The perfect space doesn’t just happen; it is created. Functionality, aesthetics, and longevity form the basis of creating the perfect room – however, these aspects cannot be achieved without the necessary skills and materials.</p>
+						<p>Dean Carpentry and Maintenance is a Gold Coast based carpentry and maintenance company with a commitment to delivering high-quality results, Dean understands what it takes to create the ideal space. Backed by experience we take the time to actively listen to our clients before commencing work – ensuring we deliver the desired outcome.</p>
+						<p>High-quality finishes, sturdy workmanship and a keen eye for detail are trademarks evident in our projects to date. We love a challenge. From heritage homes to contemporary office blocks, we have the experience necessary to complete a wide range of residential and commercial projects. With an expert labor hire team on offer, we have become the preferred choice of local builders, construction companies and property managers who require carpenters that they can rely on.</p>
+						<p>When it comes to carpentry on the Gold Coast Dean Carpentry and Maintenance is your firm of choice, we have been transforming homes on the Gold Coast since 1998.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="t2_reviews" style="margin-bottom: 20px">
+			<!-- Reviews Panel -->
+			
+			<div class="grid-container">
+				<h2>Reviews</h2>
+				<div class="site-reviews-inner">
+					<div aria-label="Favorite Space Pictures" class="orbit" data-orbit="" role="region">
+						<div class="orbit-wrapper">
+							<div class="orbit-controls">
+								<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button> <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+							</div>
+							<ul class="orbit-container" style="padding: 0 50px;">
+								<li class="orbit-slide review-content">
+									<figure class="orbit-figure">
+										<p>How many languages do you think a dog can learn. I mean, do japanese dogs understand english commands?</p><i class="fa fa-star" style="color: #ffc700"></i> <i class="fa fa-star" style="color: #ffc700"></i> <i class="fa fa-star" style="color: #ffc700"></i> <i class="fa fa-star" style="color: #ffc700"></i> <i class="fa fa-star" style="color: #ffc700"></i> <i>Fake User</i>
+									</figure>
+								</li>
+								<li class="orbit-slide review-content">
+									<figure class="orbit-figure">
+										<p>Does anyone else like pringles... Why did they make them smaller. I just don't understand!</p><i class="fa fa-star" style="color: #ffc700"></i> <i class="fa fa-star" style="color: #ffc700"></i> <i class="fa fa-star" style="color: #ffc700"></i> <i class="fa fa-star" style="color: #ffc700"></i> <i class="fa fa-star" style="color: #ffc700"></i> <i>Fake User</i>
+									</figure>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<div class="t2_contact" id="contact">
+		<div class="grid-container">
+			<div class="grid-x grid-margin-x">
+				<div class="cell small-12 medium-6">
+					<h2>Contact Us</h2><a class="button expanded large success" href="tel:04000000"><i class="fa fa-phone"></i> 04000 000 00<br></a> <!-- Map -->
+					<div class="cell small-12" style="margin-top: 40px;">
+						<h4>We service all Sydney locations</h4>
+						<div class="map-responsive">
+							<iframe allowfullscreen frameborder="0" height="650" src="https://maps.google.com/maps?q=sydney=&z=13&ie=UTF8&iwloc=&output=embed" style="border:0" width="1920"></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="cell small-12 medium-6">
+					<h4>Request a quote</h4>
+					<form action="">
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-12">
+								<input placeholder="full name" type="text">
+							</div>
+						</div>
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-12">
+								<input placeholder="email" type="text">
+							</div>
+						</div>
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-12">
+								<input placeholder="phone" type="text">
+							</div>
+						</div>
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-12">
+								<textarea cols="30" id="" name="" placeholder="Leave your message here" rows="5"></textarea>
+							</div>
+						</div>
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-12">
+								<button class="button large button-message" style="background-color: #3fa9f5">Submit Now</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
