@@ -320,6 +320,7 @@
 		<% else %>
 		<div class="t_2_header" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
 		<% end %>
+
 			<div class="t2_dark_overlay">
 				<div class="grid-x grid-padding-x">
 					<div class="cell small-12 medium-6 medium-offset-6">
@@ -349,10 +350,19 @@
 					<div class="cell small-12 medium-6">
 						<div class="grid-x grid-margin-x">
 							<div class="cell small-6 medium-12">
+								<% if @custom.content_6col_leftimg1.attached? %>
+									<%= image_tag @custom.content_6col_leftimg1, alt: "#{@site.company_name} portfolio" %>
+									<% else %>
 								<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537386293/templates/davinci/carousel_about_6_new.jpg">
+								<% end %>
 							</div>
+							
 							<div class="cell small-6 medium-12">
+								<% if @custom.content_6col_leftimg2.attached? %>
+										<%= image_tag @custom.content_6col_leftimg2, alt: "#{@site.company_name} portfolio" %>
+										<% else %>
 								<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537386279/templates/davinci/carousel_about_3_new.jpg">
+								<% end %>
 							</div>
 						</div>
 					</div>
@@ -382,8 +392,20 @@
 					</div>
 					<div class="cell small-12 medium-6">
 						<div class="grid-x grid-margin-x">
-							<div class="cell small-6 medium-12"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387083/templates/davinci/carousel_about_4.jpg"></div>
-							<div class="cell small-6 medium-12"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387092/templates/davinci/carousel_about_5.jpg"></div>
+							<div class="cell small-6 medium-12">
+								<% if @custom.content_6col_rightimg1.attached? %>
+										<%= image_tag @custom.content_6col_rightimg1, alt: "#{@site.company_name} portfolio" %>
+										<% else %>
+										<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387083/templates/davinci/carousel_about_4.jpg">
+										<% end %>
+									</div>
+							<div class="cell small-6 medium-12">
+								<% if @custom.content_6col_rightimg2.attached? %>
+									<%= image_tag @custom.content_6col_rightimg2, alt: "#{@site.company_name} portfolio" %>
+								<% else %>
+									<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387092/templates/davinci/carousel_about_5.jpg">
+								<% end %>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -482,10 +504,28 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="t2_about_us" id="about">
 			<div class="grid-container">
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-12 medium-3 show-for-medium"><img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388531/templates/davinci/1_JCF9098-1011x675.jpg"> <img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388518/templates/davinci/1_JCF5419-1012x675.jpg"> <img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388555/templates/davinci/1_JCF8252-1162x675.jpg"></div>
+					<div class="cell small-12 medium-3 show-for-medium">
+						<% if @custom.about_1_img1.attached? %>
+							<%= image_tag @custom.about_1_img1, alt: "#{@site.company_name} portfolio" %>
+						<% else %>
+						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388531/templates/davinci/1_JCF9098-1011x675.jpg">
+						<% end %>
+						<% if @custom.about_1_img2.attached? %>
+							<%= image_tag @custom.about_1_img2, alt: "#{@site.company_name} portfolio" %>
+						<% else %>
+						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388518/templates/davinci/1_JCF5419-1012x675.jpg">
+						<% end %>
+						<% if @custom.about_1_img3.attached? %>
+							<%= image_tag @custom.about_1_img3, alt: "#{@site.company_name} portfolio" %>
+						<% else %>
+						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388555/templates/davinci/1_JCF8252-1162x675.jpg">
+						<% end %>
+
+					</div>
 					<div class="cell small-12 medium-9 small-text-center">
 						<h2><span><%= @custom.about_1_subtxt %></span></h2>
 						<h2><%= @custom.about_1_primarytxt %></h2>
