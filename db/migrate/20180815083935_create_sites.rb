@@ -4,7 +4,7 @@ class CreateSites < ActiveRecord::Migration[5.2]
       t.string :company_name
       t.string :abn
       t.string :home_town
-      t.references :user
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
