@@ -17,7 +17,7 @@ end
   end
 
   def after_sign_in_path_for(resource)
-    root_url(:subdomain => resource.subdomain)
+    site_url(:subdomain => resource.subdomain)
   end
 
   def update_resource(resource, params)
