@@ -412,12 +412,9 @@
 			</div>
 		</div>
 		
-		<% if @custom.services_1_hero.attached? %>
-		<div class="t_2_services" id="services" style="background-image: url('<%= url_for(@custom.services_1_hero) %>'); background-size: cover;">
-		<% else %>
-		<div class="t_2_services" id="services" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
-		<% end %>
-
+		
+		<div class="t_2_services" id="services" style="background-color: #1e1e1e;">
+		
 			<div class="t2_services_dark_overlay">
 				<div class="grid-container">
 					<div class="grid-x">
@@ -431,9 +428,7 @@
 								<% end %>
 							</div>
 
-							<div class="show-for-small-only hide-for-medium">
-								<%= link_to "EDIT BACKGROUND IMAGE", edit_template_custom_path(@custom, :services_title => "true"), class: "button large success"  %>
-							</div>
+					
 						</div>
 						<div class="cell small-12 medium-6">
 							<div class="t_2_services_box" style="min-height: 400px;">
