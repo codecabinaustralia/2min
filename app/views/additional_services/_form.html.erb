@@ -26,7 +26,8 @@
       <% if @mycolor.present? %>
        <%= link_to "Continue", edit_color_path(@mycolor), id: "objective_next", class: "button primary large expanded" %>
        <% else %>
-       <%= link_to "Continue", new_color_path, id: "objective_next", class: "button primary large expanded" %>
+       <% @mysite = Site.last %>
+       <%= link_to "Continue", site_path(@mysite), id: "objective_next", class: "button primary large expanded" %>
        <% end %>
     </div>
   </div>
