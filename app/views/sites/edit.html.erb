@@ -19,11 +19,13 @@
               </ul>
             </div>
           <% end %>
-
+        
+        <% @site.template_name != "multi" %>
         <div class="file-upload-box">
           We need a hero image, this can be taken from your phone now or you can upload one. Just click the button to add an image.<hr />
           <%= form.file_field :featured_image %>
         </div>
+        <% end %>
 
           <div class="field">
             <%= form.hidden_field :company_name, value: session[:company] %>
