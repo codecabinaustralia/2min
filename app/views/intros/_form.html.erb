@@ -20,8 +20,11 @@
     </div>
   </div>
 
- 
-    <%= form.text_area :content, rows: 8, placeholder: "Leave an intro to your site here." %>
+  <% if @site.template_name != "multi" %>
+    <% if params[:intro_content] %>
+      <%= form.text_area :content, rows: 8, placeholder: "Leave an intro to your site here." %>
+    <% end %>
+  <% end %>
 
 
   <div class="file-upload-box">
