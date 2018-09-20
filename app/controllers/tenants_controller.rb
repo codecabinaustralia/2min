@@ -9,9 +9,9 @@ class TenantsController < ApplicationController
 
     if @user.subdomain.present?
     Apartment::Tenant.drop(@user.subdomain)
-    ends
+    end
 
-    @user.destroy
+    #@user.destroy
 
     redirect_to tenants_show_all_path
   end
