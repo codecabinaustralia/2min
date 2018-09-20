@@ -44,10 +44,7 @@
       <%= form.text_field :home_town, placeholder: "Sydney" %>
     </div>
 
-    <div class="field">
-      What trade are you in?
-      <%= form.collection_select(:trade_id, Trade.all, :id, :title, prompt: true) %>
-    </div>
+
 
     <div class="field">
       <%= form.hidden_field :user_id, value: current_user.id %>
