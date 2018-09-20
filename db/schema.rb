@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_050729) do
+ActiveRecord::Schema.define(version: 2018_09_20_002552) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -167,6 +167,38 @@ ActiveRecord::Schema.define(version: 2018_09_18_050729) do
     t.index ["template_id"], name: "index_sites_on_template_id"
     t.index ["trade_id"], name: "index_sites_on_trade_id"
     t.index ["user_id"], name: "index_sites_on_user_id"
+  end
+
+  create_table "template_customs", force: :cascade do |t|
+    t.string "header_1_img"
+    t.string "header_1_overlay_color"
+    t.string "header_1_subtxt"
+    t.string "header_1_primarytxt"
+    t.string "header_1_btntxt"
+    t.string "quotebar_1_subtxt"
+    t.string "quote_bar_primarytxt"
+    t.string "quote_bar_btntxt"
+    t.string "content_6col_leftimg1"
+    t.string "content_6col_leftimg2"
+    t.text "content_6col_righttxt"
+    t.string "content_6col_rightsubtxt"
+    t.string "content_6col_rightprimarytxt"
+    t.string "content_6col_rightimg1"
+    t.string "content_6col_rightimg2"
+    t.text "content_6col_lefttxt"
+    t.string "content_6col_leftsubtxt"
+    t.string "content_6col_leftprimarytxt"
+    t.string "quotebox_1_subtxt"
+    t.string "quotebox_1_primarytxt"
+    t.string "quotebox_1_btntxt"
+    t.string "services_1_primarytxt"
+    t.string "about_1_img1"
+    t.string "about_1_img2"
+    t.string "about_1_subtxt"
+    t.string "about_1_primarytxt"
+    t.text "about_1_txt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "templates", force: :cascade do |t|

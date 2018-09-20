@@ -197,6 +197,29 @@ class SitesController < ApplicationController
   end
 
   def create_temp_site
+    @custom = TemplateCustom.new(
+      header_1_subtxt: "CARPENTRY AND MAINTENANCE SERVICES",
+      header_1_primarytxt: "ALL YOUR GENERAL CARPENTRY NEEDS!",
+      header_1_btntxt: "VIEW OUR SERVICES",
+      quotebar_1_subtxt: "GET IN TOUCH TODAY",
+      quotebar_1_primarytxt: "FOR YOUR FREE – NO OBLIGATION QUOTE",
+      quotebar_1_btntxt: "REQUEST A QUOTE",
+      content_6col_righttxt: "<p>Our owner builder assist services will give you the knowledge and skill of a professional carpenter onsite with you from the start to completion.</p> <p>We have the license to build so you have the security and peace of mind that it’s built to the highest standard from the start. We are here to help you.</p>",
+      content_6col_rightsubtxt: "DON'T SETTLE FOR LESS",
+      content_6col_rightprimarytxt: "Get the right assistance from the start on your next project.",
+      content_6col_lefttxt: "<p>Create a home you love that fits your lifestyle If you’re looking to give your home a makeover or simply to change its layout or design, you’ve come to the right place.</p><p>At Dean Carpentry and Maintenance, we’ve developed a reputation across the Gold Coast since we started back in 1998 for our renovations, bringing life and character into your home.</p><p>Working with our clients listening to their needs has been the key, providing customised solutions to meet any project requirements. We also take pride in keeping projects on time and on budget while maintaining our highest level of quality – making the process enjoyable and stress-free for our clients.</p>",
+      content_6col_leftsubtxt: "CARPENTRY SERVICES",
+      content_6col_leftprimarytxt: "Renovation Built Exactly To Your Needs",
+      quotebox_1_subtxt: "REQUEST A QUOTE",
+      quotebox_1_primarytxt: "GET IN TOUCH FOR A FREE CONSULTATION",
+      quotebox_1_btntxt: "REQUEST A QUOTE",
+      services_primarytxt: "OUR SERVICES",
+      about_1_subtxt: "EXCEPTIONAL RESULTS THROUGH EXPERT CRAFTSMANSHIP",
+      about_1_primarytxt: "About Us",
+      about_1_txt: "<p>The perfect space doesn’t just happen; it is created. Functionality, aesthetics, and longevity form the basis of creating the perfect room – however, these aspects cannot be achieved without the necessary skills and materials.</p><p>Dean Carpentry and Maintenance is a Gold Coast based carpentry and maintenance company with a commitment to delivering high-quality results, Dean understands what it takes to create the ideal space. Backed by experience we take the time to actively listen to our clients before commencing work – ensuring we deliver the desired outcome.</p><p>High-quality finishes, sturdy workmanship and a keen eye for detail are trademarks evident in our projects to date. We love a challenge. From heritage homes to contemporary office blocks, we have the experience necessary to complete a wide range of residential and commercial projects. With an expert labor hire team on offer, we have become the preferred choice of local builders, construction companies and property managers who require carpenters that they can rely on.</p>",
+      )
+    @custom.save
+
     @site = Site.new(
       company_name: session[:company],
       template_id: session[:template_id],
@@ -247,6 +270,8 @@ class SitesController < ApplicationController
     @accreditations = AccreditationAndLicence.all
     @reviews = Review.all
     @message = Message.new
+
+    @custom = TemplateCustom.last
 
     @company = Site.last
     @company_name = @company.company_name
