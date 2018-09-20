@@ -246,7 +246,7 @@
 	<div class="t_2_cta_bar">
 		<div class="grid-x">
 			<div class="cell small-12 text-right">
-				<a href="tel:<%= @site.phone %>"><i class="fa fa-phone"></i> <%= @site.phone %></a><a href="mail_to: <%= @site.user.email %>"> <i class="fa fa-envelope"></i> info@fakewebsite.com.au</a>
+				<a href="tel:<%= @site.phone %>" style="color: white;"><i class="fa fa-phone"></i> <%= @site.phone %></a><a href="mail_to: <%= @site.user.email %>" style="color: white;"> <i class="fa fa-envelope"></i> info@fakewebsite.com.au</a>
 			</div>
 		</div>
 	</div>
@@ -266,18 +266,16 @@
 			<div class="cell shrink text-center logo">
 				
 				<% if @intro.logo.attached? %>
-					<%= image_tag @intro.logo, height: '300', width: '300', alt: "#{@site.company_name} logo" %>
+					<%= image_tag @intro.logo, width: '180', alt: "#{@site.company_name} logo" %>
 					<% else %>
-					<div class="temp-logo-bg">
 					  <div class="temp-logo text-center">
 					    <div class="company-letter-logo" style="margin:auto; background-color: <%= @color.color_1 %>">
 					      <div class="company-letter-logo-inner"><%= @company_name.split(//).first%></div>
 					    </div>
 					    <div class="company-name-logo" style="color: <%= @color.color_1 %>"><%= @company_name %></div> 
 					  </div>
-					</div>
 				<% end %>
-				
+
 				
 
 			</div>
