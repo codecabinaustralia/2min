@@ -250,7 +250,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="t_2_top_menu" data-smooth-scroll="" style="padding: 20px 0;">
+	<div class="t_2_top_menu" data-smooth-scroll="" >
 		<div class="grid-x grid-margin-x">
 			<div class="cell auto show-for-medium float-right">
 				<ul class="menu float-right">
@@ -263,7 +263,7 @@
 				</ul>
 			</div>
 
-			<div class="cell shrink text-center logo">
+			<div class="cell shrink text-center logo" style="padding: 20px 0;">
 				
 				<% if @intro.logo.attached? %>
 					<%= image_tag @intro.logo, width: '180', alt: "#{@site.company_name} logo" %>
