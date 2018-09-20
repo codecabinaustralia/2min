@@ -13,7 +13,7 @@
 
 	.t_2_header h1 span{
 	   font-size: 20px;
-	   color: <%= @color.color_1 %>;
+	   color: <%= lighten_color("#{@color.color_1}", 0.7) %>;
 	   letter-spacing: -1px;
 	   line-height: 20px;
 	}
@@ -145,7 +145,7 @@
 	}
 
 	.t_2_services_fake_box{
-	   background-color: <%= @color.color_1 %>;
+	   background-color: <%= darken_color("#{@color.color_1}", 0.5) %>;
 	   height: 50px;
 	   margin-bottom: 20px; 
 	}
