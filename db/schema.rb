@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_002552) do
+ActiveRecord::Schema.define(version: 2018_09_20_033122) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -164,6 +164,7 @@ ActiveRecord::Schema.define(version: 2018_09_20_002552) do
     t.boolean "activated"
     t.string "site_name"
     t.integer "template_id"
+    t.string "template_name"
     t.index ["template_id"], name: "index_sites_on_template_id"
     t.index ["trade_id"], name: "index_sites_on_trade_id"
     t.index ["user_id"], name: "index_sites_on_user_id"

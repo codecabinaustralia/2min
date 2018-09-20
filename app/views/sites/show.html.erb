@@ -131,9 +131,9 @@
 	<div class="off-canvas-content-spacer"></div>
 <% end %>
 
-<% if @site.template.title == "stan" %>
+<% if @site.template_name == "stan" %>
 <%= render 'templates/template_1' %>
-<% elsif @site.template.title == "multi" %>
+<% elsif @site.template_name == "multi" %>
 <%= render 'templates/template_2' %>
 <% end %>
 

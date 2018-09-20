@@ -222,7 +222,7 @@ class SitesController < ApplicationController
 
     @site = Site.new(
       company_name: session[:company],
-      template_id: session[:template_id],
+      template_name: session[:template_name],
       home_town: "Sydney",
       phone: "0400 000 000",
       user_id: current_user.id
