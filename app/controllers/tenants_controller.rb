@@ -11,7 +11,7 @@ class TenantsController < ApplicationController
     Apartment::Tenant.drop(@user.subdomain)
     ends
 
-    #@user.destroy
+    @user.destroy
 
     redirect_to tenants_show_all_path
   end
