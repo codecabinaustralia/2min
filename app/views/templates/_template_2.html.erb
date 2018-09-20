@@ -252,19 +252,7 @@
 	</div>
 	<div class="t_2_top_menu" data-smooth-scroll="" >
 		<div class="grid-x grid-margin-x">
-			<div class="cell auto show-for-medium float-right">
-				<ul class="menu float-right">
-					<li>
-						<a href="#services">Services</a>
-					</li>
-					<li>
-						<a href="#about">About Us</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="cell shrink text-center logo" style="padding: 20px 0;">
-				
+			<div class="cell auto text-center logo" style="padding: 20px 0;">	
 				<% if @intro.logo.attached? %>
 					<%= image_tag @intro.logo, width: '180', alt: "#{@site.company_name} logo" %>
 					<% else %>
@@ -275,13 +263,15 @@
 					    <div class="company-name-logo" style="color: <%= @color.color_1 %>"><%= @company_name %></div> 
 					  </div>
 				<% end %>
-
-				
-
 			</div>
-
-			<div class="cell auto show-for-medium text-left">
-				<ul class="menu" data-dropdown-menu="">
+			<div class="cell medium-8 medium-offset-2 show-for-medium float-right">
+				<ul class="menu float-right">
+					<li>
+						<a href="#services">Services</a>
+					</li>
+					<li>
+						<a href="#about">About Us</a>
+					</li>
 					<li>
 						<a href="#work">Our Work</a>
 					</li>
