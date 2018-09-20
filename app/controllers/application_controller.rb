@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
 	protected
 		def after_sign_in_path_for(resource)
-		  site_url(:subdomain => resource.subdomain)
+		  sites_url(:subdomain => resource.subdomain)
 		end
 
 	  def configure_permitted_parameters
