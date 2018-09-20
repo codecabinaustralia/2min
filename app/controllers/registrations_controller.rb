@@ -16,6 +16,10 @@ end
     create_temp_site_url(:subdomain => resource.subdomain)
   end
 
+  def after_sign_in_path_for(resource)
+    root_url(:subdomain => resource.subdomain)
+  end
+
   def update_resource(resource, params)
 
     resource.update_without_password(params)
