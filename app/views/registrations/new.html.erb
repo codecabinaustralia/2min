@@ -2,7 +2,7 @@
   <div class="grid-x">
     <div class="cell small-12 medium-4 medium-offset-4 inner-form">
       <h2>Where can we send messages from your future clients?</h2>
-
+      template: <%= session[:template_id] %>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <% @random_string = SecureRandom.hex %>
