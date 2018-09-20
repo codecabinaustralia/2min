@@ -9,11 +9,7 @@ class TenantsController < ApplicationController
 
     if @user.subdomain.present?
     Apartment::Tenant.drop(@user.subdomain)
-    @user.update_attributes(subdomain: nil)
-    @site = Site.where(user_id: @user.id).last
-    @site.destroy
     end
-
 
     @user.destroy
 
