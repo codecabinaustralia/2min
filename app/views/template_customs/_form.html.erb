@@ -14,9 +14,10 @@
   <% if params[:header_1] == "true" %>
   <h2>Let's add a nice big header to your website?</h2>      
   <h3>Choose an image and some catchy text.</h3>
-
-  <div class="field">
-    <%= form.text_field :header_1_overlay_color, placeholder: "Header color overlay" %>
+  
+  <div class="file-upload-box">
+    Let's upload a funcky header image
+    <%= form.file_field :header_1_img %>
   </div>
 
   <div class="field">
@@ -53,6 +54,16 @@
   <h2>Ready to add a bit of content?</h2>      
   <h3>This is a standard block of text we'll add some images to the left hand side too.</h3>
 
+  <div class="file-upload-box">
+    Ok let's upload an image to replace the first one
+    <%= form.file_field :content_6col_leftimg1 %>
+  </div>
+
+  <div class="file-upload-box">
+    Ok let's upload an image to replace the second one
+    <%= form.file_field :content_6col_leftimg2 %>
+  </div>
+
   <div class="field">
     <%= form.text_area :content_6col_righttxt %>
   </div>
@@ -69,6 +80,16 @@
   <% if params[:six_col_lefttxt] == "true"%>
   <h2>Here's another block of text</h2>      
   <h3>We've added the images to the right hand side</h3>
+  
+  <div class="file-upload-box">
+    Ok let's upload an image to replace the first one
+    <%= form.file_field :content_6col_rightimg1 %>
+  </div>
+
+  <div class="file-upload-box">
+    Ok let's upload an image to replace the bottom one
+    <%= form.file_field :content_6col_rightimg2 %>
+  </div>
 
   <div class="field">
     <%= form.text_area :content_6col_lefttxt %>
@@ -101,15 +122,28 @@
   <% end %>
 
   <% if params[:services_title] == "true"%>
-  <h2>Want to rename the services title?</h2>      
-  <div class="field">
-    <%= form.text_field :services_1_primarytxt, placeholder: "Title" %>
+  <h2>Let's change the background image where your services are displayed</h2>      
+  <div class="file-upload-box">
+    Ok let's upload an image to replace the top one
+    <%= form.file_field :services_1_hero %>
   </div>
+
   <% end %>
   
   <% if params[:about_1] == "true"%>
   <h2>Don't be modest!</h2>      
   <h3>Right something nice about yourself</h3>
+
+  <div class="file-upload-box">
+    But first, let's add a couple of images for asthetics
+    <%= form.file_field :about_1_img1 %>
+  </div>
+
+  <div class="file-upload-box">
+    And... one more!
+    <%= form.file_field :about_1_img2 %>
+  </div>
+
   <div class="field">
     <%= form.text_field :about_1_subtxt, placeholder: "Small text" %>
   </div>
