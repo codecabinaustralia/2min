@@ -20,6 +20,7 @@ class IntrosController < ApplicationController
     @company_name = @company.company_name
   end
 
+
   # GET /intros/1/edit
   def edit
     @color = Color.last
