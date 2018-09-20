@@ -402,14 +402,15 @@
 							</div>
 						</div>
 						<div class="cell small-12 medium-6">
-							<div class="t_2_services_box">
+							<div class="t_2_services_box" style="min-height: 550px;">
 								<h2><%= @custom.services_1_primarytxt %></h2>
 								<ul>
 								<% @additional_services.each do |service| %>
 									<li><%= service.title %></li>
 								<% end %>
-								<%= link_to "EDIT SERVICES", new_additional_service_path, class: "button large success" %>
+								
 								</ul>
+								<%= link_to "EDIT SERVICES", new_additional_service_path, class: "button large success" %>
 								
 							</div>
 						</div>
