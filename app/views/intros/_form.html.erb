@@ -19,7 +19,8 @@
       <div class="company-name-logo" style="color: <%= @color.color_1 %>"><%= @company_name %></div> 
     </div>
   </div>
-
+  
+  <% @site = Site.last %>
   <% if @site.template_name != "multi" %>
     <% if params[:intro_content] %>
       <%= form.text_area :content, rows: 8, placeholder: "Leave an intro to your site here." %>
