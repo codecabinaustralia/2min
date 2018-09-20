@@ -34,6 +34,7 @@ class IntrosController < ApplicationController
 
     respond_to do |format|
       if @intro.save
+
         format.html { redirect_to new_personal_profile_path, notice: 'Intro was successfully created.' }
         format.json { render :show, status: :created, location: @intro }
       else
