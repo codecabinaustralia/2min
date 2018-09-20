@@ -316,7 +316,7 @@
 
 	<div class="t_2_white_bg">
 		<% if @custom.header_1_img.attached? %>
-			<div style="background-image: url('<%= url_for(@custom.header_1_img) %>')">
+			<div  class="t_2_header" style="background-image: url('<%= url_for(@custom.header_1_img) %>') background-size: cover;">
 		<% else %>
 		<div class="t_2_header" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
 		<% end %>
