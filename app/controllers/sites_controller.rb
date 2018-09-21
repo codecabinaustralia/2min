@@ -255,7 +255,7 @@ class SitesController < ApplicationController
   def index
     @sites = Site.all
     @site = Site.last
-    redirect_to site_path(@site)
+    redirect_to site_path(@site, :edit_mode => "true")
   end
 
   # GET /sites/1
