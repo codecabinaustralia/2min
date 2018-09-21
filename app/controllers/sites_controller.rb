@@ -247,11 +247,6 @@ class SitesController < ApplicationController
       )
     @intro.save
 
-    @soundclip = SoundClip.new(
-        site_show: true
-        )
-    @soundclip.save
-
     redirect_to site_path(@site, :edit_mode => true)
   end
 
