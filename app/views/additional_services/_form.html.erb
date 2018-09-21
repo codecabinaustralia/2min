@@ -38,6 +38,7 @@
     <% end %>
     <% @my_new_services.each do |new_service| %>
     <li>
+      <div class="grid-x">
       <div class="shrink">
         <i class="fa fa-check"></i>
       </div>
@@ -48,6 +49,7 @@
         <%= link_to new_service, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert expanded" do %>
         <i class="fa fa-times" style="margin-right: 0; color: #fff; font-size:18px;"></i>
         <% end %>
+      </div>
       </div>
 
        </li>
