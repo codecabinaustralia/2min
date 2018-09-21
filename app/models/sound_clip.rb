@@ -1,0 +1,2 @@
+class SoundClip < ApplicationRecord
+end

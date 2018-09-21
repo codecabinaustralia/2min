@@ -100,7 +100,7 @@
                     <button class="button primary expanded">Connect an existing domain</button>
                   </div>
                   <div class="cell small-12">
-                    OR YOU CAN SKIP THIS STEP
+                    <%= link_to "OR YOU CAN SKIP THIS STEP", root_url(:subdomain => current_user.subdomain) %>
                   </div>
                 </div>
                 

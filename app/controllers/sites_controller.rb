@@ -247,6 +247,11 @@ class SitesController < ApplicationController
       )
     @intro.save
 
+    @soundclip = SoundClip.new(
+        site_show: true
+        )
+    @soundclip.save
+
     redirect_to site_path(@site, :edit_mode => true)
   end
 
@@ -261,6 +266,7 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
+    @soundclip = SoundClip.last
     @color = Color.last
     @profile = PersonalProfile.last
     @intro = Intro.last
@@ -308,6 +314,7 @@ class SitesController < ApplicationController
 
      @progress_bar = @progress_bar.to_s + "%"
     
+
   end
 
   # GET /sites/new
