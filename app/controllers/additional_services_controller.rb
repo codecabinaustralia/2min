@@ -59,7 +59,7 @@ class AdditionalServicesController < ApplicationController
   def destroy
     @additional_service.destroy
     respond_to do |format|
-      format.html { redirect_to additional_services_url, notice: 'Additional service was successfully destroyed.' }
+      format.html { redirect_to new_additional_service_path, notice: 'Additional service was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
