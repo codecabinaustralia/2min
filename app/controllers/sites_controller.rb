@@ -261,7 +261,6 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
-    @soundclip = SoundClip.last
     @color = Color.last
     @profile = PersonalProfile.last
     @intro = Intro.last
