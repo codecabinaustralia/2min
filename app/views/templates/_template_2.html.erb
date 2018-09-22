@@ -343,7 +343,7 @@
 		<div class="t_2_intro">
 			<div class="grid-container">
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-12 medium-6">
+					<div class="cell small-12 medium-6" style="padding-top: 32px;">
 						<div class="grid-x grid-margin-x">
 							<div class="cell small-6 medium-12">
 								<% if @custom.content_6col_leftimg1.attached? %>
@@ -386,9 +386,9 @@
 							<%= link_to "EDIT THIS SECTION", edit_template_custom_path(@custom, six_col_lefttxt: "true"), class: "button large success" %>
 						<% end %>
 					</div>
-					<div class="cell small-12 medium-6">
+					<div class="cell small-12 medium-6" style="padding-top: 32px;">
 						<div class="grid-x grid-margin-x">
-							<div class="cell small-6 medium-12">
+							<div class="cell small-6 medium-12" >
 								<% if @custom.content_6col_rightimg1.attached? %>
 										<%= image_tag @custom.content_6col_rightimg1, alt: "#{@site.company_name} portfolio" %>
 										<% else %>
