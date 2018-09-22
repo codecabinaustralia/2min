@@ -1,7 +1,7 @@
 class StaticController < ApplicationController
   def home
     domain = request.host
-    @found_user = User.where(domain: domain)
+    @found_user = User.where(domain: domain).last
     if  @found_user.present?
       Apartment::Tenant.switch(@found_user.subdomain) do
       end
