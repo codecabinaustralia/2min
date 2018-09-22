@@ -1,5 +1,13 @@
 class StaticController < ApplicationController
   def home
+    domain = request.host
+    @found_user = User.where(domain: domain)
+    if  @found_user.present?
+      Apartment::Tenant.switch(@user.subdomain)
+      redirect_to sites_url(:subdomain => @user.subdomain)
+    end
+
+
     if user_signed_in?
       sign_out_and_redirect(current_user)
     end
