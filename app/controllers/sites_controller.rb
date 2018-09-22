@@ -268,7 +268,7 @@ class SitesController < ApplicationController
       @site = Site.last
       redirect_to site_path(@site)
     else
-        sites_url(:subdomain => resource.subdomain)
+        sites_url(:subdomain => request.subdomain)
     end
 
     
