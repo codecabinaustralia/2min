@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       resources :service_locations
       resources :additional_services
       resources :sites
+      get 'income' => 'sites#income'
 
       get 'create_temp_site' => 'sites#create_temp_site'
       get 'tenant' => 'sites#tenant'
@@ -44,7 +45,7 @@ Rails.application.routes.draw do
       get 'charge/create_charge'
       get 'charge/thank_you'
       get 'charge/building'
-      
+      root to: "sites#income"
     end
 
   resources :services

@@ -258,6 +258,23 @@ class SitesController < ApplicationController
     redirect_to site_path(@site, :edit_mode => "true")
   end
 
+  def income
+
+    @host = request.host
+    @host = @host.sub(/^www./,'')
+    @found_user = User.where(domain: @host).last
+    if  @found_user.present?
+      Apartment::Tenant.switch(@found_user.subdomain) do
+      end
+      @site = Site.last
+      redirect_to site_path(@site, :edit_mode => "true")
+    else
+        redirect_to root_path
+    end
+
+    
+  end
+
   # GET /sites/1
   # GET /sites/1.json
   def show
