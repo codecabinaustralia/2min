@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
   def home
-    @host = request.host
+    @host = request.domain
     #domain = domain.sub(/^https?\:\/\//, '').sub(/^www./,'')
     @found_user = User.where(domain: @host).last
     if  @found_user.present?
