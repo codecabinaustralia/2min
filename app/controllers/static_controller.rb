@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
   def home
     domain = request.host
+    domain = domain.sub(/^https?\:\/\//, '').sub(/^www./,'')
     @found_user = User.where(domain: domain).last
     if  @found_user.present?
       Apartment::Tenant.switch(@found_user.subdomain) do
