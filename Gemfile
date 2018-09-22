@@ -21,7 +21,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-
+gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 gem 'devise'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
