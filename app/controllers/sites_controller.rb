@@ -258,11 +258,6 @@ class SitesController < ApplicationController
     redirect_to site_path(@site, :edit_mode => "true")
   end
 
-  def incomming
-    @site = Site.last
-    redirect_to site_path(@site)
-  end
-
   # GET /sites/1
   # GET /sites/1.json
   def show
