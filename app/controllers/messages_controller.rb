@@ -35,7 +35,7 @@ class MessagesController < ApplicationController
         @user = User.find(@site.user_id)
         user = @user
         message = @message
-        Message.free_quote.deliver(message, user)
+        MessageMailer.free_quote.deliver(message, user)
 
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.js { }
