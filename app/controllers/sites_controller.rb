@@ -266,6 +266,20 @@ class SitesController < ApplicationController
     if @found_user.present?
       Apartment::Tenant.switch!(@found_user.subdomain)
       @site = Site.last
+      @color = Color.last
+      @profile = PersonalProfile.last
+      @intro = Intro.last
+      @additional_services = AdditionalService.all
+      @locations = ServiceLocation.all
+      @portfolios = Portfolio.all
+      @accreditations = AccreditationAndLicence.all
+      @reviews = Review.all
+      @message = Message.new
+
+      @custom = TemplateCustom.last
+
+      @company = Site.last
+      @company_name = @company.company_name
     end
   end
 
