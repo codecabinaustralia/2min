@@ -12,19 +12,19 @@
 			<table>
 				<tr>
 					<td width="50%"><strong>Name</strong></td>
-					<td><%= message.full_name %></td>
+					<td><%= @message.full_name %></td>
 				</tr>
 				<tr>
 					<td width="50%"><strong>Email</strong></td>
-					<td><a href="mail_to:<%= message.email %>"><%= message.email %></a></td>
+					<td><a href="mail_to:<%= message.email %>"><%= @message.email %></a></td>
 				</tr>
 				<tr>
 					<td width="50%"><strong>Phone</strong></td>
-					<td><a href="tel:<%= message.phone %>"><%= message.phone %></a></td>
+					<td><a href="tel:<%= message.phone %>"><%= @message.phone %></a></td>
 				</tr>
 				<tr>
 					<td width="50%"><strong>Message</strong></td>
-					<td><%= message.content %></td>
+					<td><%= @message.content %></td>
 				</tr>
 			</table>
 		</div>
