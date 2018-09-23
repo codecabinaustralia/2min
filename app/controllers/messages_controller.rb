@@ -24,10 +24,18 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
+
     @message = Message.new(message_params)
 
     respond_to do |format|
       if @message.save
+
+        @site = Site.last
+        @user = User.find(@site.user_id)
+        user = @user
+        message = @message
+        Message.free_quote.deliver(message, user)
+
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.js { }
       end

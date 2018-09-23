@@ -519,7 +519,8 @@
 						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388518/templates/davinci/1_JCF5419-1012x675.jpg">
 						<% end %>
 						<% if @custom.about_1_img3.attached? %>
-							<%= image_tag @custom.about_1_img3.variant(quality: "70", format: "jpeg") %>
+							<img src="<%= url_for(@custom.about_1_img3) %>">
+							<%= image_tag @custom.about_1_img3.variant(quality: "70") %>
 						<% else %>
 						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388555/templates/davinci/1_JCF8252-1162x675.jpg">
 						<% end %>

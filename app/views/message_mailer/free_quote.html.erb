@@ -1,0 +1,32 @@
+<div style="background-color: #e5e5e5; margin: 0; padding: 40px;">
+	<div style="background-color: white; padding: 40px; border-radius: 5px; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); width: 600px; margin:auto;">
+		<div style="text-align: center; background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537735441/2minute/envelope-border.png');background-position: 0 100%; background-repeat: repeat-x; background-size: 40px 3px;">
+			<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537734394/2minute/mail-icon.png" alt="You've got mail" width="120">
+			<h1>You've got mail</h1>
+		</div>
+		<div style="text-align: center; margin-top: 40px;">
+			<span style="font-size: 18px"></span> You have a new message from your website. I have listed the details of this message below. To reply simply contact them via the phone number provided or just reply to this email.</span>
+		</div>
+
+		<div style="margin-top: 40px; font-size: 20px;">
+			<table>
+				<tr>
+					<td width="50%"><strong>Name</strong></td>
+					<td><%= message.full_name %></td>
+				</tr>
+				<tr>
+					<td width="50%"><strong>Email</strong></td>
+					<td><a href="mail_to:<%= message.email %>"><%= message.email %></a></td>
+				</tr>
+				<tr>
+					<td width="50%"><strong>Phone</strong></td>
+					<td><a href="tel:<%= message.phone %>"><%= message.phone %></a></td>
+				</tr>
+				<tr>
+					<td width="50%"><strong>Message</strong></td>
+					<td><%= message.content %></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
