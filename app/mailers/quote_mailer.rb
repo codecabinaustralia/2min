@@ -4,9 +4,11 @@ class QuoteMailer < ApplicationMailer
 		@quote = quote
 		@user = user
 
-		mail to: @user.email, 
-			 subject: "Yay! You have a new message from your website.",
-			 reply_to: @quote.email,
-			 from: @quote.email
+		mail(
+		  :subject => 'Yay! You have a new message from your website.',
+		  :to  => @user.email ,
+		  :from => @quote.email,
+		)
+
 	   end
 end
