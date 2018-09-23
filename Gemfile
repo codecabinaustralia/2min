@@ -43,6 +43,7 @@ gem 'apartment'
 
 gem "mini_magick"
 
+
 group :production do
   gem 'pg', '~> 0.18'
   gem 'rails_12factor'
