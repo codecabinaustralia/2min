@@ -1,4 +1,135 @@
+<% if user_signed_in? && current_user.id == @site.user_id && @site.activated != true %>
+<%= render 'pay_footer' %>
+<% end %>
 
+<% if user_signed_in? && current_user.id == @site.user_id %>
+	
+	<% if @progress_bar != "100%" %>
+	<div class="list-panel-open">
+	
+			<i class="fa fa-close"></i>
+
+	</div>
+	<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+	<div class="list-panel">
+		<h3>What's left?</h3>
+		<div class="list-close">
+			<i class="fa fa-close"></i>
+		</div>
+		
+		<ul>
+			<% if !@intro.logo.attached? %>
+			<li><%= link_to "Add your logo", edit_intro_path(@intro) %></li>
+			<% end %>
+			<% if @additional_services.blank? %>
+			<li><%= link_to "Customise your site", new_additional_service_path %></li>
+			<% end %>
+			<% if !@site.featured_image.attached? %>
+			<li><%= link_to "Add hero image", edit_site_path(@site) %></li>
+			<% end %>
+			<% if @profile.bio.blank? %>
+			<li><%= link_to "Write your profile", edit_personal_profile_path(@profile) %></li>
+			<% end %>
+			<% if !@profile.avatar.attached? %>
+			<li><%= link_to "Add a selfie", edit_personal_profile_path(@profile) %></li>
+			<% end %>
+			<% if @portfolios.blank? %>
+			<li><%= link_to "Add portfolio", new_portfolio_path %></li>
+			<% end %>
+			<% if @reviews.blank? %>
+			<li><%= link_to "Add reviews", new_review_path %></li>
+			<% end %>
+			<% if @accreditations.blank? %>
+			<li><%= link_to "Accreditations & licences", new_accreditation_and_licence_path %></li>
+			<% end %>
+			<% if @site.abn.blank? %>
+			<li><%= link_to "Add your ABN", edit_site_path(@site) %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	<% end %>
+
+
+
+	
+	<div class="edit-site-bar">
+		<div class="grid-x grid-margin-x">
+		
+			<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] != "true" %>
+
+
+			<div class="cell shrink preview-buttons">
+				<%= link_to site_path(@site, :edit_mode => "true"), class: "button success" do %>
+				<i class="fas fa-pencil-alt"></i> Edit Mode
+				<% end %>
+			</div>
+
+
+			<% else %>
+				<div class="cell shrink preview-buttons">
+					<%= link_to site_path(@site), class: "button success" do %>
+					<i class="fa fa-desktop"></i> Preview Mode
+					<% end %>
+				</div>
+			<% end %>
+
+			<div class="cell shrink preview-buttons">
+				<%= link_to edit_user_registration_path, class: "button warning" do %>
+				<i class="fa fa-user"></i> Settings
+				<% end %>
+			</div>
+			<div class="cell shrink preview-buttons">
+
+			<% if user_signed_in? %>
+			  <button class="button" data-open="exit_modal">
+			  <i class="fas fa-door-open"></i>
+			  </button> 
+
+			  <div class="reveal" id="exit_modal" data-reveal>
+			    <h4>ARE YOU'RE ATTEMPTING TO LOG OUT?</h4>
+			    <p class="lead"></p>
+			    <%= link_to destroy_user_session_path, method: :delete, class: 'button primary large' do %>
+    			  YES LOG ME OUT
+    			<% end %> 
+    			<button class="button large success" data-close aria-label="Close modal" type="button">NO STAY SIGNED IN</button>
+			    <button class="close-button" data-close aria-label="Close modal" type="button">
+			      <span aria-hidden="true">&times;</span>
+			    </button>
+			  </div>
+
+			<% else %>
+			  <%= link_to('Sign In', new_user_session_path, class: 'button primary')  %>     
+			<% end %>
+			</div>	
+
+			
+
+			
+			<% if @progress_bar != "100%"  %>
+			<div class="cell auto show-for-medium">
+				<div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100" style="border-radius: 5px; height: 35px;">
+				  <div class="progress-meter" style="width: <%= @progress_bar %>; border-radius: 5px;">
+				  	<p class="progress-meter-text">Welcome add some final touches: <%= @progress_bar %> FINSIHED</p>
+				  </div>
+
+				</div>
+			</div>
+			<% else %>
+			<% if @site.activated != true %>
+			<div class="cell auto preview-buttons"></div>
+			<div class="cell auto preview-buttons">
+				<%= link_to "LAUNCH NOW 50% OFF!", charge_payment_page_path, class: "button primary expanded"%>
+			</div>
+			<% end %>
+			<% end %>
+		</div>
+	</div>
+<% end %>
+
+<% if user_signed_in? && current_user.id == @site.user_id %>
+	<div class="off-canvas-content-spacer"></div>
+<% end %>
 
 <% if @site.template_name == "stan" %>
 <%= render 'templates/template_1' %>
@@ -6,3 +137,31 @@
 <%= render 'templates/template_2' %>
 <% end %>
 
+
+
+<script>
+
+$(function() {
+
+$('.list-close').click(function () {
+    $(".list-panel").animate({"left" : "-=300px"}, "fast");
+    $(".list-panel-open").animate({"left" : "300px"}, "slow");
+    
+});
+
+$('.list-panel-open').click(function () {
+    $(".list-panel-open").animate({"left" : "-300px"}, "fast");
+    $(".list-panel").animate({"left" : "0"}, "slow");
+    
+});
+
+});
+
+
+
+</script>
+
+
+<div style="position: absolute; left: -9000px; top:-9000px;">
+<embed src="https://res.cloudinary.com/thypowerhouse/video/upload/v1537563363/2minute/audio/5_site_show.mp3">
+</div>
