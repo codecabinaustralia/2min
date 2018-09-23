@@ -250,7 +250,7 @@
 	<div class="t_2_cta_bar">
 		<div class="grid-x">
 			<div class="cell small-12 text-right">
-				<a href="tel:<%= @site.phone %>" style="color: white;"><i class="fa fa-phone"></i> <%= @site.phone %></a><a href="mail_to: <%= @site.user.email %>" style="color: white;"> <i class="fa fa-envelope"></i> info@fakewebsite.com.au</a>
+				<a href="tel:<%= @site.phone %>" style="color: white;"><i class="fa fa-phone"></i> <%= @site.phone %></a><a href="mail_to: <%= @site.user.email %>" style="color: white;"> <i class="fa fa-envelope"></i> <%= @site.user.email %></a>
 			</div>
 		</div>
 	</div>
@@ -258,7 +258,7 @@
 		<div class="grid-x grid-margin-x">
 			<div class="cell small-12 text-center logo" style="padding-top: 20px;">	
 				<% if @intro.logo.attached? %>
-					<%= image_tag @intro.logo.variant(quality: "10"), width: '380' %>
+					<%= image_tag @intro.logo.variant(quality: "70"), width: '380' %>
 					<% else %>
 					  <div class="temp-logo text-center">
 					    <div class="company-letter-logo" style="margin:auto; background-color: <%= @color.color_1 %>">
@@ -347,7 +347,7 @@
 						<div class="grid-x grid-margin-x">
 							<div class="cell small-6 medium-12">
 								<% if @custom.content_6col_leftimg1.attached? %>
-									<%= image_tag @custom.content_6col_leftimg1.variant(quality: "10"), alt: "#{@site.company_name} portfolio" %>
+									<%= image_tag @custom.content_6col_leftimg1.variant(quality: "70"), alt: "#{@site.company_name} portfolio" %>
 									<% else %>
 								<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537386293/templates/davinci/carousel_about_6_new.jpg">
 								<% end %>
@@ -355,7 +355,7 @@
 							
 							<div class="cell small-6 medium-12">
 								<% if @custom.content_6col_leftimg2.attached? %>
-										<%= image_tag @custom.content_6col_leftimg2.variant(quality: "10"), alt: "#{@site.company_name} portfolio" %>
+										<%= image_tag @custom.content_6col_leftimg2.variant(quality: "70"), alt: "#{@site.company_name} portfolio" %>
 										<% else %>
 								<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537386279/templates/davinci/carousel_about_3_new.jpg">
 								<% end %>
@@ -390,14 +390,14 @@
 						<div class="grid-x grid-margin-x">
 							<div class="cell small-6 medium-12" >
 								<% if @custom.content_6col_rightimg1.attached? %>
-										<%= image_tag @custom.content_6col_rightimg1.variant(quality: "10"), alt: "#{@site.company_name} portfolio" %>
+										<%= image_tag @custom.content_6col_rightimg1.variant(quality: "70"), alt: "#{@site.company_name} portfolio" %>
 										<% else %>
 										<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387083/templates/davinci/carousel_about_4.jpg">
 										<% end %>
 									</div>
 							<div class="cell small-6 medium-12">
 								<% if @custom.content_6col_rightimg2.attached? %>
-									<%= image_tag @custom.content_6col_rightimg2.variant(quality: "10"), alt: "#{@site.company_name} portfolio" %>
+									<%= image_tag @custom.content_6col_rightimg2.variant(quality: "70"), alt: "#{@site.company_name} portfolio" %>
 								<% else %>
 									<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387092/templates/davinci/carousel_about_5.jpg">
 								<% end %>
@@ -466,7 +466,7 @@
 										<% @portfolios.each do |portfolio| %>
 												<li class="orbit-slide">
 													<figure class="orbit-figure">
-														<%= image_tag portfolio.image.variant(quality: "10") %>
+														<%= image_tag portfolio.image.variant(quality: "70") %>
 													</figure>
 												</li>
 										<% end %>
@@ -509,17 +509,17 @@
 				<div class="grid-x grid-margin-x">
 					<div class="cell small-12 medium-3 show-for-medium">
 						<% if @custom.about_1_img1.attached? %>
-							<%= image_tag @custom.about_1_img1.variant(quality: "10"), alt: "#{@site.company_name} portfolio" %>
+							<%= image_tag @custom.about_1_img1.variant(quality: "70"), alt: "#{@site.company_name} portfolio" %>
 						<% else %>
 						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388531/templates/davinci/1_JCF9098-1011x675.jpg">
 						<% end %>
 						<% if @custom.about_1_img2.attached? %>
-							<%= image_tag @custom.about_1_img2.variant(quality: "10"), alt: "#{@site.company_name} portfolio" %>
+							<%= image_tag @custom.about_1_img2.variant(quality: "70"), alt: "#{@site.company_name} portfolio" %>
 						<% else %>
 						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388518/templates/davinci/1_JCF5419-1012x675.jpg">
 						<% end %>
 						<% if @custom.about_1_img3.attached? %>
-							<%= image_tag @custom.about_1_img3.variant(quality: "10"), alt: "#{@site.company_name} portfolio" %>
+							<%= image_tag @custom.about_1_img3.variant(quality: "70"), alt: "#{@site.company_name} portfolio" %>
 						<% else %>
 						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388555/templates/davinci/1_JCF8252-1162x675.jpg">
 						<% end %>
@@ -607,7 +607,7 @@
 				<div class="cell small-12 medium-6">
 					<h2>Contact Us</h2><a class="button expanded large success" href="tel:<%= @site.phone %>"><i class="fa fa-phone"></i> <%= @site.phone %><br></a> <!-- Map -->
 					<div class="cell small-12" style="margin-top: 40px;">
-						<h4>We service all Sydney locations</h4>
+						<h4>We service all <%= @site.home_town %> locations</h4>
 						<div class="map-responsive">
 							<iframe allowfullscreen frameborder="0" height="650" src="https://maps.google.com/maps?q=<%= @site.home_town %>=&z=13&ie=UTF8&iwloc=&output=embed" style="border:0" width="1920"></iframe>
 						</div>
