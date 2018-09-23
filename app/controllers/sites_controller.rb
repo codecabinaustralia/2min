@@ -263,15 +263,10 @@ class SitesController < ApplicationController
     @host = request.host
     @host = @host.sub(/^www./,'')
     @found_user = User.where(domain: @host).last
-    if  @found_user.present?
+    if @found_user.present?
       Apartment::Tenant.switch!(@found_user.subdomain)
       @site = Site.last
-      redirect_to site_path(@site)
-    else
-      redirect_to sites_url(:subdomain => request.subdomain)
     end
-
-    
   end
 
   # GET /sites/1

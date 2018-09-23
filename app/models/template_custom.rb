@@ -8,6 +8,6 @@ class TemplateCustom < ApplicationRecord
 	has_one_attached :about_1_img1
 	has_one_attached :about_1_img2
 	has_one_attached :about_1_img3
-
+	
 
 end
