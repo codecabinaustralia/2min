@@ -280,7 +280,9 @@ class SitesController < ApplicationController
 
       @company = Site.last
       @company_name = @company.company_name
-    end
+    else
+        redirect_to sites_url(:subdomain => request.subdomain)
+    end    
   end
 
   # GET /sites/1
