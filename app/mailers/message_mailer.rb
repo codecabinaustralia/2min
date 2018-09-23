@@ -3,10 +3,9 @@ class MessageMailer < ApplicationMailer
 		@message = message
 		@user = user
 
-	    mail(
-	    recipients: user.email,
-	    reply_to: message.email,
-	    from: message.email,
-	    subject: "Yay! You have a new message from your website.")
+		mail to: @user.email, 
+			 subject: "Yay! You have a new message from your website.",
+			 reply_to: @message.email,
+			 from: @message.email
 	   end
 end

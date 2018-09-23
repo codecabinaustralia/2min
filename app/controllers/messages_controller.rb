@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
-  
+
   # GET /messages
   # GET /messages.json
   def index
@@ -33,9 +33,8 @@ class MessagesController < ApplicationController
 
         @site = Site.last
         @user = User.find(@site.user_id)
-        user = @user
-        message = @message
-        MessageMailer.free_quote.deliver(message, user)
+
+        MessageMailer.free_quote.deliver(@message, @user)
 
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.js { }
