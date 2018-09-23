@@ -258,7 +258,7 @@
 		<div class="grid-x grid-margin-x">
 			<div class="cell small-12 text-center logo" style="padding-top: 20px;">	
 				<% if @intro.logo.attached? %>
-					<%= image_tag @intro.logo.variant(quality: "70", :trim), width: '380' %>
+					<%= image_tag @intro.logo.variant(quality: "70"), width: '380' %>
 					<% else %>
 					  <div class="temp-logo text-center">
 					    <div class="company-letter-logo" style="margin:auto; background-color: <%= @color.color_1 %>">
