@@ -9,4 +9,8 @@ class TemplateCustom < ApplicationRecord
 	has_one_attached :about_1_img2
 	has_one_attached :about_1_img3
 
+	def thumbnail
+		return self.header_1_img.variant(quality: '10')
+	end
+
 end
