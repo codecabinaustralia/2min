@@ -9,11 +9,7 @@ end
 
 Rails.application.routes.draw do
 
-  resources :template_customs
-  resources :domains
-  get 'already_have_domain' => 'domains#already_have_domain'
-  get 'need_domain' => 'domains#need_domain'
-
+  
 
   resources :templates
 
@@ -35,11 +31,13 @@ Rails.application.routes.draw do
       resources :service_locations
       resources :additional_services
       resources :sites
+      resources :template_customs
+      resources :domains
+      get 'already_have_domain' => 'domains#already_have_domain'
+      get 'need_domain' => 'domains#need_domain'
       get 'income' => 'sites#income'
-
       get 'create_temp_site' => 'sites#create_temp_site'
       get 'tenant' => 'sites#tenant'
-
       get 'charge/payment_page'
       post 'charge/create_charge'
       get 'charge/create_charge'
