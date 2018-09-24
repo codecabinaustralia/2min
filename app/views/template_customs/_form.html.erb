@@ -65,7 +65,7 @@
   </div>
 
   <div class="field">
-    <%= form.text_area :content_6col_righttxt, rows: 8, class: "my_text_editor" %>
+    <%= form.text_area :content_6col_righttxt, :class => "tinymce", :rows => 8 %>
   </div>
 
   <div class="field">
@@ -92,7 +92,7 @@
   </div>
 
   <div class="field">
-    <%= form.text_area :content_6col_lefttxt, rows: 8, class: "my_text_editor" %>
+    <%= form.text_area :content_6col_lefttxt, :class => "tinymce", :rows => 8 %>
   </div>
 
   <div class="field">
@@ -158,7 +158,7 @@
   </div>
 
   <div class="field">
-    <%= form.text_area :about_1_txt, rows: 8, class: "my_text_editor" %>
+    <%= form.text_area :about_1_txt, :class => "tinymce", :rows => 8 %>
   </div>
   <% end %>
 
@@ -166,3 +166,6 @@
     <%= form.submit "SAVE", class: "button large success" %>
   </div>
 <% end %>
+
+
+<%= tinymce %>

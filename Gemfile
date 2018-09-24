@@ -42,9 +42,7 @@ gem 'geocoder'
 gem 'apartment'
 gem 'mailgun-ruby', '~>1.1.6'
 gem "mini_magick"
-
-gem "wysiwyg-rails"
-gem "font-awesome-sass"
+gem 'tinymce-rails', '~> 4.3'
 
 
 group :production do
