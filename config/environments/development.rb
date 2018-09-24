@@ -63,7 +63,7 @@ Rails.application.configure do
   #Devise
   config.action_mailer.default_url_options = { host: 'localhost' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.mailgun_settings = {
+  ActionMailer::Base.smtp_settings = {
      user_name: ENV['MAILGUN_USER'],
      password: ENV['MAILGUN_PASS'],
      domain: 'http://2min.co',
