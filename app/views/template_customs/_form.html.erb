@@ -65,7 +65,7 @@
   </div>
 
   <div class="field">
-    <%= text_area_tag :content_6col_righttxt, "Add your content here", :class => "tinymce", :rows => 8 %>
+    <%= form.trix_editor  :content_6col_righttxt, "Add your content here", :rows => 8 %>
   </div>
 
   <div class="field">
@@ -92,7 +92,7 @@
   </div>
 
   <div class="field">
-    <%= text_area_tag :content_6col_lefttxt, "Add your content here", :class => "tinymce", :rows => 8 %>
+    <%= form.trix_editor  :content_6col_lefttxt, "Add your content here", :rows => 8 %>
   </div>
 
   <div class="field">
@@ -158,7 +158,7 @@
   </div>
 
   <div class="field">
-    <%= text_area_tag :about_1_txt, "Add your content here", :class => "tinymce", :rows => 8 %>
+    <%= form.trix_editor  :about_1_txt, "Add your content here", :rows => 8 %>
   </div>
   <% end %>
 

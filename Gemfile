@@ -42,7 +42,7 @@ gem 'geocoder'
 gem 'apartment'
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'tinymce-rails'
-gem "mini_magick"
+gem 'trix'
 
 
 group :production do
