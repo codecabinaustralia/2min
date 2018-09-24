@@ -15,6 +15,7 @@
 //= require foundation
 //= require jquery.minicolors
 //= require activestorage
+//= require tinymce-jquery
 //= require turbolinks
 //= require_tree .
 

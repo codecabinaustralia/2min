@@ -41,7 +41,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'geocoder'
 gem 'apartment'
 gem 'mailgun-ruby', '~>1.1.6'
-
+gem 'tinymce-rails'
 gem "mini_magick"
 
 
