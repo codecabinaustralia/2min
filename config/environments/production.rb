@@ -96,7 +96,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Devise
-  config.action_mailer.default_url_options = { host: 'http://2min.co', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'http://2min.co' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.mailgun_settings = {
      user_name: ENV['MAILGUN_USER'],
