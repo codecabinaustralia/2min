@@ -61,7 +61,7 @@ Rails.application.configure do
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   #Devise
-  config.action_mailer.default_url_options = { host: 'localhost' }
+  config.action_mailer.default_url_options = { host: 'http://2min.co' }
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
      user_name: ENV['MAILGUN_USER'],
