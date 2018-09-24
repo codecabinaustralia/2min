@@ -15,7 +15,6 @@
 //= require foundation
 //= require jquery.minicolors
 //= require activestorage
-//= require trix
 //= require turbolinks
 //= require_tree .
 

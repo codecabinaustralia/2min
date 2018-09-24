@@ -65,7 +65,7 @@
   </div>
 
   <div class="field">
-    <%= form.trix_editor :content_6col_righttxt %>
+    <%= form.text_area :content_6col_righttxt, rows: 8, class: "my_text_editor" %>
   </div>
 
   <div class="field">
@@ -92,7 +92,7 @@
   </div>
 
   <div class="field">
-    <%= form.trix_editor :content_6col_lefttxt %>
+    <%= form.text_area :content_6col_lefttxt, rows: 8, class: "my_text_editor" %>
   </div>
 
   <div class="field">
@@ -158,7 +158,7 @@
   </div>
 
   <div class="field">
-    <%= form.trix_editor :about_1_txt %>
+    <%= form.text_area :about_1_txt, rows: 8, class: "my_text_editor" %>
   </div>
   <% end %>
 
@@ -166,6 +166,3 @@
     <%= form.submit "SAVE", class: "button large success" %>
   </div>
 <% end %>
-
-
-<%= tinymce %>
