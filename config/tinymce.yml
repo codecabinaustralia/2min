@@ -1,6 +1,6 @@
 default:
+  menu_bar: false
   plugins:
-    - image
     - link
 
 alternate:
