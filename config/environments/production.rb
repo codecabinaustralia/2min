@@ -96,12 +96,12 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Devise
-  config.action_mailer.default_url_options = { host: 'http://2min.co' }
+  config.action_mailer.default_url_options = { host: 'localhost' }
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-     user_name: 'josh@codecabin.com.au',
-     password: 'JetStar!23',
-     domain: '2min.co',
+     user_name: ENV['MAILGUN_USER'],
+     password: ENV['MAILGUN_PASS'],
+     domain: 'http://2min.co',
      address: 'smtp.mailgun.org',
      port: 587,
      :authentication => :plain,
