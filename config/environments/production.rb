@@ -99,9 +99,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'http://2min.co' }
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-     user_name: ENV['MAILGUN_USER'],
-     password: ENV['MAILGUN_PASS'],
-     domain: 'sandboxab4a87d929b24e15b1107a4a27d0e77e.mailgun.org',
+     user_name: 'josh@codecabin.com.au',
+     password: 'JetStar!23',
+     domain: '2min.co',
      address: 'smtp.mailgun.org',
      port: 587,
      :authentication => :plain,
