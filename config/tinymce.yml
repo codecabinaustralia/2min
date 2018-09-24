@@ -1,7 +1,12 @@
 default:
-  menu_bar: false
-  toolbar: 
-    [styleselect | bold italic | undo redo | link, alignleft aligncenter alignright | bullist numlist]
   plugins:
-    link
-    lists
+    - image
+    - link
+
+alternate:
+  menu_bar: false
+  selector: textarea.table-editor
+  toolbar: styleselect | bold italic | undo redo | link | alignleft aligncenter alignright | bullist numlist
+  plugins:
+    - link
+    - lists
