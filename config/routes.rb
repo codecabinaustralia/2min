@@ -9,11 +9,7 @@ end
 
 Rails.application.routes.draw do
 
-  if Rails.env.production?
-      scope format: true, constraints: { format: /jpg|png|gif|PNG/ } do
-        get '/*anything', to: proc { [404, {}, ['']] }, constraints: lambda { |request| !request.path_parameters[:anything].start_with?('rails/') }
-      end
-    end
+  
 
   resources :templates
 

@@ -1,24 +1,10 @@
-#test:
-#  service: Disk
-#  root: <%= Rails.root.join("tmp/storage") %>
-#local:
-# service: Disk
-# root: <%= Rails.root.join("storage") %>
-local:
- service: S3
- access_key_id: <%= ENV['DIGITALOCEANSPACES_ACCESS'] %>
- secret_access_key: <%= ENV['DIGITALOCEANSPACES_SECRET'] %>
- region: us-east-1
- bucket: twominutes
- endpoint: 'https://nyc3.digitaloceanspaces.com'
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
 
-#cloudinary:
-#  service: Cloudinary
-#  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
-#  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
-#  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
-#  secure: true
-#  cdn_subdomain: true
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
     
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
