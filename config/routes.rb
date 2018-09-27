@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'tenants/show_all' => 'tenants#show_all'
   get 'tenants/drop_tenant' => 'tenants#drop_tenant'
     
-
+resources :template_customs
 
     constraints SubdomainContraint do
       resources :messages
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       resources :service_locations
       resources :additional_services
       resources :sites
-      resources :template_customs
+      
       resources :domains
       get 'already_have_domain' => 'domains#already_have_domain'
       get 'need_domain' => 'domains#need_domain'
