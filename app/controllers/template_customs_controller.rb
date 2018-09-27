@@ -26,6 +26,16 @@ class TemplateCustomsController < ApplicationController
   def create
     @template_custom = TemplateCustom.new(template_custom_params)
 
+    @template_custom.header_1_img.attach(template_custom_params[:header_1_img])
+    @template_custom.content_6col_leftimg1.attach(template_custom_params[:content_6col_leftimg1])
+    @template_custom.content_6col_leftimg2.attach(template_custom_params[:content_6col_leftimg2])
+    @template_custom.content_6col_rightimg1.attach(template_custom_params[:content_6col_rightimg1])
+    @template_custom.content_6col_rightimg2.attach(template_custom_params[:content_6col_rightimg2])
+    @template_custom.services_1_hero.attach(template_custom_params[:services_1_hero])
+    @template_custom.about_1_img1.attach(template_custom_params[:about_1_img1])
+    @template_custom.about_1_img2.attach(template_custom_params[:about_1_img2])
+    @template_custom.about_1_img3.attach(template_custom_params[:about_1_img3])
+
     respond_to do |format|
       if @template_custom.save
         format.html { redirect_to @template_custom, notice: 'Template custom was successfully created.' }
