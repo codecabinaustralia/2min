@@ -43,6 +43,7 @@ gem 'apartment'
 gem 'mailgun-ruby', '~>1.1.6'
 gem "mini_magick"
 gem 'tinymce-rails', '~> 4.3'
+gem 'rack-canonical-host'
 
 
 group :production do

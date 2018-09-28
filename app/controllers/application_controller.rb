@@ -2,10 +2,7 @@ class ApplicationController < ActionController::Base
 	require 'securerandom'
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	#before_action :check_subdomain
-	before_filter :force_www!
-
 	
-
 	def check_subdomain
       @host = request.host
       @host = @host.sub(/^www./,'')
@@ -19,12 +16,6 @@ class ApplicationController < ActionController::Base
 	end
 
 	protected
-		def force_www!
-		  if Rails.env.production? and request.host[0..3] != "www."
-		    redirect_to "#{request.protocol}www.#{request.host_with_port}#{request.fullpath}", :status => 301
-		  end
-		end
-		
 		def after_sign_in_path_for(resource)
 		  sites_url(:subdomain => resource.subdomain)
 		end
