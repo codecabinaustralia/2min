@@ -74,7 +74,7 @@ class SitesController < ApplicationController
     if @found_user.present?
       Apartment::Tenant.switch!(@found_user.subdomain)
     else
-      redirect_to root_path
+      redirect_to sites_url(:subdomain => request.subdomain)
     end  
 
       @site = Site.last
