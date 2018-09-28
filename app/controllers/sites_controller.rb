@@ -69,7 +69,7 @@ class SitesController < ApplicationController
   def income
 
     
-      
+
       @site = Site.last
       @color = Color.last
       @profile = PersonalProfile.last
@@ -85,9 +85,7 @@ class SitesController < ApplicationController
 
       @company = Site.last
       @company_name = @company.company_name
-    else
-        redirect_to sites_url(:subdomain => request.subdomain)
-    end    
+     
   end
 
   # GET /sites/1

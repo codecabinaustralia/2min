@@ -10,7 +10,9 @@ class ApplicationController < ActionController::Base
       @found_user = User.where(domain: @host).last
       if @found_user.present?
         Apartment::Tenant.switch!(@found_user.subdomain)
-      end
+      else
+        redirect_to sites_url(:subdomain => request.subdomain)
+      end   
 
 	end
 
