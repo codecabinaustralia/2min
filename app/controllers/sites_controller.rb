@@ -80,6 +80,7 @@ class SitesController < ApplicationController
       @message = Message.new
       @custom = TemplateCustom.last
       @company = Site.last
+      @company_name = @company.company_name
 
       end
 
