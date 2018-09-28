@@ -8,9 +8,7 @@ class ActiveWebsite < Subdomain
 	end
 
 	def by_domain
-		@host = request.host
-		@host = @host.sub(/^www./,'')
-		website = User.find_by(domain: @host)
+		website = User.find_by(domain: request.host)
 		website && website.subdomain
 	end
 end
