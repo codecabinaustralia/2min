@@ -1,14 +1,17 @@
 class ApplicationController < ActionController::Base
 	require 'securerandom'
 	before_action :configure_permitted_parameters, if: :devise_controller?
-	#before_action :check_subdomain
+	before_action :check_subdomain
 	
 	def check_subdomain
 
       @host = request.host
       @host = @host.sub(/^www./,'')
       @found_user = User.where(domain: @host).last
-      Apartment::Tenant.switch!(@found_user.subdomain)
+      if @found_user.present?
+      else
+        redirect_to sites_url(:subdomain => request.subdomain)
+      end   
 
 	end
 
