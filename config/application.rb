@@ -2,7 +2,6 @@ require_relative 'boot'
 require 'apartment/elevators/subdomain'
 require 'rails/all'
 require "active_storage"
-require 'rack/ssl-enforcer'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,7 +15,7 @@ module Powerhouse
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
-    config.middleware.use Rack::SslEnforcer, :only_hosts => 'www.2min.co', :strict => true
+    #config.middleware.use Rack::SslEnforcer, :only_hosts => 'www.2min.co', :strict => true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
