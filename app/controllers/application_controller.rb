@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	require 'securerandom'
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	#before_action :check_subdomain
-	before_filter :redirect_subdomain
+	before_action :redirect_subdomain
 
 	def redirect_subdomain
 	  if request.host == '2min.co'
