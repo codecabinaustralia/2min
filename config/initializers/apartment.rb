@@ -103,18 +103,9 @@ end
 #   request.host.split('.').first
 # }
 
-# Rails.application.config.middleware.use Apartment::Elevators::Domain
-Rails.application.config.middleware.use Apartment::Elevators::Subdomain
-Rails.application.config.middleware.use Apartment::Elevators::Generic, -> (request) { 
-  @host = request.host
-  @host = @host.sub(/^www./,'')
-  @found_user = User.where(domain: @host).last
-  if @found_user.present?
-    Apartment::Tenant.switch!(@found_user.subdomain)
-  else
-    redirect_to sites_url(:subdomain => request.subdomain)
-  end  
-}
+Rails.application.config.middleware.use Apartment::Elevators::Domain
+#Rails.application.config.middleware.use Apartment::Elevators::Subdomain
+
 
 Apartment::Elevators::Subdomain.excluded_subdomains = ['www', 'admin', 'mdoz', 'public', 'mytest']
 # Rails.application.config.middleware.use Apartment::Elevators::FirstSubdomain
