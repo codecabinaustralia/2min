@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 		end
 
 	    def ssl_configured?
-	        if request.host == 'www.2min.co'
+	        request.host == 'www.2min.co'
 	      end
 
 		def after_sign_in_path_for(resource)
