@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
 		    redirect_to root_path, alert: "You are not authorized to access that subdomain."
 		  end
       end
+
+      @host = request.host
+      @host = @host.sub(/^www./,'')
+      @found_user = User.where(domain: @host).last
+      if @found_user.present?
+        Apartment::Tenant.switch!(@found_user.subdomain)
+      end
+      
 	end
 
 	protected
