@@ -68,8 +68,6 @@ class SitesController < ApplicationController
 
   def income
 
-
-
       @site = Site.last
       @color = Color.last
       @profile = PersonalProfile.last
@@ -80,9 +78,7 @@ class SitesController < ApplicationController
       @accreditations = AccreditationAndLicence.all
       @reviews = Review.all
       @message = Message.new
-
       @custom = TemplateCustom.last
-
       @company = Site.last
       @company_name = @company.company_name
 
