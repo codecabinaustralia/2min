@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
 	def redirect_subdomain
 	  if request.host == '2min.co'
-	    redirect_to 'http://www.2min.co' + request.fullpath, :status => 301
+	    redirect_to 'https://www.2min.co' + request.fullpath, :status => 301
 	  end
 	end
 
