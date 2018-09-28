@@ -320,6 +320,7 @@
 			<div class="t2_dark_overlay">
 				<div class="grid-x grid-padding-x">
 					<div class="cell small-12 medium-6 medium-offset-6">
+						<h1><%= @test %></h1>
 						<h1><span><%= @custom.header_1_subtxt %></span></h1>
 						<h1><%= @custom.header_1_primarytxt %></h1><a class="button large primary" style="border: 2px solid white; background-color: rgba(0,0,0,0);" href="#services"><%= @custom.header_1_btntxt %></a>
 						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
