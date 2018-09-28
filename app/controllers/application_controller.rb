@@ -14,9 +14,9 @@ class ApplicationController < ActionController::Base
       @host = @host.sub(/^www./,'')
       @found_user = User.where(domain: @host).last
       if @found_user.present?
-        Apartment::Tenant.switch!(@found_user.subdomain)
+        Apartment::Tenant.switch(@found_user.subdomain)
       end
-      
+
 	end
 
 	protected
