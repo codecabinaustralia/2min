@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
 	
 	def check_subdomain
 
-      
+      @host = request.host
+      @host = @host.sub(/^www./,'')
+      @found_user = User.where(domain: @host).last
+      Apartment::Tenant.switch!(@found_user.subdomain)
 
 	end
 
