@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	require 'securerandom'
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :redirect_subdomain
-	force_ssl if: :ssl_required?
+	force_ssl if: :ssl_configured?
 
 	
 
@@ -14,9 +14,9 @@ class ApplicationController < ActionController::Base
 		  end
 		end
 
-	    def ssl_required?
-	     request.host == 'www.2min.co'
-	    end
+	    def ssl_configured?
+	        if request.host == 'www.2min.co'
+	      end
 
 		def after_sign_in_path_for(resource)
 		  sites_url(:subdomain => resource.subdomain)
