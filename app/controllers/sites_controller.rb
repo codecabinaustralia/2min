@@ -68,6 +68,14 @@ class SitesController < ApplicationController
 
   def income
 
+    @host = request.host
+    @host = @host.sub(/^www./,'')
+    @found_user = User.where(domain: @host).last
+    if @found_user.present?
+      Apartment::Tenant.switch!(@found_user.subdomain)
+    else
+      redirect_to root_path
+    end  
 
       @site = Site.last
       @color = Color.last
