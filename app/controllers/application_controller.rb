@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
       @host = request.host
       @host = @host.sub(/^www./,'')
       @found_user = User.where(domain: @host).last
-      if @found_user.blank?
+      if @found_user.present?
           redirect_to sites_url(:subdomain => request.subdomain)
+      else
+      	redirect_to root_path
       end   
 	end
 
