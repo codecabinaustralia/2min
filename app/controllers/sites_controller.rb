@@ -67,7 +67,7 @@ class SitesController < ApplicationController
   end
 
   def income
-      
+      @test = request.host
       @site = Site.last
       @color = Color.last
       @profile = PersonalProfile.last
