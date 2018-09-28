@@ -1,5 +1,6 @@
 require 'apartment/elevators/subdomain'
-
+module Apartment
+	module Elevators
 class ActiveWebsite < Subdomain
 	def parse_tenant_name(request)
 		tenant = super(request)
@@ -12,4 +13,6 @@ class ActiveWebsite < Subdomain
 		website = User.find_by(domain: @host)
 		website && website.subdomain
 	end
+end
+end
 end
