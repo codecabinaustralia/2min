@@ -1,9 +1,7 @@
 class StaticController < ApplicationController
   def home
     
-    Apartment::Tenant.switch('gmail') do
-      
-    end
+    Apartment::Tenant.switch!('gmail')
 
     @sites = Site.count
 
