@@ -111,7 +111,7 @@ Rails.application.config.middleware.use Apartment::Elevators::Subdomain, -> (req
 
   if @found_domain.blank?
     @subdomain = request.subdomain
-    @found_subdomain = User.where(subdomain: @host).last
+    @found_subdomain = User.where(subdomain: @subdomain).last
   end
 
   @found_user = @found_subdomain || @found_domain
