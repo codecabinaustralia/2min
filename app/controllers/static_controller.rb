@@ -1,7 +1,7 @@
 class StaticController < ApplicationController
   def home
     
-    Apartment::Tenant.switch('public') do
+    Apartment::Tenant.switch('gmail') do
       
     end
 
