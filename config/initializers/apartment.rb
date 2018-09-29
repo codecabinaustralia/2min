@@ -110,7 +110,7 @@ Rails.application.config.middleware.use Apartment::Elevators::Subdomain, -> (req
   @found_domain = User.where(domain: @host).last
 
   if @found_domain.blank?
-    @subdomain = request.subdomains
+    @subdomain = @host.split('.').first
     @found_subdomain = User.where(subdomain: @subdomain).last
   end
 
