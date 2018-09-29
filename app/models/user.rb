@@ -13,7 +13,6 @@ class User < ApplicationRecord
     Apartment::Tenant.create(subdomain)
     Apartment::Tenant.switch(subdomain) do
     end
-
   end
 
 end
