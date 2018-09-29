@@ -106,10 +106,14 @@ end
 # Rails.application.config.middleware.use Apartment::Elevators::Domain
 Rails.application.config.middleware.use Apartment::Elevators::Subdomain, -> (request) { 
 
-  @found_user = User.where(domain: request.host).last
+  @host = request.host
+  @host = @host
+  @found_user = User.where(domain: @host).last
+
   if @found_user.present?
     Apartment::Tenant.switch!(@found_user.subdomain)
   end
+
 }
 #Rails.application.config.middleware.use Apartment::Elevators::Generic
 
