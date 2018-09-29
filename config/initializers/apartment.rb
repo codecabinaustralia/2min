@@ -107,7 +107,6 @@ end
 Rails.application.config.middleware.use Apartment::Elevators::Subdomain, -> (request) { 
 
   @host = request.host
-  @host = @host.sub(/^www./,'')
   @found_user = User.where(domain: @host).last
 
   if @found_user.present?
