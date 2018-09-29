@@ -1,7 +1,6 @@
 class SitesController < ApplicationController
   before_action :set_site, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
-  force_ssl except: [:income, :show]
   
 
   def create_temp_site
@@ -398,6 +397,9 @@ class SitesController < ApplicationController
   end
 
   private
+    def use_https?
+      false
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_site
       @site = Site.find(params[:id])
