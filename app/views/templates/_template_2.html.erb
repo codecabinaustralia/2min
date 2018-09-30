@@ -257,6 +257,17 @@
 
 	}
 
+	.pedit-nop{
+		transition: all ease 0.3s;
+	}
+	.pedit-nop:hover{
+		border:8px dashed #19935C;
+		position: relative;
+		cursor: pointer;
+		padding: 0;
+
+	}
+
 	</style>
 	<style>
 		<% if @custom.custom_css.present? %>
@@ -337,7 +348,7 @@
 		<% end %>
 			
 			<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-			<div class="t2_dark_overlay pedit">
+			<div class="t2_dark_overlay pedit-nop">
 			<% else %>
 			<div class="t2_dark_overlay">
 			<% end %>
