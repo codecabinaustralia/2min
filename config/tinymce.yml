@@ -6,6 +6,7 @@ default:
 alternate:
   menubar: false
   selector: textarea.table-editor
+  branding: false
   toolbar: styleselect | bold italic | link | alignleft aligncenter alignright | bullist numlist
   plugins:
     - link
