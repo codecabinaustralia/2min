@@ -674,7 +674,7 @@
 					<h2>Contact Us</h2>
 					<h4><a href="tel:<%= @site.phone %>"><i class="fa fa-phone"></i> <%= @site.phone %><br></a> 
 						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to, edit_site_path(@site, :phone => "true"),class: "button large success" do %><i class="fa fa-pencil"></i><% end %></h4>
+							<%= link_to edit_site_path(@site, :phone => "true"),class: "button success" do %><i class="fa fa-pencil"></i><% end %></h4>
 						<% end %>
 					<!-- Map -->
 					<div class="cell small-12" style="margin-top: 40px;">
@@ -687,11 +687,16 @@
 						<%= link_to "EDIT LOCATION DETAILS", edit_site_path(@site, :location => "true"),class: "button large success" %>
 						<% end %>
 						<hr />
-						<small><strong>ABN:</strong> <%= @site.abn %></small>
+						<small><strong>ABN:</strong> <%= @site.abn %> <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<%= link_to edit_site_path(@site, :abn => "true"),class: "button success" do %><i class="fa fa-pencil"></i><% end %>
+						<% end %></small>
 						<p>
 							<% @accreditations.each do |accreditation| %>
 							<small><strong><%= accreditation.name %></strong> <%= accreditation.reference_number %></small><br />
 							<% end %>
+							<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<%= link_to "EDIT LICENCES &amp; ACCREDITATIONS", new_accreditation_and_licence_path,class: "button large success"  %>
+						<% end %>
 						</p>
 					</div>
 				</div>
