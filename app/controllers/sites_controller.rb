@@ -65,10 +65,10 @@ class SitesController < ApplicationController
     list_id = '628a07e4b814c79d71a4699262e5d642'
     email_address = "#{current_user.email}"
     full_name = "Josh Edgar"
-    temporary_password = "Test123"
+    custom_fields = [{'temporary_password' => 'Test123'}]
 
     begin
-      CreateSend::Subscriber.add(auth, list_id, email_address, full_name, [], true, true)
+      CreateSend::Subscriber.add(auth, list_id, email_address, full_name, custom_fields, true, true)
     rescue CreateSend::BadRequest => exception
       fail "could not add #{email_address} code=#{exception.data.Code}"
     end
