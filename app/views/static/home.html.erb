@@ -64,5 +64,9 @@
 	</div>
 </div>
 
+<% if session[:sound_1] == true %>
 <div style="position: absolute; left: -9000px; top:-9000px;">
 <embed src="https://res.cloudinary.com/thypowerhouse/video/upload/v1537563362/2minute/audio/1_homepage.mp3"></div>
+<% end %>
+
+<% session[:sound_1] = true %>
