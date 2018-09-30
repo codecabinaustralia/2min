@@ -32,9 +32,11 @@ Rails.application.routes.draw do
       resources :additional_services
       resources :sites
       resources :template_customs
+      
       resources :domains
-      get 'already_have_domain' => 'domains#already_have_domain'
-      get 'need_domain' => 'domains#need_domain'
+      get 'create_dnssimple_contact' => 'domains#create_dnssimple_contact'
+      get 'purchase_dnssimple_domain' => 'domains#purchase_dnssimple_domain'
+
       get 'income' => 'sites#income'
       get 'create_temp_site' => 'sites#create_temp_site'
       get 'tenant' => 'sites#tenant'

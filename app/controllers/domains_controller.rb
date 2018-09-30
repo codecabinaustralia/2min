@@ -24,19 +24,28 @@ class DomainsController < ApplicationController
   # POST /domains
   # POST /domains.json
   def create
+    #Delete all existing records (Should only ever be one max)
+    @existing_domains = Domain.all
+    @existing_domains.destroy_all
 
-    #Check domain
-    whois = Whois::Client.new
-    record =  whois.lookup("kajsdlkaqqqq.com")
-    parser = record.parser
-
-    puts parser.available?
+    
 
     #Create domain in db
     @domain = Domain.new(domain_params)
 
     respond_to do |format|
       if @domain.save
+
+        #Check domain
+        require 'dnsimple' #ACC ID  
+        client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
+        account_id = 84989
+        response = client.registrar.check_domain(account_id, "#{ @domain.domain_name }")
+
+        if response.premium == true && response.available == true
+          #Find premium price
+        end
+
         format.html { redirect_to @domain, notice: 'Domain was successfully created.' }
         format.json { render :show, status: :created, location: @domain }
       else
@@ -60,10 +69,24 @@ class DomainsController < ApplicationController
     end
   end
 
-  def already_have_domain
-  end
-
-  def need_domain
+  def create_dnssimple_contact
+    #Create an account in simple DNS
+    require 'dnsimple' #ACC ID  
+    client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
+    account_id = 84989
+    client.contacts.create_contact(
+      account_id,
+      first_name: "#{current_user.subdomain}",
+      last_name: "#{current_user.subdomain}",
+      address1: ,
+      city: ,
+      state_province: ,
+      postal_code: ,
+      country: ,
+      email: ,
+      phone: ,
+      fax: ,
+      )
   end
 
   # DELETE /domains/1

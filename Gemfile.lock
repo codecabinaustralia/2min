@@ -96,6 +96,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    dnsimple (4.4.0)
+      httparty
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.1)
@@ -117,6 +119,8 @@ GEM
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     icomoon-rails (0.1.0)
@@ -160,6 +164,7 @@ GEM
     msgpack (1.2.4)
     msgpack (1.2.4-x86-mingw32)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.3.1)
@@ -292,6 +297,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   devise
+  dnsimple (~> 4.0)
   figaro
   font-awesome-rails
   foundation-rails

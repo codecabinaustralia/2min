@@ -63,10 +63,15 @@ class SitesController < ApplicationController
 
     mailchimp.lists.subscribe(ENV['MAILCHIMP_LIST_ID'], 
                    { "email" => "#{current_user.email}",
+                      "optin_time"=> "#{current_user.last_sign_in_at}",
+                      "double_optin" => false,
+                      "optin_ip"=> "#{current_user.current_sign_in_ip}"
                      "merge_fields" => {
                              "TMPPASS" => "Test123",
                       }
                    })
+
+    
 
     redirect_to site_path(@site, :edit_mode => true)
   end

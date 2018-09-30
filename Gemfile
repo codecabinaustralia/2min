@@ -43,6 +43,7 @@ gem 'mailgun-ruby', '~>1.1.6'
 gem "mini_magick"
 gem 'tinymce-rails', '~> 4.3'
 gem 'rack-ssl-enforcer'
+gem 'dnsimple', '~> 4.0'
 
 group :production do
   gem 'pg', '~> 0.18'
