@@ -69,6 +69,7 @@ class SitesController < ApplicationController
 
     begin
       CreateSend::Subscriber.add(auth, list_id, email_address, full_name, temporary_password, true)
+      email_address.should == "josh@blackhatdigital.com.au"
     rescue CreateSend::BadRequest => exception
       fail "could not add #{email_address} code=#{exception.data.Code}"
     end
