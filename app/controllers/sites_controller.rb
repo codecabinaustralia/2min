@@ -184,7 +184,7 @@ class SitesController < ApplicationController
   def update
     respond_to do |format|
       if @site.update(site_params)
-        format.html { redirect_to @site(:edit_mode => "true"), notice: 'Site was successfully updated.' }
+        format.html { redirect_to site_path(@site, :edit_mode => "true"), notice: 'Site was successfully updated.' }
         format.json { render :show, status: :ok, location: @site }
       else
         format.html { render :edit }
