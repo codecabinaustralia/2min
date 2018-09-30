@@ -61,7 +61,7 @@ class SitesController < ApplicationController
 
     AgileCRMWrapper.configure do |config|
       config.api_key = 'kcpdal8br1cdm2floo8ct69o5m'
-      config.domain = 'twomin.agilecrm.com'
+      config.domain = 'twomin'
       config.email = 'josh@codecabin.com.au'
     end
 
