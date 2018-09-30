@@ -61,14 +61,14 @@ class SitesController < ApplicationController
 
     require 'createsend'
 
-    auth = {api_key: ENV['CAMPAIGN_MONITOR_API']}
+    auth = {api_key: 'TINzqYQj7v//enQnIw2gMVX4uUPHQh7w/9Mhn0LD4PWL4Wr5EixHYhQWiqp/U1hUkjZ6859ak0/5glG6C54a7Dy2iuNiEjO5IBplwL81VLNQQ8Xp7Sa0bh2Chhk01jWqwPZOJUhIQMbiJXx5ZhvoTw=='}
     list_id = '628a07e4b814c79d71a4699262e5d642'
     email_address = "#{current_user.email}"
     full_name = "Josh Edgar"
     temporary_password = "Test123"
 
     begin
-      CreateSend::Subscriber.add(auth, list_id, email_address, full_name, [], true, true)
+      CreateSend::Subscriber.add(auth, list_id, email_address, full_name, [], true)
     rescue CreateSend::BadRequest => exception
       fail "could not add #{email_address} code=#{exception.data.Code}"
     end
