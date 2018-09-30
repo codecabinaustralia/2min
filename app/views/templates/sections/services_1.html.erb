@@ -1,0 +1,48 @@
+<div class="t_2_services" id="services" style="background-color: #1e1e1e;">
+			<div class="t2_services_dark_overlay">
+				<div class="grid-container">
+					<div class="grid-x">
+						<div class="cell small-12 medium-6">
+							<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<div class="t_2_quote_square pedit">
+							<% else %>
+							<div class="t_2_quote_square">
+							<% end %>
+							
+								<h2><span><%= @custom.quotebox_1_subtxt %></span></h2>
+								<h2><%= @custom.quotebox_1_primarytxt %></h2>
+								<a href="#contact" class="primary button large" style="border: 2px solid white; background-color: rgba(0,0,0,0);"><%= @custom.quotebox_1_btntxt %></a>
+								<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+									<%= link_to "EDIT QUOTE BOX", edit_template_custom_path(@custom, quotebox_1: "true"), class: "button large success" %>
+								<% end %>
+							</div>
+
+					
+						</div>
+						<div class="cell small-12 medium-6">
+							<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<div class="t_2_services_box pedit" style="min-height: 400px;">
+							<% else %>
+							<div class="t_2_services_box" style="min-height: 400px;">
+							<% end %>
+							
+								<h2><%= @custom.services_1_primarytxt %></h2>
+								<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+								<%= link_to "EDIT SERVICES", new_additional_service_path, class: "button large success" %>
+								<% end %>
+								<ul>
+								<% @additional_services.each do |service| %>
+									<li><%= service.title %></li>
+								<% end %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid-container">
+			<div class="grid-x">
+				<div class="cell small-12 medium-offset-6 medium-6 t_2_services_fake_box"></div>
+			</div>
+		</div>

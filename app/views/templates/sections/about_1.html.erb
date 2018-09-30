@@ -1,0 +1,37 @@
+<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+		<div class="t2_about_us pedit" id="about">
+		<% else %>
+		<div class="t2_about_us" id="about">
+		<% end %>
+		
+			<div class="grid-container">
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-12 medium-3 show-for-medium">
+						<% if @custom.about_1_img1.attached? %>
+							<%= image_tag @custom.about_1_img1.variant(quality: "70") %>
+						<% else %>
+						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388531/templates/davinci/1_JCF9098-1011x675.jpg">
+						<% end %>
+						<% if @custom.about_1_img2.attached? %>
+							<%= image_tag @custom.about_1_img2.variant(quality: "70") %>
+						<% else %>
+						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388518/templates/davinci/1_JCF5419-1012x675.jpg">
+						<% end %>
+						<% if @custom.about_1_img3.attached? %>
+							<%= image_tag @custom.about_1_img3.variant(quality: "70") %>
+						<% else %>
+						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388555/templates/davinci/1_JCF8252-1162x675.jpg">
+						<% end %>
+
+					</div>
+					<div class="cell small-12 medium-9 small-text-center">
+						<h2><span><%= @custom.about_1_subtxt %></span></h2>
+						<h2><%= @custom.about_1_primarytxt %></h2>
+						<p><%= @custom.about_1_txt.html_safe %></p>
+						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+							<%= link_to "EDIT ABOUT US", edit_template_custom_path(@custom, about_1: "true"), class: "button large success" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>

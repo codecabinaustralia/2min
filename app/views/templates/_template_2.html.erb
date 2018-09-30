@@ -1,4 +1,4 @@
-
+	<!-- Style Tags -->
 	<style>
 	.t_2_header{
 	   min-height: 500px;
@@ -269,442 +269,43 @@
 	}
 
 	</style>
+
 	<style>
 		<% if @custom.custom_css.present? %>
 		<%= @custom.custom_css.html_safe %>
 		<% end %>
 	</style>
+
+	<!-- Title Tags -->
 	<% content_for :title, "#{@site.user.subdomain} - #{@site.home_town}" %>
-
-	<div class="t_2_cta_bar">
-		<div class="grid-x">
-			<div class="cell small-12 text-right">
-				<a href="tel:<%= @site.phone %>" style="color: white;"><i class="fa fa-phone"></i> <%= @site.phone %></a><a href="mail_to: <%= @site.user.email %>" style="color: white;"> <i class="fa fa-envelope"></i> <%= @site.user.email %></a>
-			</div>
-		</div>
-	</div>
-
-	<div class="t_2_top_menu" data-smooth-scroll="" >
-		<div class="grid-x grid-margin-x">
-			<div class="cell small-12 text-center logo" style="padding-top: 20px;">	
-				<% if @intro.logo.attached? %>
-					<%= image_tag @intro.logo.variant(quality: "70"), width: '380' %>
-					<% else %>
-					  <div class="temp-logo text-center">
-					    <div class="company-letter-logo" style="margin:auto; background-color: <%= @color.color_1 %>">
-					      <div class="company-letter-logo-inner"><%= @company_name.split(//).first%></div>
-					    </div>
-					    <div class="company-name-logo" style="color: <%= @color.color_1 %>"><%= @company_name %></div> 
-					  </div>
-				<% end %>
-			</div>
-			<div class="cell medium-8 medium-offset-2 show-for-medium" style="margin-top:-40px;">
-				<div class="menu-centered">
-				<ul class="menu">
-					<li>
-						<a href="#services">Services</a>
-					</li>
-					<li>
-						<a href="#about">About Us</a>
-					</li>
-					<li>
-						<a href="#work">Our Work</a>
-					</li>
-					<li>
-						<a href="#contact">Contact Us</a>
-					</li>
-				</ul>
-				</div>
-			</div>
-		</div>
-		
-	</div>
 	
-	<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-	<div class="edit-site-logo" style="background-color: white;">
-		<div class="grid-x">
-			<div class="cell small-12 medium-6 medium-offset-3">
-				<div class="grid-x grid-margin-x">
-					<div class="cell small-12 medium-4 text-center">
-						<%= link_to "EDIT SETTINGS", edit_site_path(@site, :company_name => "true"), class: "button success expanded" %>
-					</div>
-					<div class="cell small-12 medium-4 text-center">
-						<%= link_to "EDIT LOGO", edit_intro_path(@intro), class: "button success expanded" %>
-					</div>
-					<div class="cell small-12 medium-4 text-center">
-						<%= link_to "EDIT COLORS", edit_color_path(@color), class: "button success expanded" %>
-					</div>
-				</div>
-			</div>
-		</div>
+	<!-- Start Body -->
+	<!-- Topbar -->
+	<%= render 'templates/sections/topbar-1' %>
+	<!-- Primary Menu -->
+	<%= render 'templates/sections/topmenu-1' %>
+	<!-- Background Container -->
+	<div class="t_2_white_bg">
+		<!-- Header Image -->
+		<%= render 'templates/sections/header_image_1' %>
+		<!-- Quote Bar -->
+		<%= render 'templates/sections/quotebar_1' %>
+		<!-- Intro Text Right 1 -->
+		<%= render 'templates/sections/intro_txtright_1' %>
+		<!-- Intro Text Left 1 -->
+		<%= render 'templates/sections/intro_txtleft_1' %>
+		<!-- Services 1 -->
+		<%= render 'templates/sections/services_1' %>
+		<!-- Portfolio -->
+		<%= render 'templates/sections/portfolio_1' %>
+		<!-- About Us -->
+		<%= render 'templates/sections/about_1' %>
+		<!-- Reviews -->
+		<%= render 'templates/sections/reviews_1' %>
 	</div>
-	<% end %>
-	
-		<div class="t_2_white_bg">
-		<% if @custom.header_1_img.attached? %>
-			<div  class="t_2_header" style="background-image: url('<%= url_for(@custom.header_1_img) %>'); background-size: cover;">
-		<% else %>
-		<div class="t_2_header" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
-		<% end %>
-			
-			<div class="t2_dark_overlay">
-				<div class="grid-x grid-padding-x">
-					<div class="cell small-12 medium-6 medium-offset-6">
-						<h1><span><%= @custom.header_1_subtxt %></span></h1>
-						<h1><%= @custom.header_1_primarytxt %></h1><a class="button large primary" style="border: 2px solid white; background-color: rgba(0,0,0,0);" href="#services"><%= @custom.header_1_btntxt %></a>
-						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to "EDIT HEADER", edit_template_custom_path(@custom, header_1: "true"), class: "button large success" %>
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-		<div class="t_2_quote pedit">
-		<% else %>
-		<div class="t_2_quote">
-		<% end %>
-			<div class="grid-x">
-				
-				<div class="cell small-12 medium-6 medium-offset-3 text-center">
-				
-					<span><%= @custom.quotebar_1_subtxt %></span><br>
-					<h2><%= @custom.quote_bar_primarytxt %></h2><a href="#contact" class="primary button large" style="border: 2px solid white; background-color: rgba(0,0,0,0);"><%= @custom.quote_bar_btntxt %></a>
-					<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-						<%= link_to "EDIT QUOTE BAR", edit_template_custom_path(@custom, quote_bar_1: "true"), class: "button large success" %>
-					<% end %>
-				</div>
-			</div>
-		</div>
-		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-		<div class="t_2_intro pedit">
-		<% else %>
-		<div class="t_2_intro">
-		<% end %>
-			<div class="grid-container">
-				<div class="grid-x grid-margin-x">
-					<div class="cell small-12 medium-6" style="padding-top: 32px;">
-						<div class="grid-x grid-margin-x">
-							<div class="cell small-6 medium-12">
-								<% if @custom.content_6col_leftimg1.attached? %>
-									<%= image_tag @custom.content_6col_leftimg1.variant(quality: "70") %>
-									<% else %>
-								<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537386293/templates/davinci/carousel_about_6_new.jpg">
-								<% end %>
-							</div>
-							
-							<div class="cell small-6 medium-12">
-								<% if @custom.content_6col_leftimg2.attached? %>
-										<%= image_tag @custom.content_6col_leftimg2.variant(quality: "70") %>
-										<% else %>
-								<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537386279/templates/davinci/carousel_about_3_new.jpg">
-								<% end %>
-							</div>
-						</div>
-					</div>
-					<div class="cell small-12 medium-6">
-						<h2><span><%= @custom.content_6col_rightsubtxt %></span></h2>
-						<h2><%= @custom.content_6col_rightprimarytxt %></h2>
-						<div class="t2_line"></div>
-						<p><%= @custom.content_6col_righttxt.html_safe %></p>
-						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to "EDIT THIS SECTION", edit_template_custom_path(@custom, six_col_righttxt: "true"), class: "button large success" %>
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-		<div class="t_2_intro pedit">
-		<% else %>
-		<div class="t_2_intro">
-		<% end %>
-			<div class="grid-container">
-				<div class="grid-x grid-margin-x">
-					<div class="cell small-12 medium-6">
-						<h2><span><%= @custom.content_6col_leftsubtxt %></span></h2>
-						<h2><%= @custom.content_6col_leftprimarytxt %></h2>
-						<div class="t2_line"></div>
-						<%= @custom.content_6col_lefttxt.html_safe %>
-						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to "EDIT THIS SECTION", edit_template_custom_path(@custom, six_col_lefttxt: "true"), class: "button large success" %>
-						<% end %>
-					</div>
-					<div class="cell small-12 medium-6" style="padding-top: 32px;">
-						<div class="grid-x grid-margin-x">
-							<div class="cell small-6 medium-12" >
-								<% if @custom.content_6col_rightimg1.attached? %>
-										<%= image_tag @custom.content_6col_rightimg1.variant(quality: "70") %>
-										<% else %>
-										<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387083/templates/davinci/carousel_about_4.jpg">
-										<% end %>
-									</div>
-							<div class="cell small-6 medium-12">
-								<% if @custom.content_6col_rightimg2.attached? %>
-									<%= image_tag @custom.content_6col_rightimg2.variant(quality: "70") %>
-								<% else %>
-									<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537387092/templates/davinci/carousel_about_5.jpg">
-								<% end %>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div class="t_2_services" id="services" style="background-color: #1e1e1e;">
-			<div class="t2_services_dark_overlay">
-				<div class="grid-container">
-					<div class="grid-x">
-						<div class="cell small-12 medium-6">
-							<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<div class="t_2_quote_square pedit">
-							<% else %>
-							<div class="t_2_quote_square">
-							<% end %>
-							
-								<h2><span><%= @custom.quotebox_1_subtxt %></span></h2>
-								<h2><%= @custom.quotebox_1_primarytxt %></h2>
-								<a href="#contact" class="primary button large" style="border: 2px solid white; background-color: rgba(0,0,0,0);"><%= @custom.quotebox_1_btntxt %></a>
-								<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-									<%= link_to "EDIT QUOTE BOX", edit_template_custom_path(@custom, quotebox_1: "true"), class: "button large success" %>
-								<% end %>
-							</div>
-
-					
-						</div>
-						<div class="cell small-12 medium-6">
-							<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<div class="t_2_services_box pedit" style="min-height: 400px;">
-							<% else %>
-							<div class="t_2_services_box" style="min-height: 400px;">
-							<% end %>
-							
-								<h2><%= @custom.services_1_primarytxt %></h2>
-								<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-								<%= link_to "EDIT SERVICES", new_additional_service_path, class: "button large success" %>
-								<% end %>
-								<ul>
-								<% @additional_services.each do |service| %>
-									<li><%= service.title %></li>
-								<% end %>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-container">
-			<div class="grid-x">
-				<div class="cell small-12 medium-offset-6 medium-6 t_2_services_fake_box"></div>
-			</div>
-		</div>
-
-		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-		<div class="t2_portfolio pedit" id="work">
-		<% else %>
-		<div class="t2_portfolio" id="work">
-		<% end %>
-		
-			<div class="grid-container">
-				<div class="grid-x">
-					<div class="cell small-12">
-						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-						<%= link_to "EDIT OUR WORK", new_portfolio_path, class: "button large success" %>
-						<% end %>
-
-						<div aria-label="Favorite Space Pictures" class="orbit" data-orbit="" role="region">
-							<div class="orbit-wrapper">
-								<div class="orbit-controls">
-									<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button> <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-								</div>
-								<ul class="orbit-container">
-									<% if @portfolios.present? %>
-										<% @portfolios.each do |portfolio| %>
-												<li class="orbit-slide">
-													<figure class="orbit-figure">
-														<%= image_tag portfolio.image.variant(quality: "70") %>
-													</figure>
-												</li>
-										<% end %>
-									<% else %>
-									<li class="is-active orbit-slide">
-										<figure class="orbit-figure">
-											<img alt="Space" class="orbit-image" src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537389008/templates/davinci/2_JCF7636-3-1005x675.jpg">
-											<figcaption class="orbit-caption">
-												One of our finest works.
-											</figcaption>
-										</figure>
-									</li>
-									<li class="orbit-slide">
-										<figure class="orbit-figure">
-											<img alt="Space" class="orbit-image" src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537389151/templates/davinci/3_TDOxGeorgeClarkeHR-56-1013x675.jpg">
-											<figcaption class="orbit-caption">
-												Let metake a selfie
-											</figcaption>
-										</figure>
-									</li>
-									<li class="orbit-slide">
-										<figure class="orbit-figure">
-											<img alt="Space" class="orbit-image" src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537389175/templates/davinci/5_JCF8124-3-1011x675.jpg">
-											<figcaption class="orbit-caption">
-												Encapsulating
-											</figcaption>
-										</figure>
-									</li>
-									<% end %>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-		<div class="t2_about_us pedit" id="about">
-		<% else %>
-		<div class="t2_about_us" id="about">
-		<% end %>
-		
-			<div class="grid-container">
-				<div class="grid-x grid-margin-x">
-					<div class="cell small-12 medium-3 show-for-medium">
-						<% if @custom.about_1_img1.attached? %>
-							<%= image_tag @custom.about_1_img1.variant(quality: "70") %>
-						<% else %>
-						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388531/templates/davinci/1_JCF9098-1011x675.jpg">
-						<% end %>
-						<% if @custom.about_1_img2.attached? %>
-							<%= image_tag @custom.about_1_img2.variant(quality: "70") %>
-						<% else %>
-						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388518/templates/davinci/1_JCF5419-1012x675.jpg">
-						<% end %>
-						<% if @custom.about_1_img3.attached? %>
-							<%= image_tag @custom.about_1_img3.variant(quality: "70") %>
-						<% else %>
-						<img src="https://res.cloudinary.com/thypowerhouse/image/upload/v1537388555/templates/davinci/1_JCF8252-1162x675.jpg">
-						<% end %>
-
-					</div>
-					<div class="cell small-12 medium-9 small-text-center">
-						<h2><span><%= @custom.about_1_subtxt %></span></h2>
-						<h2><%= @custom.about_1_primarytxt %></h2>
-						<p><%= @custom.about_1_txt.html_safe %></p>
-						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to "EDIT ABOUT US", edit_template_custom_path(@custom, about_1: "true"), class: "button large success" %>
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="t2_reviews" style="margin-bottom: 20px">
-			<!-- Reviews Panel -->
-			
-			<div class="grid-container">
-				<% if @reviews.blank? && !user_signed_in? || @reviews.blank? && params[:edit_mode] != "true" %>
-				<% else %>
-
-					<% if user_signed_in? && @reviews.blank? && current_user.id == @site.user_id %>
-					<div class="grid-container" style="margin-top:70px;">
-						<div class="text-center">
-							<h2>You have 0 Reviews - add some!</h2>
-							<%= link_to "ADD REVIEWS", new_review_path, class: "button large success" %>
-						</div>
-					</div>
-					<% elsif @reviews.present? %>
-					<div class="grid-container" style="margin-top:70px;">
-						<div class="text-center">
-							<h2>Reviews
-							 <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-								<%=link_to reviews_path do %>
-									<span class="button success" style=" font-size: 16px;">
-										<i class="fas fa-pencil-alt  " ></i> Manage Reviews
-									</span>
-								<% end %>
-							<% end %>
-							</h2> 
-						</div>
-						<div class="site-reviews-inner">
-								
-									<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-									  <div class="orbit-wrapper">
-									    <div class="orbit-controls">
-									      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-									      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-									    </div>
-									    <ul class="orbit-container">
-									      <% @reviews.each do |review| %>
-									      <li class="orbit-slide review-content">
-									        <figure class="orbit-figure">
-									          <p><%= review.content %></p>
-									          <i class="fa fa-star" style="color: #ffc700"></i>
-									          <i class="fa fa-star" style="color: #ffc700"></i>
-									          <i class="fa fa-star" style="color: #ffc700"></i>
-									          <i class="fa fa-star" style="color: #ffc700"></i>
-									          <i class="fa fa-star" style="color: #ffc700"></i>
-									          <i> <%= review.name %></i>
-									        </figure>
-									      </li>
-									      <% end %>
-									    
-									    </ul>
-									  </div>
-									  
-									</div>
-						</div>
-					</div>
-					<% end %>
-				<% end %>
-
-			</div>
-		</div>
-
-	</div>
+	<!-- Contact -->
+	<%= render 'templates/sections/contact_1' %>
 	
 
-	<div class="t2_contact" id="contact">	
-		<div class="grid-container">
-			<div class="grid-x grid-margin-x">
-				<div class="cell small-12 medium-6">
-					<h2>Contact Us</h2>
-					<h4><a href="tel:<%= @site.phone %>"><i class="fa fa-phone"></i> <%= @site.phone %><br></a> 
-						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to edit_site_path(@site, :phone => "true"),class: "button small success" do %><i class="fas fa-pencil-alt"></i> Edit Phone Number<% end %></h4>
-						<% end %>
-					<!-- Map -->
-					<div class="cell small-12" style="margin-top: 40px;">
-						<h4>We service all <%= @site.home_town %> locations</h4>
-						<p style="font-size: 14px; font-weight: normal;"><%= @site.location_text %></p>
-						<div class="map-responsive" style="margin-bottom: 10px">
-							<iframe allowfullscreen frameborder="0" height="650" src="https://maps.google.com/maps?q=<%= @site.home_town %>=&z=13&ie=UTF8&iwloc=&output=embed" style="border:0" width="1920"></iframe>
-						</div>
-						<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-						<%= link_to "EDIT LOCATION DETAILS", edit_site_path(@site, :location => "true"),class: "button success" %>
-						<% end %>
-						<hr />
-						<small style="font-size: 12px; color: #a0a0a0; font-weight: normal;"><strong>ABN:</strong> <%= @site.abn %> <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to edit_site_path(@site, :abn_number => "true"), class: "button small success" do %><i class="fas fa-pencil-alt"></i><% end %>
-						<% end %></small>
-						<p><h4 style="font-size: 14px;">LICENCES & ACCREDITATIONS</h4>
-							<% @accreditations.each do |accreditation| %>
-							<small style="font-size: 12px; color: #a0a0a0; font-weight: normal;"><strong><%= accreditation.name %></strong> <%= accreditation.reference_number %></small><br />
-							<% end %>
-							
-							<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to "EDIT LICENCES & ACCREDITATIONS", new_accreditation_and_licence_path,class: "button success"  %>
-						<% end %>
-						</p>
-					</div>
-				</div>
-				<div class="cell small-12 medium-6">
-					<h4>Request a quote</h4>
-					<%= render 'messages/form', message: @message, color: @color %>
-				</div>
-			</div>
-		</div>
-	</div>
+	
