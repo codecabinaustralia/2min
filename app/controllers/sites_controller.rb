@@ -62,7 +62,7 @@ class SitesController < ApplicationController
     require 'createsend'
 
     auth = {api_key: ENV['CAMPAIGN_MONITOR_API']}
-    list_id = '5B2D9CF70E4D26AE'
+    list_id = '628a07e4b814c79d71a4699262e5d642'
     email, name, temporary_password = current_user.email, 'Alice', 'Test123'
     begin
       CreateSend::Subscriber.add(auth, list_id, email, name, temporary_password, [], false)
