@@ -29,7 +29,7 @@
 
             <% if params[:company_name] == "true" %>
             <div class="field">
-              <%= form.text_field :company_name, value: session[:company] %>
+              <%= form.text_field :company_name, value: session[:company], placeholder: "What's Your Company Name" %>
             </div>
             <% end %>
             <% if params[:abn_number] == "true" %>
