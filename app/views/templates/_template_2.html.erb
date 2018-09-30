@@ -658,12 +658,8 @@
 
 	</div>
 	
-	<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-	<div class="t2_contact pedit" id="contact">
-	<% else %>
-	<div class="t2_contact" id="contact">
-	<% end %>
-	
+
+	<div class="t2_contact" id="contact">	
 		<div class="grid-container">
 			<div class="grid-x grid-margin-x">
 				<div class="cell small-12 medium-6">
