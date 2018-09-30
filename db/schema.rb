@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_30_021126) do
+ActiveRecord::Schema.define(version: 2018_09_30_042930) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 2018_09_30_021126) do
     t.integer "template_id"
     t.string "template_name"
     t.text "custom_css"
+    t.text "location_text"
     t.index ["template_id"], name: "index_sites_on_template_id"
     t.index ["trade_id"], name: "index_sites_on_trade_id"
     t.index ["user_id"], name: "index_sites_on_user_id"
