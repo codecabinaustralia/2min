@@ -397,9 +397,7 @@ class SitesController < ApplicationController
   end
 
   private
-    def use_https?
-      false
-    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_site
       @site = Site.find(params[:id])
