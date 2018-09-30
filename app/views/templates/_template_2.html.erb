@@ -679,7 +679,7 @@
 					<!-- Map -->
 					<div class="cell small-12" style="margin-top: 40px;">
 						<h4>We service all <%= @site.home_town %> locations</h4>
-						<p><%= @site.location_text %></p>
+						<p style="font-size: 14px; font-weight: normal;"><%= @site.location_text %></p>
 						<div class="map-responsive" style="margin-bottom: 10px">
 							<iframe allowfullscreen frameborder="0" height="650" src="https://maps.google.com/maps?q=<%= @site.home_town %>=&z=13&ie=UTF8&iwloc=&output=embed" style="border:0" width="1920"></iframe>
 						</div>
@@ -687,14 +687,14 @@
 						<%= link_to "EDIT LOCATION DETAILS", edit_site_path(@site, :location => "true"),class: "button success" %>
 						<% end %>
 						<hr />
-						<small><strong>ABN:</strong> <%= @site.abn %> <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+						<small style="font-size: 12px; font-weight: normal;"><strong>ABN:</strong> <%= @site.abn %> <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 							<%= link_to edit_site_path(@site, :abn_number => "true"), class: "button small success" do %><i class="fas fa-pencil-alt"></i><% end %>
 						<% end %></small>
-						<p>
+						<p><h4>LICENCES & ACCREDITATIONS</h4>
 							<% @accreditations.each do |accreditation| %>
-							<small><strong><%= accreditation.name %></strong> <%= accreditation.reference_number %></small><br />
+							<small style="font-size: 12px; font-weight: normal;"><strong><%= accreditation.name %></strong> <%= accreditation.reference_number %></small><br />
 							<% end %>
-							<h4>LICENCES & ACCREDITATIONS</h4>
+							
 							<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 							<%= link_to "EDIT LICENCES & ACCREDITATIONS", new_accreditation_and_licence_path,class: "button success"  %>
 						<% end %>
