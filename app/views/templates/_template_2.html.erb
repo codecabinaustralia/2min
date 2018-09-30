@@ -248,7 +248,9 @@
 
 	</style>
 	<style>
+		<% if @custom.custom_css.present? %>
 		<%= @custom.custom_css.html_safe %>
+		<% end %>
 	</style>
 	<% content_for :title, "#{@site.user.subdomain} - #{@site.home_town}" %>
 
