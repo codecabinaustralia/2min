@@ -31,7 +31,7 @@ class SitesController < ApplicationController
       company_name: session[:company],
       template_name: session[:template_name],
       home_town: "Sydney",
-      location_text: "We service all areas of Sydney and surroundingsuburbs. Call now and see if we can service your area."
+      location_text: "We service all areas of Sydney and surrounding suburbs. Call now and see if we can service your area.",
       phone: "0400 000 000",
       user_id: current_user.id
       )
