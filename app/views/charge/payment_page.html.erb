@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div>  
   <div class="grid-x">
     <div class="cell small-12 medium-4 medium-offset-4 inner-form">
@@ -52,7 +53,14 @@
     </div>
   </div>
 </div>
+<% end %>
 
+<% if session[:sound_6].blank? && user_signed_in? %>
 <div style="position: absolute; left: -9000px; top:-9000px;">
 <embed src="https://res.cloudinary.com/thypowerhouse/video/upload/v1537563365/2minute/audio/6_payment.mp3">
 </div>
+
+<% end %>
+
+<% session[:sound_6] = true %>
+

@@ -32,6 +32,12 @@
 </div>
 </div>
 
+
+<% if session[:sound_2].blank? %>
 <div style="position: absolute; left: -9000px; top:-9000px;">
 <embed src="https://res.cloudinary.com/thypowerhouse/video/upload/v1537563363/2minute/audio/2_template.mp3">
 </div>
+<% end %>
+
+<% session[:sound_2] = true %>
+
