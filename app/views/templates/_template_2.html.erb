@@ -688,7 +688,7 @@
 						<% end %>
 						<hr />
 						<small><strong>ABN:</strong> <%= @site.abn %> <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-							<%= link_to edit_site_path(@site, :abn => "true"),class: "button small success" do %><i class="fas fa-pencil-alt"></i><% end %>
+							<%= link_to edit_site_path(@site, :abn_number => "true"), class: "button small success" do %><i class="fas fa-pencil-alt"></i><% end %>
 						<% end %></small>
 						<p>
 							<% @accreditations.each do |accreditation| %>
