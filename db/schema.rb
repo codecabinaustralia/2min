@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_033122) do
+ActiveRecord::Schema.define(version: 2018_09_30_021126) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -165,9 +165,22 @@ ActiveRecord::Schema.define(version: 2018_09_20_033122) do
     t.string "site_name"
     t.integer "template_id"
     t.string "template_name"
+    t.text "custom_css"
     t.index ["template_id"], name: "index_sites_on_template_id"
     t.index ["trade_id"], name: "index_sites_on_trade_id"
     t.index ["user_id"], name: "index_sites_on_user_id"
+  end
+
+  create_table "sound_clips", force: :cascade do |t|
+    t.boolean "home"
+    t.boolean "templates"
+    t.boolean "template_preview"
+    t.boolean "email"
+    t.boolean "site_show"
+    t.boolean "payment"
+    t.boolean "domain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "template_customs", force: :cascade do |t|
@@ -200,6 +213,7 @@ ActiveRecord::Schema.define(version: 2018_09_20_033122) do
     t.text "about_1_txt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "custom_css"
   end
 
   create_table "templates", force: :cascade do |t|
@@ -233,6 +247,7 @@ ActiveRecord::Schema.define(version: 2018_09_20_033122) do
     t.string "subdomain"
     t.string "domain"
     t.string "stripe_customer_id"
+    t.boolean "admin"
     t.index ["email", "subdomain"], name: "index_users_on_email_and_subdomain", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

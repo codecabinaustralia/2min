@@ -3,8 +3,14 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :redirect_subdomain
 	before_action :https_redirect
+	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	protected
+
+		def configure_permitted_parameters
+		    devise_parameter_sanitizer.permit(:sign_up, keys: [:admin])
+		    devise_parameter_sanitizer.permit(:account_update, keys: [:admin])
+		  end
 
 		def https_redirect
 			if ENV["ENABLE_HTTPS"] == "yes"

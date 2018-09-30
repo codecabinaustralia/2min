@@ -247,7 +247,9 @@
 	}
 
 	</style>
-
+	<style>
+		<%= @custom.custom_css.html_safe %>
+	</style>
 	<% content_for :title, "#{@site.user.subdomain} - #{@site.home_town}" %>
 
 	<div class="t_2_cta_bar">

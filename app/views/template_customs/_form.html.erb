@@ -161,7 +161,13 @@
     <%= form.text_area :about_1_txt, :class => "tinymce", :rows => 8 %>
   </div>
   <% end %>
-
+  
+  <% if current_user.admin? && params[:about_1] == "true"%>
+  <div class="field">
+    <%= form.text_area :custom_css, :rows => 20 %>
+  </div>
+  <% end %>
+  
   <div class="actions" style="margin-top: 20px;">
     <%= form.submit "SAVE", class: "button large success" %>
   </div>

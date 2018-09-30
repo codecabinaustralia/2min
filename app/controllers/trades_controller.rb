@@ -1,9 +1,13 @@
 class TradesController < ApplicationController
   before_action :set_trade, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /trades
   # GET /trades.json
   def index
+    if !current_user.admin?
+      redirect_to site_path(Site.last)
+    end
     @trades = Trade.all
   end
 

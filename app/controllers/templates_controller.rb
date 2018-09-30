@@ -1,6 +1,6 @@
 class TemplatesController < ApplicationController
   before_action :set_template, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only:[:new, :edit, :update, :destroy]
   # GET /templates
   # GET /templates.json
   def index
@@ -16,16 +16,25 @@ class TemplatesController < ApplicationController
 
   # GET /templates/new
   def new
+    if current_user.admin?
     @template = Template.new
+    else
+      redirect_to site_path(Site.last)
+    end
+    
   end
 
   # GET /templates/1/edit
   def edit
+    if !current_user.admin?
+      redirect_to site_path(Site.last)
+    end
   end
 
   # POST /templates
   # POST /templates.json
   def create
+    
     @template = Template.new(template_params)
 
     respond_to do |format|

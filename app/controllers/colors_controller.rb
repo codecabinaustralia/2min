@@ -4,7 +4,11 @@ class ColorsController < ApplicationController
   # GET /colors
   # GET /colors.json
   def index
+    if current_user.admin?
     @colors = Color.all
+    else
+      redirect_to site_path(Site.last)
+    end
   end
 
   # GET /colors/1
