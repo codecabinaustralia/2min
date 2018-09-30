@@ -249,7 +249,7 @@
 	.page-edit-hover{
 		transition: all ease 0.2s;
 	}
-	.page-edit-hover:hover{
+	.pedit:hover{
 		border:5px solid #0088F1;
 		position: relative;
 		background-color: #e5e5e5; 
@@ -332,21 +332,16 @@
 	
 		<div class="t_2_white_bg">
 		<% if @custom.header_1_img.attached? %>
-			<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-				<div  class="t_2_header page-edit-hover" style="background-image: url('<%= url_for(@custom.header_1_img) %>'); background-size: cover;">
-			<% else %>
 			<div  class="t_2_header" style="background-image: url('<%= url_for(@custom.header_1_img) %>'); background-size: cover;">
-			<% end %>
-		<% else %>
-		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-		<div class="t_2_header page-edit-hover" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
 		<% else %>
 		<div class="t_2_header" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
-
 		<% end %>
-		<% end %>
-
+			
+			<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+			<div class="t2_dark_overlay pedit">
+			<% else %>
 			<div class="t2_dark_overlay">
+			<% end %>
 				<div class="grid-x grid-padding-x">
 					<div class="cell small-12 medium-6 medium-offset-6">
 						<h1><span><%= @custom.header_1_subtxt %></span></h1>
@@ -358,9 +353,15 @@
 				</div>
 			</div>
 		</div>
+		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+		<div class="t_2_quote pedit">
+		<% else %>
 		<div class="t_2_quote">
+		<% end %>
 			<div class="grid-x">
+				
 				<div class="cell small-12 medium-6 medium-offset-3 text-center">
+				
 					<span><%= @custom.quotebar_1_subtxt %></span><br>
 					<h2><%= @custom.quote_bar_primarytxt %></h2><a href="#contact" class="primary button large" style="border: 2px solid white; background-color: rgba(0,0,0,0);"><%= @custom.quote_bar_btntxt %></a>
 					<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
