@@ -57,19 +57,18 @@ class SitesController < ApplicationController
       )
     @intro.save
 
-    #AGILE
+    #CAMPAIGN SEND
 
-    AgileCRMWrapper.configure do |config|
-      config.api_key = 'kcpdal8br1cdm2floo8ct69o5m'
-      config.domain = 'twomin'
-      config.email = 'josh@codecabin.com.au'
+    require 'createsend'
+
+    auth = {api_key: ENV['CAMPAIGN_MONITOR_API']}
+    list_id = '5B2D9CF70E4D26AE'
+    email, name, temporary_password = current_user.email, 'Alice', 'Test123'
+    begin
+      CreateSend::Subscriber.add(auth, list_id, email, name, temporary_password, [], false)
+    rescue CreateSend::BadRequest => exception
+      fail "could not add #{email} code=#{exception.data.Code}"
     end
-
-    AgileCRMWrapper::Contact.create(
-      tags: ["new_lead"],
-      email: "#{current_user.email}",
-      initial_password: "Test123"
-    )
 
     redirect_to site_path(@site, :edit_mode => true)
   end
