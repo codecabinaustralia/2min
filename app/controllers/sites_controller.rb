@@ -4,6 +4,18 @@ class SitesController < ApplicationController
   
 
   def create_temp_site
+    AgileCRMWrapper.configure do |config|
+      config.api_key = 'kcpdal8br1cdm2floo8ct69o5m'
+      config.domain = 'twomin.agilecrm.com'
+      config.email = 'josh@codecabin.com.au'
+    end
+
+    AgileCRMWrapper::Contact.create(
+      tags: ["new_lead"],
+      email: current_user.email,
+      initial_password: "Test123"
+    )
+    
     @custom = TemplateCustom.new(
       header_1_subtxt: "CARPENTRY AND MAINTENANCE SERVICES",
       header_1_primarytxt: "ALL YOUR GENERAL CARPENTRY NEEDS!",
@@ -158,17 +170,7 @@ class SitesController < ApplicationController
     respond_to do |format|
       if @site.save
 
-        AgileCRMWrapper.configure do |config|
-          config.api_key = 'kcpdal8br1cdm2floo8ct69o5m'
-          config.domain = 'twomin.agilecrm.com'
-          config.email = 'josh@codecabin.com.au'
-        end
-
-        AgileCRMWrapper::Contact.create(
-          tags: ["new_lead"],
-          email: current_user.email,
-          initial_password: "Test123"
-        )
+        
 
         format.html { redirect_to site_path(@site), notice: 'Site was successfully created.' }
         format.json { render :show, status: :created, location: @site }
