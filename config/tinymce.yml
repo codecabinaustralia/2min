@@ -1,10 +1,10 @@
 default:
-  menu_bar: false
+  menubar: false
   plugins:
     - link
 
 alternate:
-  menu_bar: false
+  menubar: false
   selector: textarea.table-editor
   toolbar: styleselect | bold italic | undo redo | link | alignleft aligncenter alignright | bullist numlist
   plugins:
