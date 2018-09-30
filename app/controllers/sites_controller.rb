@@ -63,12 +63,14 @@ class SitesController < ApplicationController
 
     auth = {api_key: ENV['CAMPAIGN_MONITOR_API']}
     list_id = '628a07e4b814c79d71a4699262e5d642'
-    email_address, name, temporary_password = 'info@theblackandwhites.com.au', 'Alice', 'Test123'
+    email_address = "josh@blackhatdigital.com.au"
+    full_name = "Josh Edgar"
+    temporary_password = "Test123"
 
     begin
-      CreateSend::Subscriber.add(auth, list_id, email_address, name, temporary_password, true, true, true)
+      CreateSend::Subscriber.add(auth, list_id, email_address, full_name, temporary_password, true, true, true)
     rescue CreateSend::BadRequest => exception
-      fail "could not add #{email} code=#{exception.data.Code}"
+      fail "could not add #{email_address} code=#{exception.data.Code}"
     end
 
     redirect_to site_path(@site, :edit_mode => true)
