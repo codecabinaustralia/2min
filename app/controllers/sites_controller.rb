@@ -65,8 +65,6 @@ class SitesController < ApplicationController
       config.email = 'josh@codecabin.com.au'
     end
 
-
-
     AgileCRMWrapper::Contact.create(
       tags: ["new_lead"],
       email: "#{current_user.email}",
