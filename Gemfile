@@ -20,8 +20,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'gaffe'
-
 gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 gem 'devise'
 gem 'foundation-rails'
