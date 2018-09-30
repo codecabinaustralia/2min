@@ -20,33 +20,42 @@
             </div>
           <% end %>
         
-        <% if @site.template_name != "multi" %>
-        <div class="file-upload-box">
-          We need a hero image, this can be taken from your phone now or you can upload one. Just click the button to add an image.<hr />
-          <%= form.file_field :featured_image %>
-        </div>
-        <% end %>
-
-          <div class="field">
-            <%= form.hidden_field :company_name, value: session[:company] %>
-          </div>
-
-          <div class="grid-x">
-            <div class="cell small-12"> 
-            ABN
-            <%= form.text_field :abn %>
+        <% if params[:hero] == "true" %>
+            <div class="file-upload-box" style="display: none;">
+              We need a hero image, this can be taken from your phone now or you can upload one. Just click the button to add an image.<hr />
+              <%= form.file_field :featured_image %>
             </div>
-          </div>
+            <% end %>
 
-          <div class="field">
-            Your clients need somewhere to call!
-            <%= form.text_field :phone,placeholder: "Mobile Number" %>
-          </div>
+            <% if params[:company_name] == "true" %>
+            <div class="field">
+              <%= form.text_field :company_name, value: session[:company] %>
+            </div>
+            <% end %>
+            <% if params[:abn] == "true" %>
+            <div class="grid-x" style="display: none;">
+              <div class="cell small-12"> 
+              ABN <i><small>if you have it handy.. you can add it later</small></i>
+              <%= form.text_field :abn %>
+              </div>
+            </div>
+            <% end %>
+            <% if params[:phone] == "true" %>
+            <div class="field">
+              Your clients need somewhere to call!
+              <%= form.text_field :phone, placeholder: "Mobile Number" %>
+            </div>
+            <% end %>
+            <% if params[:location] == "true" %>
+            <div class="field">
+              What city or town do you operate in?
+              <%= form.text_field :home_town, placeholder: "Sydney" %>
+            </div>
 
-          <div class="field">
-            What city or town do you operate in?
-            <%= form.text_field :home_town, placeholder: "Sydney" %>
-          </div>
+            <div>
+              <%= form.text_area :location_text, placeholder: "Write a few words about your location" %>
+            </div>
+            <% end %>
 
   
           <div class="field">

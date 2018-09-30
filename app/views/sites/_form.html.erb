@@ -24,7 +24,7 @@
 
     <% if params[:company_name] == "true" %>
     <div class="field">
-      <%= form.hidden_field :company_name, value: session[:company] %>
+      <%= form.text_field :company_name, value: session[:company] %>
     </div>
     <% end %>
     <% if params[:abn] == "true" %>
