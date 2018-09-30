@@ -65,15 +65,14 @@
   </div>
 
   <div class="field">
-    <%= form.text_area :content_6col_righttxt, :class => "tinymce", :rows => 8 %>
-  </div>
-
-  <div class="field">
     <%= form.text_field :content_6col_rightsubtxt, placeholder: "Small text" %>
   </div>
 
   <div class="field">
     <%= form.text_field :content_6col_rightprimarytxt, placeholder: "Large text" %>
+  </div>
+  <div class="field" >
+    <%= form.text_area :content_6col_righttxt, :class => "tinymce", :rows => 8 %>
   </div>
   <% end %>
   
@@ -91,9 +90,7 @@
     <%= form.file_field :content_6col_rightimg2 %>
   </div>
 
-  <div class="field">
-    <%= form.text_area :content_6col_lefttxt, :class => "tinymce", :rows => 8 %>
-  </div>
+  
 
   <div class="field">
     <%= form.text_field :content_6col_leftsubtxt, placeholder: "Small text" %>
@@ -101,6 +98,9 @@
 
   <div class="field">
     <%= form.text_field :content_6col_leftprimarytxt, placeholder: "Large text" %>
+  </div>
+  <div class="field">
+    <%= form.text_area :content_6col_lefttxt, :class => "tinymce", :rows => 8 %>
   </div>
   <% end %>
   
