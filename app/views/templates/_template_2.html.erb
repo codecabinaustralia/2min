@@ -687,12 +687,12 @@
 						<%= link_to "EDIT LOCATION DETAILS", edit_site_path(@site, :location => "true"),class: "button success" %>
 						<% end %>
 						<hr />
-						<small style="font-size: 12px; font-weight: normal;"><strong>ABN:</strong> <%= @site.abn %> <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+						<small style="font-size: 12px; color: #a0a0a0; font-weight: normal;"><strong>ABN:</strong> <%= @site.abn %> <% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
 							<%= link_to edit_site_path(@site, :abn_number => "true"), class: "button small success" do %><i class="fas fa-pencil-alt"></i><% end %>
 						<% end %></small>
-						<p><h4>LICENCES & ACCREDITATIONS</h4>
+						<p><h4 style="font-size: 14px;">LICENCES & ACCREDITATIONS</h4>
 							<% @accreditations.each do |accreditation| %>
-							<small style="font-size: 12px; font-weight: normal;"><strong><%= accreditation.name %></strong> <%= accreditation.reference_number %></small><br />
+							<small style="font-size: 12px; color: #a0a0a0; font-weight: normal;"><strong><%= accreditation.name %></strong> <%= accreditation.reference_number %></small><br />
 							<% end %>
 							
 							<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
