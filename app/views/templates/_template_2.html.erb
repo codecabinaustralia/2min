@@ -247,7 +247,7 @@
 	}
 	
 	.page-edit-hover{
-		transition: all ease 0.2;
+		transition: all ease 0.2s;
 	}
 	.page-edit-hover:hover{
 		border:5px solid #0088F1;
@@ -329,15 +329,21 @@
 		</div>
 	</div>
 	<% end %>
-	<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
-		<div class="t_2_white_bg page-edit-hover">
-	<% else %>
+	
 		<div class="t_2_white_bg">
-	<% end %>
 		<% if @custom.header_1_img.attached? %>
+			<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+				<div  class="t_2_header page-edit-hover" style="background-image: url('<%= url_for(@custom.header_1_img) %>'); background-size: cover;">
+			<% else %>
 			<div  class="t_2_header" style="background-image: url('<%= url_for(@custom.header_1_img) %>'); background-size: cover;">
+			<% end %>
+		<% else %>
+		<% if user_signed_in? && current_user.id == @site.user_id && params[:edit_mode] == "true" %>
+		<div class="t_2_header page-edit-hover" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
 		<% else %>
 		<div class="t_2_header" style="background-image: url('https://res.cloudinary.com/thypowerhouse/image/upload/v1537385181/templates/davinci/carousel_about_2.jpg'); background-size: cover;">
+
+		<% end %>
 		<% end %>
 
 			<div class="t2_dark_overlay">
