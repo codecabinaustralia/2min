@@ -38,7 +38,7 @@ class SitesController < ApplicationController
     @site.save
 
     @color = Color.new(
-      color_1: "#bf0101"
+      color_1: "#002859"
       )
     @color.save
 
