@@ -74,6 +74,24 @@ class DomainsController < ApplicationController
   def approve_domain
     @domain = Domain.last
     @domain_last = Domain.last
+
+    #Get attributes for domain
+    require 'dnsimple' #ACC ID  
+    client = Dnsimple::Client.new(base_url: "https://api.sandbox.dnsimple.com", access_token: "miqodsYlFyBlPWG5hpwyUjDXFqGeevGT")
+    account_id = 924
+
+    domain_attributes = client.tlds.extended_attributes(account_id, "#{@domain.tld}")
+    @domain.update_attributes(
+      tld_type: domain_attributes.tld_type,
+      minimum_registration: domain_attributes.minimum_registration,
+      whois_privacy: domain_attributes.whois_privacy,
+      auto_renew_only: domain_attributes.auto_renew_only,
+      idn: domain_attributes.idn,
+      registration_enabled: domain_attributes.registration_enabled,
+      renewal_enabled: domain_attributes.renewal_enabled,
+      transfer_enabled: domain_attributes.transfer_enabled
+    )
+
     #Get Details Here
   end
 
@@ -100,7 +118,7 @@ class DomainsController < ApplicationController
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
 
-    
+
     #Register Domain
     register_domain = client.registrar.register_domain(
         account_id,

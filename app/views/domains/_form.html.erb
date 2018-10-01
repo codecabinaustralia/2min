@@ -16,6 +16,9 @@
     <div class="cell auto">
       <%= form.text_field :domain_name, placeholder: "Choose a domain" %>
     </div>
+     <div class="cell shrink">
+      <%= form.select(:tld, [ 'com', 'com.au', '.net', '.net.au' ], {}, { :class => 'select' }) %>
+    </div>
     <div class="cell shrink">
       <%= form.submit "SEARCH", class: "button primary large" %>
     </div>
