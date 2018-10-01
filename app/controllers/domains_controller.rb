@@ -83,6 +83,7 @@ class DomainsController < ApplicationController
     require 'dnsimple' #ACC ID  
     client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
     account_id = 84989
+    begin
     contact = client.contacts.create_contact(
       account_id,
       first_name: "#{@domain.first_name}",
@@ -96,6 +97,9 @@ class DomainsController < ApplicationController
       phone: "#{@domain.phone}",
       fax: "#{@domain.phone}"
     )
+    rescue Dnsimple::RequestError
+  puts contact.data
+end
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
 
