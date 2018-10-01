@@ -49,24 +49,6 @@ class DomainsController < ApplicationController
           redirect_to approve_domain_path
         end
 
-        client.contacts.create_contact(
-          account_id,
-          label: "Tradie",
-          first_name: "Josh",
-          last_name: "Edgar",
-          organization_name: "Test Company",
-          job_title: "CEO",
-          address1: "397 Christine Avenue",
-          address2: "test",
-          city: "Gold Coast",
-          state_province: "Queensland",
-          postal_code: "4000",
-          country: "Australia",
-          email: "info@theblackandwhites.com.au",
-          phone: "+61 043 1373024",
-          fax: "+61 043 1373024"
-          )
-
       else
         format.html { render :new }
         format.json { render json: @domain.errors, status: :unprocessable_entity }
@@ -97,25 +79,25 @@ class DomainsController < ApplicationController
   def create_dnssimple_contact
     @domain = Domain.last
     #Create an account in simple DNS
-    require 'dnsimple' #ACC ID  
+    require 'dnsimple'
     client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
     account_id = 84989
     client.contacts.create_contact(
       account_id,
-      label: "Tradie",
-      first_name: "Josh",
-      last_name: "Edgar",
-      organization_name: "Test Company",
-      job_title: "CEO",
-      address1: "397 Christine Avenue",
-      address2: "test",
-      city: "Gold Coast",
-      state_province: "Queensland",
-      postal_code: "4000",
-      country: "Australia",
-      email: "info@theblackandwhites.com.au",
-      phone: "+61 043 1373024",
-      fax: "+61 043 1373024"
+      "Tradie",
+      "Josh",
+      "Edgar",
+      "Test Company",
+      "CEO",
+      "397 Christine Avenue",
+      "test",
+      "Gold Coast",
+      "Queensland",
+      "4000",
+      "Australia",
+      "info@theblackandwhites.com.au",
+      "+61 043 1373024",
+      "+61 043 1373024"
       )
 
 
