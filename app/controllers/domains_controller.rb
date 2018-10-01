@@ -92,10 +92,10 @@ class DomainsController < ApplicationController
         "email": "#{@domain.email}",
         "phone": "#{@domain.phone}",
         "address1": "#{@domain.address1}",
-        "city": "Roma",
-        "state_province": "RM",
-        "postal_code": "00100",
-        "country": "IT"
+        "city": "#{@domain.city}",
+        "state_province": "{@domain.state_province}",
+        "postal_code": "#{@domain.postal_code}",
+        "country": "AU"
     )
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
