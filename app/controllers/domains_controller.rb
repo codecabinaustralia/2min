@@ -83,7 +83,7 @@ class DomainsController < ApplicationController
     require 'dnsimple' #ACC ID  
     client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
     account_id = 84989
-    begin
+
     contact = client.contacts.create_contact(
       account_id,
         "label": "Default",
@@ -97,9 +97,7 @@ class DomainsController < ApplicationController
         "postal_code": "@domain.postal_code",
         "country": "AU"
     )
-    rescue Dnsimple::RequestError
-      puts contact
-    end
+
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
 
