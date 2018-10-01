@@ -40,7 +40,7 @@ class DomainsController < ApplicationController
         require 'dnsimple' #ACC ID  
         client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
         account_id = 84989
-        response = client.registrar.check_domain(account_id, "#{ @domain.domain_name }#{ @domain.tld }")
+        response = client.registrar.check_domain(account_id, "#{ @domain.domain_name }.#{ @domain.tld }")
 
         if response.data.available == false || response.data.available == false
           redirect_to domains_path(domain_unavailable: response.data.available, domain_premium: response.data.premium)
