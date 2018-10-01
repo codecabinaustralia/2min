@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_30_233909) do
+ActiveRecord::Schema.define(version: 2018_10_01_232220) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -95,6 +95,15 @@ ActiveRecord::Schema.define(version: 2018_09_30_233909) do
     t.string "email"
     t.string "phone"
     t.string "fax"
+    t.string "tld"
+    t.string "tld_type"
+    t.string "minimum_registration"
+    t.boolean "whois_privacy"
+    t.boolean "auto_renew_only"
+    t.boolean "idn"
+    t.boolean "registration_enabled"
+    t.boolean "renewal_enabled"
+    t.boolean "transfer_enabled"
   end
 
   create_table "intros", force: :cascade do |t|
