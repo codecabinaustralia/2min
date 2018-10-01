@@ -1,8 +1,8 @@
-<h1>You can purchase <%= @domain.domain_name %> now for just $29 per year</h1>
+<h1>You can purchase <%=  @domain_last.domain_name %> now for just $29 per year</h1>
 <%= link_to "YES BUY THIS", create_dnssimple_contact_path, class: "button primary" %>
 
 <%= form_with @domain do |form| %>
-  <% if domain.errors.any? %>
+  <% if @domain.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@domain.errors.count, "error") %> prohibited this domain from being saved:</h2>
 

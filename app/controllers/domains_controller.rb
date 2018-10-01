@@ -32,7 +32,7 @@ class DomainsController < ApplicationController
 
     #Create domain in db
     @domain = Domain.new(domain_params)
-    
+
       if @domain.save
 
         #Check domain
@@ -71,7 +71,8 @@ class DomainsController < ApplicationController
   end
 
   def approve_domain
-    @domain = Domain.last
+    @domain = Domain.new
+    @domain_last = Domain.last
     #Get Details Here
   end
 
