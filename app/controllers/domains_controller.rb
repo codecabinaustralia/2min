@@ -93,7 +93,7 @@ class DomainsController < ApplicationController
       country: "#{@domain.country}",
       email: "#{@domain.email}",
       phone: "#{@domain.phone}",
-      fax: "#{@domain.fax}"
+      fax: "#{@domain.phone}"
     )
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
