@@ -65,7 +65,7 @@ class SitesController < ApplicationController
                    { "email" => "#{current_user.email}",
                       "optin_time"=> "#{current_user.last_sign_in_at}",
                       "double_optin" => false,
-                      "optin_ip"=> "#{current_user.current_sign_in_ip}"
+                      "optin_ip"=> "#{current_user.current_sign_in_ip}",
                      "merge_fields" => {
                              "TMPPASS" => "Test123",
                       }
