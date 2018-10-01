@@ -98,7 +98,7 @@ class DomainsController < ApplicationController
       fax: "#{@domain.phone}"
     )
     rescue Dnsimple::RequestError
-      puts client.data
+      puts contact
     end
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
