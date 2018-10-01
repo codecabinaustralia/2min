@@ -32,8 +32,7 @@ class DomainsController < ApplicationController
 
     #Create domain in db
     @domain = Domain.new(domain_params)
-
-    respond_to do |format|
+    
       if @domain.save
 
         #Check domain
@@ -54,7 +53,7 @@ class DomainsController < ApplicationController
         format.html { render :new }
         format.json { render json: @domain.errors, status: :unprocessable_entity }
       end
-    end
+    
   end
 
   # PATCH/PUT /domains/1
