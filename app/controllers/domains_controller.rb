@@ -84,16 +84,16 @@ class DomainsController < ApplicationController
     account_id = 84989
     contact = client.contacts.create_contact(
       account_id,
-      first_name: "#{@domain.first_name}",
-      last_name: "#{@domain.last_name}",
-      address1: "#{@domain.address1}",
-      city: "#{@domain.city}",
-      state_province: "#{@domain.state_province}",
-      postal_code: "#{@domain.postal_code}",
-      country: "#{@domain.country}",
-      email: "#{@domain.email}",
-      phone: "#{@domain.phone}",
-      fax: "#{@domain.phone}"
+      first_name: "Josh",
+      last_name: "Edgar",
+      address1: "1214/397 cChristine Avenue",
+      city: "Gold Coast",
+      state_province: "QLD",
+      postal_code: "4000",
+      country: "Australia",
+      email: "info@theblackandwhites.com.au",
+      phone: "0431373024",
+      fax: "0431373024"
     )
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
