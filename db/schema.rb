@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_30_231929) do
+ActiveRecord::Schema.define(version: 2018_09_30_233909) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -85,6 +85,16 @@ ActiveRecord::Schema.define(version: 2018_09_30_231929) do
     t.boolean "available"
     t.boolean "premium"
     t.string "premium_price"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address1"
+    t.string "city"
+    t.string "state_province"
+    t.string "postal_code"
+    t.string "country"
+    t.string "email"
+    t.string "phone"
+    t.string "fax"
   end
 
   create_table "intros", force: :cascade do |t|

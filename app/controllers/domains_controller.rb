@@ -42,12 +42,14 @@ class DomainsController < ApplicationController
         account_id = 84989
         response = client.registrar.check_domain(account_id, "#{ @domain.domain_name }")
 
-        if response.premium == true && response.available == true
-          #Find premium price
+        if response.data.available == false || response.data.available == false
+          redirect_to domains_path(domain_unavailable: response.available, domain_premium: response.premium)
         end
 
-        format.html { redirect_to @domain, notice: 'Domain was successfully created.' }
-        format.json { render :show, status: :created, location: @domain }
+        if response.data.available == true
+          redirect_to approve_domain_path
+        end
+
       else
         format.html { render :new }
         format.json { render json: @domain.errors, status: :unprocessable_entity }
@@ -60,7 +62,7 @@ class DomainsController < ApplicationController
   def update
     respond_to do |format|
       if @domain.update(domain_params)
-        format.html { redirect_to @domain, notice: 'Domain was successfully updated.' }
+        format.html { redirect_to create_dnssimple_contact_path, notice: 'Domain was successfully updated.' }
         format.json { render :show, status: :ok, location: @domain }
       else
         format.html { render :edit }
@@ -69,24 +71,40 @@ class DomainsController < ApplicationController
     end
   end
 
+  def approve_domain
+    @domain = Domain.last
+    #Get Details Here
+  end
+
   def create_dnssimple_contact
+    @domain = Domain.last
     #Create an account in simple DNS
     require 'dnsimple' #ACC ID  
     client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
     account_id = 84989
-    client.contacts.create_contact(
+    contact = client.contacts.create_contact(
       account_id,
-      first_name: "#{current_user.subdomain}",
-      last_name: "#{current_user.subdomain}",
-      address1: ,
-      city: ,
-      state_province: ,
-      postal_code: ,
-      country: ,
-      email: ,
-      phone: ,
-      fax: ,
-      )
+      first_name: "#{@domain.first_name}",
+      last_name: "#{@domain.last_name}",
+      address1: "#{@domain.address1}",
+      city: "#{@domain.city}",
+      state_province: "#{@domain.state_province}",
+      postal_code: "#{@domain.postal_code}",
+      country: "#{@domain.country}",
+      email: "#{@domain.email}",
+      phone: "#{@domain.phone}",
+      fax: "#{@domain.fax}"
+    )
+
+    @domain.update_attributes(dns_simple_id: contact.data.id)
+
+    #register_domain = client.registrar.register_domain(
+     # account_id,
+      #{}"#{@domain.domain_name}",
+      #registrant_id: contact.data.id,
+      #extended_attributes: ,
+      #)
+
   end
 
   # DELETE /domains/1
@@ -107,6 +125,6 @@ class DomainsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def domain_params
-      params.require(:domain).permit(:domain_name, :dns_simple_id)
+      params.require(:domain).permit(:domain_name, :dns_simple_id, :first_name, :last_name, :address1, :city, :state_province, :country, :postal_code, :email, :phone, :fax)
     end
 end

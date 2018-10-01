@@ -1,3 +1,6 @@
+<h1>You can purchase <%= @domain.domain_name %> now for just $29 per year</h1>
+<%= link_to "YES BUY THIS", create_dnssimple_contact_path, class: "button primary" %>
+
 <%= form_with @domain do |form| %>
   <% if domain.errors.any? %>
     <div id="error_explanation">

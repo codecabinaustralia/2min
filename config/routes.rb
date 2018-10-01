@@ -32,8 +32,9 @@ Rails.application.routes.draw do
       resources :additional_services
       resources :sites
       resources :template_customs
-      
+
       resources :domains
+      get 'approve_domain' => 'domains#approve_domain'
       get 'create_dnssimple_contact' => 'domains#create_dnssimple_contact'
       get 'purchase_dnssimple_domain' => 'domains#purchase_dnssimple_domain'
 
