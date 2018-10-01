@@ -43,7 +43,7 @@ class DomainsController < ApplicationController
         response = client.registrar.check_domain(account_id, "#{ @domain.domain_name }")
 
         if response.data.available == false || response.data.available == false
-          redirect_to domains_path(domain_unavailable: response.available, domain_premium: response.premium)
+          redirect_to domains_path(domain_unavailable: response.data.available, domain_premium: response.data.premium)
         end
 
         if response.data.available == true
