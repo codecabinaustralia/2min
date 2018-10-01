@@ -5,6 +5,7 @@ class DomainsController < ApplicationController
   # GET /domains.json
   def index
     @domains = Domain.all
+    @domain = Domain.new
   end
 
   # GET /domains/1

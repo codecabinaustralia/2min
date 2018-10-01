@@ -1,27 +1,24 @@
-<%= form_with(model: domain, local: true) do |form| %>
-  <% if domain.errors.any? %>
+<%= form_for @domain do |form| %>
+  <% if @domain.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(domain.errors.count, "error") %> prohibited this domain from being saved:</h2>
+      <h2><%= pluralize(@domain.errors.count, "error") %> prohibited this domain from being saved:</h2>
 
       <ul>
-      <% domain.errors.full_messages.each do |message| %>
+      <% @domain.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :domain_name %>
-    <%= form.text_field :domain_name %>
+  
+  <div class="grid-x grid-margin-x">
+    <div class="cell shrink"><h2 style="font-size: 20px;">www.</h2></div>
+    <div class="cell auto">
+      <%= form.text_field :domain_name, placeholder: "Choose a domain" %>
+    </div>
+    <div class="cell shrink">
+      <%= form.submit "SEARCH", class: "button primary large" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :dns_simple_id %>
-    <%= form.text_field :dns_simple_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
