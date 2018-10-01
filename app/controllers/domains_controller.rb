@@ -80,7 +80,7 @@ class DomainsController < ApplicationController
     client = Dnsimple::Client.new(base_url: "https://api.sandbox.dnsimple.com", access_token: "miqodsYlFyBlPWG5hpwyUjDXFqGeevGT")
     account_id = 924
 
-    domain_attributes = client.tlds.extended_attributes("#{@domain.tld}")
+    domain_attributes = client.tlds.tld("#{@domain.tld}")
     @domain.update_attributes(
       tld_type: domain_attributes.tld_type,
       minimum_registration: domain_attributes.minimum_registration,
