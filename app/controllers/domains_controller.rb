@@ -81,7 +81,7 @@ class DomainsController < ApplicationController
     @domain = Domain.last
     #Create an account in simple DNS
     require 'dnsimple' #ACC ID  
-    client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
+    client = Dnsimple::Client.new(base_url: "https://api.sandbox.dnsimple.com", access_token: "miqodsYlFyBlPWG5hpwyUjDXFqGeevGT")
     account_id = 84989
 
     contact = client.contacts.create_contact(
@@ -100,12 +100,15 @@ class DomainsController < ApplicationController
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
 
-    #register_domain = client.registrar.register_domain(
-     # account_id,
-      #{}"#{@domain.domain_name}",
-      #registrant_id: contact.data.id,
-      #extended_attributes: ,
-      #)
+    
+    #Register Domain
+    register_domain = client.registrar.register_domain(
+        account_id,
+        "#{@domain.domain_name}",
+        registrant_id: contact.data.id,
+        private_whois: true, 
+        auto_renew: true
+      )
 
   end
 
