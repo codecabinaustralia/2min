@@ -71,7 +71,7 @@ class DomainsController < ApplicationController
   end
 
   def approve_domain
-    @domain = Domain.new
+    @domain = Domain.last
     @domain_last = Domain.last
     #Get Details Here
   end
