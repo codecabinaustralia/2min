@@ -83,10 +83,14 @@ class DomainsController < ApplicationController
     client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
     account_id = 84989
     client.contacts.create_contact(
-      84989,
+      account_id,
+      label: "Tradie"
       first_name: "Josh",
       last_name: "Edgar",
+      organization_name: "Test Company"
+      job_title: "CEO"
       address1: "397 Christine Avenue",
+      address2: "test"
       city: "Gold Coast",
       state_province: "Queensland",
       postal_code: "4000",
@@ -94,7 +98,7 @@ class DomainsController < ApplicationController
       email: "info@theblackandwhites.com.au",
       phone: "+61 043 1373024",
       fax: "+61 043 1373024"
-    )
+      )
 
 
     #register_domain = client.registrar.register_domain(
