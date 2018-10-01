@@ -82,7 +82,7 @@ class DomainsController < ApplicationController
     #Create an account in simple DNS
     require 'dnsimple' #ACC ID  
     client = Dnsimple::Client.new(base_url: "https://api.sandbox.dnsimple.com", access_token: "miqodsYlFyBlPWG5hpwyUjDXFqGeevGT")
-    account_id = 84989
+    account_id = 924
 
     contact = client.contacts.create_contact(
       account_id,
