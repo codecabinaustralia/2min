@@ -80,10 +80,10 @@ class DomainsController < ApplicationController
     @domain = Domain.last
     #Create an account in simple DNS
     require 'dnsimple' #ACC ID  
-    dns_client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
+    client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
     account_id = 84989
-    new_contact = dns_client.contacts.create_contact(
-      account_id,
+    client.contacts.create_contact(
+      84989,
       first_name: "Josh",
       last_name: "Edgar",
       address1: "397 Christine Avenue",
@@ -96,7 +96,6 @@ class DomainsController < ApplicationController
       fax: "+61 043 1373024"
     )
 
-    @domain.update_attributes(dns_simple_id: new_contact.data.id)
 
     #register_domain = client.registrar.register_domain(
      # account_id,
