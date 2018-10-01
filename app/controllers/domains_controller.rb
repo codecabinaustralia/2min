@@ -86,16 +86,19 @@ class DomainsController < ApplicationController
     begin
     contact = client.contacts.create_contact(
       account_id,
-      first_name: "#{@domain.first_name}",
-      last_name: "#{@domain.last_name}",
-      address1: "#{@domain.address1}",
-      city: "#{@domain.city}",
-      state_province: "#{@domain.state_province}",
-      postal_code: "#{@domain.postal_code}",
-      country: "#{@domain.country}",
-      email: "#{@domain.email}",
-      phone: "#{@domain.phone}",
-      fax: "#{@domain.phone}"
+      "label": "Default",
+        "first_name": "First",
+        "last_name": "User",
+        "job_title": "CEO",
+        "organization_name": "Awesome Company",
+        "email": "first@example.com",
+        "phone": "+18001234567",
+        "fax": "+18011234567",
+        "address1": "Italian Street, 10",
+        "city": "Roma",
+        "state_province": "RM",
+        "postal_code": "00100",
+        "country": "IT"
     )
     rescue Dnsimple::RequestError
       puts contact
