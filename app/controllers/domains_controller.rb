@@ -93,7 +93,7 @@ class DomainsController < ApplicationController
         "phone": "#{@domain.phone}",
         "address1": "#{@domain.address1}",
         "city": "#{@domain.city}",
-        "state_province": "{@domain.state_province}",
+        "state_province": "#{@domain.state_province}",
         "postal_code": "#{@domain.postal_code}",
         "country": "AU"
     )
