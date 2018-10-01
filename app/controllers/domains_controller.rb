@@ -92,8 +92,9 @@ class DomainsController < ApplicationController
       postal_code: "4000",
       country: "Australia",
       email: "info@theblackandwhites.com.au",
-      phone: "+61431373024"
-      )
+      phone: "+61431373024",
+      fax: "0431373024"
+    )
 
     @domain.update_attributes(dns_simple_id: new_contact.data.id)
 
