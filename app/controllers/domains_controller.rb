@@ -84,13 +84,13 @@ class DomainsController < ApplicationController
     account_id = 84989
     client.contacts.create_contact(
       account_id,
-      label: "Tradie"
+      label: "Tradie",
       first_name: "Josh",
       last_name: "Edgar",
-      organization_name: "Test Company"
-      job_title: "CEO"
+      organization_name: "Test Company",
+      job_title: "CEO",
       address1: "397 Christine Avenue",
-      address2: "test"
+      address2: "test",
       city: "Gold Coast",
       state_province: "Queensland",
       postal_code: "4000",
