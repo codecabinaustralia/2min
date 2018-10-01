@@ -79,27 +79,24 @@ class DomainsController < ApplicationController
   def create_dnssimple_contact
     @domain = Domain.last
     #Create an account in simple DNS
-    require 'dnsimple'
+    require 'dnsimple' #ACC ID  
     client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
     account_id = 84989
-    client.contacts.create_contact(
+    contact = client.contacts.create_contact(
       account_id,
-      "Tradie",
-      "Josh",
-      "Edgar",
-      "Test Company",
-      "CEO",
-      "397 Christine Avenue",
-      "test",
-      "Gold Coast",
-      "Queensland",
-      "4000",
-      "Australia",
-      "info@theblackandwhites.com.au",
-      "+61 043 1373024",
-      "+61 043 1373024"
-      )
+      first_name: "#{@domain.first_name}",
+      last_name: "#{@domain.last_name}",
+      address1: "#{@domain.address1}",
+      city: "#{@domain.city}",
+      state_province: "#{@domain.state_province}",
+      postal_code: "#{@domain.postal_code}",
+      country: "#{@domain.country}",
+      email: "#{@domain.email}",
+      phone: "#{@domain.phone}",
+      fax: "#{@domain.phone}"
+    )
 
+    @domain.update_attributes(dns_simple_id: contact.data.id)
 
     #register_domain = client.registrar.register_domain(
      # account_id,
