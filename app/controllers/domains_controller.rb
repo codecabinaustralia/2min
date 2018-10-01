@@ -82,13 +82,13 @@ class DomainsController < ApplicationController
     require 'dnsimple' #ACC ID  
     client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
     account_id = 84989
-    contact = client.contacts.create_contact(
+    new_contact = client.contacts.create_contact(
       account_id,
       first_name: "Josh",
       last_name: "Edgar",
-      address1: "1214/397 cChristine Avenue",
+      address1: "397 Christine Avenue",
       city: "Gold Coast",
-      state_province: "QLD",
+      state_province: "Queensland",
       postal_code: "4000",
       country: "Australia",
       email: "info@theblackandwhites.com.au",
@@ -96,7 +96,7 @@ class DomainsController < ApplicationController
       fax: "0431373024"
     )
 
-    @domain.update_attributes(dns_simple_id: contact.data.id)
+    @domain.update_attributes(dns_simple_id: new_contact.data.id)
 
     #register_domain = client.registrar.register_domain(
      # account_id,
