@@ -49,6 +49,24 @@ class DomainsController < ApplicationController
           redirect_to approve_domain_path
         end
 
+        client.contacts.create_contact(
+          account_id,
+          label: "Tradie",
+          first_name: "Josh",
+          last_name: "Edgar",
+          organization_name: "Test Company",
+          job_title: "CEO",
+          address1: "397 Christine Avenue",
+          address2: "test",
+          city: "Gold Coast",
+          state_province: "Queensland",
+          postal_code: "4000",
+          country: "Australia",
+          email: "info@theblackandwhites.com.au",
+          phone: "+61 043 1373024",
+          fax: "+61 043 1373024"
+          )
+
       else
         format.html { render :new }
         format.json { render json: @domain.errors, status: :unprocessable_entity }
