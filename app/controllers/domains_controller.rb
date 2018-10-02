@@ -92,7 +92,9 @@ class DomainsController < ApplicationController
       transfer_enabled: domain_attributes.data.transfer_enabled
     )
 
-    
+    full_web_address = "www.#{@domain.domain_name}.#{@domain.tld}"
+    current_user.update_attributes(domain: full_web_address)
+
     extended_hash_response = client.tlds.extended_attributes("#{@domain.tld}")
 
     @domain.update_attributes(extended_hash_response: extended_hash_response.data.to_yaml)
