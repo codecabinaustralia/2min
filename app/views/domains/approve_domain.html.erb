@@ -1,14 +1,42 @@
+<div class="grid-x">
+	<div class="cell small-12 medium-6 medium-offset-3 text-center">
+
 <h1>You can purchase <%=  @domain_last.domain_name %> now for just $29 per year</h1>
 
-
-tld_type: <%= @domain_last.tld_type %><br />
-minimum_registration: <%= @domain_last.minimum_registration %><br />
-whois_privacy: <%= @domain_last.whois_privacy %><br />
-auto_renew_only: <%= @domain_last.auto_renew_only %><br />
-idn: <%= @domain_last.idn %><br />
-registration_enabled: <%= @domain_last.registration_enabled %><br />
-renewal_enabled: <%= @domain_last.renewal_enabled %><br />
-transfer_enabled: <%= @domain_last.transfer_enabled %><br />
+<table>
+	<tr>
+		<td><strong>tld_type:</strong></td>
+		<td><%= @domain_last.tld_type %></td>
+	</tr>
+	<tr>
+		<td><strong>minimum_registration:</strong></td>
+		<td><%= @domain_last.minimum_registration %></td>
+	</tr>
+	<tr>
+		<td><strong>whois_privacy:</strong></td>
+		<td><%= @domain_last.whois_privacy %></td>
+	</tr>
+	<tr>
+		<td><strong>auto_renew_only:</strong></td>
+		<td><%= @domain_last.auto_renew_only %></td>
+	</tr>
+	<tr>
+		<td><strong>IDN:</strong></td>
+		<td><%= @domain_last.idn %></td>
+	</tr>
+	<tr>
+		<td><strong>registration_enabled:</strong></td>
+		<td><%= @domain_last.registration_enabled %></td>
+	</tr>
+	<tr>
+		<td><strong>renewal_enabled:</strong></td>
+		<td><%= @domain_last.renewal_enabled %></td>
+	</tr>
+	<tr>
+		<td><strong>transfer_enabled:</strong></td>
+		<td><%= @domain_last.transfer_enabled %></td>
+	</tr>
+</table>
 
 
 <%= form_for @domain do |form| %>
@@ -69,3 +97,6 @@ transfer_enabled: <%= @domain_last.transfer_enabled %><br />
     <%= form.submit %>
   </div>
 <% end %>
+
+	</div>
+</div>
