@@ -1,128 +1,15 @@
 <div>  
   <div class="grid-x">
-    <div class="cell small-12 medium-4 medium-offset-4 inner-form">
+    <div class="cell small-12 medium-4 medium-offset-4 inner-form text-center">
 
-        <% if @domain_available != "true" %>
-
-        <div class="grid-x">
-          <div class="cell small-12">
-            <div class="domain-card text-center">
-              <h2 style="color: #0E304A;">GREAT NEWS</h2>
-              <h4 style="color: #0088F1; font-size: 14px;"><%= @domain %></h4>
-              <h2 style="color: #F30033; font-size: 26px;">DOMAIN IS AVAILABLE</h2>
-
-              <div style="margin-top: 20px;">
-                I can use your card to purchase it if you like:
-                <div class="credit-card-scenario">
-                  <div class="grid-x">
-                    <div class="cell shrink credit-card-scenario-left">
-                      <% if @charge.credit_brand == "Visa" %>
-                      <i class="fab fa-cc-visa"></i>
-                      <% elsif @charge.credit_brand == "MasterCard" %>
-                      <i class="fab fa-cc-mastercard"></i>
-                      <% elsif @charge.credit_brand == "American Express" %>
-                      <i class="fab fa-cc-amex"></i>
-                      <% elsif @charge.credit_brand == "Discover" %>
-                      <i class="fab fa-cc-discover"></i>
-                      <% elsif @charge.credit_brand == "JCB" %>
-                      <i class="fab fa-cc-jcb"></i>
-                      <% elsif @charge.credit_brand == "Diners Club" %>
-                      <i class="fab cc-diners-club"></i>
-                      <% else %>
-                      <i class="fab credit-card"></i>
-                      <% end %>
-                    </div>
-                    <div class="cell auto credit-card-scenario-right">
-                      XXXX-XXXX-XXXX-<%= @charge.credit_last_4 %>
-                    </div>
-                  </div>
-                   
-                </div>
-                It's currently just <span style="color: #F30033; font-weight: bold;">$25 per year</span>, If you want I can also set up an email address and take care of all the nerdy stuff for you.<br /><br />
-                
-                <p><strong>Alternatively, you may want to choose from the following options</strong></p>
-                <div class="grid-x grid-margin-x">
-                  <div class="cell auto">
-                    <button class="button primary expanded">Connect an existing domain</button>
-                  </div>
-                  <div class="shrink" style="padding-top: 15px;">
-                    <strong>OR</strong>
-                  </div>
-                  <div class="cell auto">
-                    <%= link_to "Purchase a different domain", domains_path, class: "button success expanded" %>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <% else %>
-        <div class="grid-x">
-          <div class="cell small-12">
-            <div class="domain-card text-center">
-              <h2 style="color: #0E304A;">Let's get you a domain</h2>
-              <h2 style="color: #F30033; font-size: 26px;">JUST $25 / YEAR</h2>
-
-              <div style="margin-top: 20px;">
-                We can help you purchase one if you like using:
-                <div class="credit-card-scenario">
-                  <div class="grid-x">
-                    <div class="cell shrink credit-card-scenario-left">
-                      <% if @charge.credit_brand == "Visa" %>
-                      <i class="fab fa-cc-visa"></i>
-                      <% elsif @charge.credit_brand == "MasterCard" %>
-                      <i class="fab fa-cc-mastercard"></i>
-                      <% elsif @charge.credit_brand == "American Express" %>
-                      <i class="fab fa-cc-amex"></i>
-                      <% elsif @charge.credit_brand == "Discover" %>
-                      <i class="fab fa-cc-discover"></i>
-                      <% elsif @charge.credit_brand == "JCB" %>
-                      <i class="fab fa-cc-jcb"></i>
-                      <% elsif @charge.credit_brand == "Diners Club" %>
-                      <i class="fab cc-diners-club"></i>
-                      <% else %>
-                      <i class="fab credit-card"></i>
-                      <% end %>
-                    </div>
-                    <div class="cell auto credit-card-scenario-right">
-                      XXXX-XXXX-XXXX-<%= @charge.credit_last_4 %>
-                    </div>
-                  </div>
-                   
-                </div>
-                For just <span style="color: #F30033; font-weight: bold;">$25 per year</span> we'll organise a new domain name so you can visit your new website at <span style="color: #F30033; font-weight: bold;">www.something.com</span>, If you want I can also set up an email address and take care of all the nerdy stuff for you.<br /><br />
-                <%= link_to "Purchase a new domain", domains_path, class: "button large success expanded" %>
-                <br /><br />
-                <p><strong>Alternatively, you may choose to connect a domain that you've already purchased.</strong></p>
-                <div class="grid-x grid-margin-x grid-margin-y">
-                  <div class="cell small-12">
-                    <button class="button primary expanded">Connect an existing domain</button>
-                  </div>
-                  <div class="cell small-12">
-                    <%= link_to "OR YOU CAN SKIP THIS STEP", root_url(:subdomain => current_user.subdomain) %>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-
+ 
 
 		
-
+    <h1 style="font-size: 30px;">You're done</h1>
+    <%= link_to "Visit Your Site", root_path, class: "button larg primary" %>
       
 
     </div>
   </div>
 </div>
 
-<% if session[:sound_7].blank? && user_signed_in? %>
-<div style="position: absolute; left: -9000px; top:-9000px;">
-<embed src="https://res.cloudinary.com/thypowerhouse/video/upload/v1537563368/2minute/audio/7_domain.mp3">
-</div>
-<% end %>
-
-<% session[:sound_7] = true %>

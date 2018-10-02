@@ -150,7 +150,7 @@ class DomainsController < ApplicationController
       template_id = 5181
       apply_template = client.templates.apply_template(account_id, template_id, "#{@domain.domain_name}.#{@domain.tld}")
 
-      
+      redirect_to charge_thank_you_path
     
   end
 
