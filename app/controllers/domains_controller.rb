@@ -138,8 +138,8 @@ class DomainsController < ApplicationController
         "private_whois": @domain.whois_privacy, 
         "auto_renew": @domain.renewal_enabled,
         "extended_attributes": {
-            "au_registrantidtype": "ABN",
-            "au_registrantid": "24625680793"
+            "au_registrantidtype": "#{@domain.registrant_id_type}",
+            "au_registrantid": "#{@domain.registrant_id_number}"
           }
       )
 
