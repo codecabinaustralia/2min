@@ -95,7 +95,7 @@ class DomainsController < ApplicationController
     
     extended_hash_response = client.tlds.extended_attributes("#{@domain.tld}")
 
-    @domain.update_attributes(extended_hash_response: extended_hash_response.data)
+    @domain.update_attributes(extended_hash_response: extended_hash_response.data.to_yaml)
 
     #Get Details Here
   end
