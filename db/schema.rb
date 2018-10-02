@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_232220) do
+ActiveRecord::Schema.define(version: 2018_10_02_010837) do
 
   create_table "accreditation_and_licences", force: :cascade do |t|
     t.string "name"
@@ -104,6 +104,9 @@ ActiveRecord::Schema.define(version: 2018_10_01_232220) do
     t.boolean "registration_enabled"
     t.boolean "renewal_enabled"
     t.boolean "transfer_enabled"
+    t.string "registrant_id_number"
+    t.string "registrant_id_type"
+    t.text "extended_hash_response"
   end
 
   create_table "intros", force: :cascade do |t|
