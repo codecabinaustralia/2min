@@ -94,7 +94,7 @@ class DomainsController < ApplicationController
 
     #Extended Attributes
     ps = client.tlds.extended_attributes("#{@domain.tld}")
-    Rails.logger.debug("debug::" + ps)
+    Rails.logger.debug("debug::" + ps.to_s)
     #Get Details Here
   end
 
