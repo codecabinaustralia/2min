@@ -81,7 +81,6 @@ class DomainsController < ApplicationController
     account_id = 924
 
     domain_attributes = client.tlds.tld("#{@domain.tld}")
-    puts domain_attributes
     @domain.update_attributes(
       tld_type: domain_attributes.data.tld_type,
       minimum_registration: domain_attributes.data.minimum_registration,
@@ -93,6 +92,9 @@ class DomainsController < ApplicationController
       transfer_enabled: domain_attributes.data.transfer_enabled
     )
 
+    #Extended Attributes
+    ps = client.tlds.extended_attributes("#{@domain.tld}")
+    Rails.logger.debug("debug::" + ps)
     #Get Details Here
   end
 
