@@ -92,6 +92,11 @@ class DomainsController < ApplicationController
       transfer_enabled: domain_attributes.data.transfer_enabled
     )
 
+    
+    extended_hash_response = client.tlds.extended_attributes("#{@domain.tld}")
+
+    @domain.update_attributes(extended_hash_response: extended_hash_response.data)
+
     #Get Details Here
   end
 
@@ -118,6 +123,8 @@ class DomainsController < ApplicationController
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
 
+    extended_attributes = {au_registrantid: @domain.au_registrantid, au_registrantidtype: @domain.au_registrantidtype}
+
 
     #Register Domain
     register_domain = client.registrar.register_domain(
@@ -125,13 +132,16 @@ class DomainsController < ApplicationController
         "#{@domain.domain_name}.#{@domain.tld}",
         registrant_id: contact.data.id,
         private_whois: @domain.whois_privacy, 
-        auto_renew: @domain.renewal_enabled
+        auto_renew: @domain.renewal_enabled,
+        extended_attributes: extended_attributes
       )
 
-    #Future self >> I'm haven't made an api call for 
-    au_registrantid: @domain.au_registrantid
-    au_registrantidtype: @domain.au_registrantidtype
+    #Future self >> I'm haven't made an api call for extended attributes
+    #However I have just hardcoded abn and CRN
+    #If you're going international, first of all well done, you better have your farm by now
+    #secondly.. you need to do a call on extended attributes
 
+    
   end
 
   # DELETE /domains/1
