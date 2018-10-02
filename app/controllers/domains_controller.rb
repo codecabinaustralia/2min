@@ -128,21 +128,19 @@ class DomainsController < ApplicationController
     #If you're going international, first of all well done, you better have your farm by now
     #secondly.. you need to do a call on extended attributes
 
-    my_extended_attributes = {
-      au_registrantid: "24625680793",
-      au_registrantidtype: "ABN"
-    }
-
     
 
     #Register Domain
     register_domain = client.registrar.register_domain(
         account_id,
         "#{@domain.domain_name}.#{@domain.tld}",
-        registrant_id: contact.data.id,
-        private_whois: @domain.whois_privacy, 
-        auto_renew: @domain.renewal_enabled,
-        extended_attribute: my_extended_attributes
+        "registrant_id": contact.data.id,
+        "private_whois": @domain.whois_privacy, 
+        "auto_renew": @domain.renewal_enabled,
+        "extended_attribute": {
+            "au_registrantidtype": "24625680793",
+            "au_registrantid": "ABN"
+          }
       )
 
     
@@ -168,6 +166,6 @@ class DomainsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def domain_params
-      params.require(:domain).permit(:domain_name, :dns_simple_id, :first_name, :last_name, :address1, :city, :state_province, :country, :postal_code, :email, :phone, :fax, :tld,:registrant_id_number, :registrant_id_type)
+      params.require(:domain).permit(:domain_name, :dns_simple_id, :first_name, :last_name, :address1, :city, :state_province, :country, :postal_code, :email, :phone, :fax, :tld, :registrant_id_number, :registrant_id_type)
     end
 end
