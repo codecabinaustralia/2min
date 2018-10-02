@@ -82,7 +82,17 @@ class DomainsController < ApplicationController
 
     domain_attributes = client.tlds.tld("#{@domain.tld}")
     puts domain_attributes
-   
+    @domain.update_attributes(
+      tld_type: domain_attributes.data.tld_type,
+      minimum_registration: domain_attributes.data.minimum_registration,
+      whois_privacy: domain_attributes.data.whois_privacy,
+      auto_renew_only: domain_attributes.data.auto_renew_only,
+      idn: domain_attributes.data.idn,
+      registration_enabled: domain_attributes.data.registration_enabled,
+      renewal_enabled: domain_attributes.data.renewal_enabled,
+      transfer_enabled: domain_attributes.data.transfer_enabled
+    )
+
     #Get Details Here
   end
 
