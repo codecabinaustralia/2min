@@ -92,9 +92,6 @@ class DomainsController < ApplicationController
       transfer_enabled: domain_attributes.data.transfer_enabled
     )
 
-    #Extended Attributes
-    ps = client.tlds.extended_attributes("#{@domain.tld}")
-    Rails.logger.debug("debug::" + ps.to_s)
     #Get Details Here
   end
 
@@ -127,9 +124,13 @@ class DomainsController < ApplicationController
         account_id,
         "#{@domain.domain_name}.#{@domain.tld}",
         registrant_id: contact.data.id,
-        private_whois: true, 
-        auto_renew: true
+        private_whois: @domain.whois_privacy, 
+        auto_renew: @domain.renewal_enabled
       )
+
+    #Future self >> I'm haven't made an api call for 
+    au_registrantid: @domain.au_registrantid
+    au_registrantidtype: @domain.au_registrantidtype
 
   end
 
@@ -151,6 +152,6 @@ class DomainsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def domain_params
-      params.require(:domain).permit(:domain_name, :dns_simple_id, :first_name, :last_name, :address1, :city, :state_province, :country, :postal_code, :email, :phone, :fax, :tld)
+      params.require(:domain).permit(:domain_name, :dns_simple_id, :first_name, :last_name, :address1, :city, :state_province, :country, :postal_code, :email, :phone, :fax, :tld,:registrant_id_number, :registrant_id_type)
     end
 end

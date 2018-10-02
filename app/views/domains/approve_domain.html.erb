@@ -65,6 +65,17 @@
 </div>
 
 <div class="grid-x grid-margin-x">
+  <div class="cell small-12 medium-3">
+    <%= form.label :registrant_id_type %>
+    <%= form.select(:registrant_id_type, [ 'ABN', 'ACN' ], {}, { :class => 'select' }) %>
+  </div>
+  <div class="cell small-12 medium-9">
+    <%= form.label :registrant_id_number %>
+    <%= form.text_field :registrant_id_number %>
+  </div>
+</div>
+
+<div class="grid-x grid-margin-x">
   <div class="cell small-12 medium-8">
     <%= form.label :address1 %>
     <%= form.text_field :address1 %>
