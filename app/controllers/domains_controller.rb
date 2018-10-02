@@ -77,8 +77,8 @@ class DomainsController < ApplicationController
 
     #Get attributes for domain
     require 'dnsimple' #ACC ID  
-    client = Dnsimple::Client.new(base_url: "https://api.sandbox.dnsimple.com", access_token: "miqodsYlFyBlPWG5hpwyUjDXFqGeevGT")
-    account_id = 924
+    client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
+    account_id = 84989
 
     domain_attributes = client.tlds.tld("#{@domain.tld}")
     @domain.update_attributes(
@@ -104,8 +104,8 @@ class DomainsController < ApplicationController
     @domain = Domain.last
     #Create an account in simple DNS
     require 'dnsimple' #ACC ID  
-    client = Dnsimple::Client.new(base_url: "https://api.sandbox.dnsimple.com", access_token: "miqodsYlFyBlPWG5hpwyUjDXFqGeevGT")
-    account_id = 924
+    client = Dnsimple::Client.new(access_token: "siaZ0YIbNM12f815m5kcBk4MvXJNBLES")
+    account_id = 84989
 
     contact = client.contacts.create_contact(
       account_id,
@@ -145,7 +145,7 @@ class DomainsController < ApplicationController
 
       
       #Apply template to domain
-      template_id = 473
+      template_id = 5181
       apply_template = client.templates.apply_template(account_id, template_id, "#{@domain.domain_name}.#{@domain.tld}")
 
       
