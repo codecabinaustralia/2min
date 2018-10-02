@@ -137,8 +137,8 @@ class DomainsController < ApplicationController
         "registrant_id": contact.data.id,
         "private_whois": @domain.whois_privacy, 
         "auto_renew": @domain.renewal_enabled,
-        "extended_attribute": {
-            "au_registrantidtype": "24625680793",
+        "extended_attributes": {
+            "au_registrantidtype": 24625680793,
             "au_registrantid": "ABN"
           }
       )
