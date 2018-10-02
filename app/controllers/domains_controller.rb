@@ -128,7 +128,12 @@ class DomainsController < ApplicationController
     #If you're going international, first of all well done, you better have your farm by now
     #secondly.. you need to do a call on extended attributes
 
-    my_extended_attributes = {au_registrantid: @domain.registrant_id_number, au_registrantidtype: @domain.registrant_id_type}
+    my_extended_attributes = {
+      au_registrantid: "24625680793",
+      au_registrantidtype: "ABN"
+    }
+
+    
 
     #Register Domain
     register_domain = client.registrar.register_domain(
