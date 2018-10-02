@@ -143,8 +143,12 @@ class DomainsController < ApplicationController
           }
       )
 
-    
+      
+      #Apply template to domain
+      template_id = 473
+      apply_template = client.templates.apply_template(account_id, template_id, "#{@domain.domain_name}.#{@domain.tld}")
 
+      
     
   end
 
