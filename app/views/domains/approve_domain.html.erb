@@ -23,45 +23,45 @@ transfer_enabled: <%= @domain_last.transfer_enabled %><br />
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :domain_name %>
-    <%= form.text_field :domain_name %>
-  </div>
-
-  <div class="field">
+<div class="grid-x grid-margin-x">
+  <div class="cell small-12 medium-6">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
   </div>
-  <div class="field">
+  <div class="cell small-12 medium-6">
     <%= form.label :last_name %>
     <%= form.text_field :last_name %>
   </div>
-  <div class="field">
+</div>
+
+<div class="grid-x grid-margin-x">
+  <div class="cell small-12 medium-8">
     <%= form.label :address1 %>
     <%= form.text_field :address1 %>
   </div>
-  <div class="field">
+  <div class="cell small-12 medium-4">
     <%= form.label :city %>
     <%= form.text_field :city %>
   </div>
-  <div class="field">
+  <div class="cell small-12 medium-3">
     <%= form.label :state_province %>
-    <%= form.text_field :state_province %>
+    <%= form.select(:state_province, [ 'ACT', 'QLD', 'NSW', 'NT', 'SA', 'TAS','VIC', 'WA' ], {}, { :class => 'select' }) %>
   </div>
-  <div class="field">
+  <div class="cell small-12 medium-3">
     <%= form.label :postal_code %>
     <%= form.text_field :postal_code %>
   </div>
-  <div class="field">
+  <div class="cell small-12 medium-3">
     <%= form.label :country %>
-    <%= form.text_field :country %>
+    <%= form.select(:country, [ 'AU' ], {}, { :class => 'select' }) %>
   </div>
-  <div class="field">
+</div>
+<div class="grid-x grid-margin-x">
+  <div class="cell small-12">
     <%= form.label :email %>
     <%= form.text_field :email %>
   </div>
-  <div class="field">
+  <div class="cell small-12">
     <%= form.label :phone %>
     <%= form.text_field :phone %>
   </div>
