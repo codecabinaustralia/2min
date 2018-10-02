@@ -123,7 +123,7 @@ class DomainsController < ApplicationController
     #Register Domain
     register_domain = client.registrar.register_domain(
         account_id,
-        "#{@domain.domain_name}",
+        "#{@domain.domain_name}.#{@domain.tld}",
         registrant_id: contact.data.id,
         private_whois: true, 
         auto_renew: true
