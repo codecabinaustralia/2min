@@ -123,7 +123,7 @@ class DomainsController < ApplicationController
 
     @domain.update_attributes(dns_simple_id: contact.data.id)
 
-    extended_attributes = {au_registrantid: @domain.au_registrantid, au_registrantidtype: @domain.au_registrantidtype}
+    extended_attributes = {au_registrantid: @domain.registrant_id_number, au_registrantidtype: @domain.registrant_id_type}
 
 
     #Register Domain
