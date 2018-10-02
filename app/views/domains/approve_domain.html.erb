@@ -1,9 +1,11 @@
 <div class="grid-x">
 	<div class="cell small-12 medium-6 medium-offset-3 text-center">
 
-<h1>You can purchase <%=  @domain_last.domain_name %>.<%= @domain.tld %> now for just $29 per year</h1>
+<h1 style="font-size: 20px;">You can purchase <br/>
+	<span style="color: #0088f1"><%=  @domain_last.domain_name %>.<%= @domain.tld %></span><br />
+	 now for <span style="color: #f20068;">just $29 per year</span></h1>
 
-<table>
+<table class="stack">
 	<tr>
 		<td><strong>tld_type:</strong></td>
 		<td><%= @domain_last.tld_type %></td>
