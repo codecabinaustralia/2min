@@ -111,13 +111,13 @@ Rails.application.config.middleware.use Apartment::Elevators::Subdomain, -> (req
 
   if @found_domain.present?
     Apartment::Tenant.switch!(@found_domain.subdomain)
-    root_path
+    redirect_to root_url(:subdomain => @found_domain.subdomain)
   else
     @subdomain = @host.split('.').first
     @found_subdomain = User.where(subdomain: @subdomain).last
     if @found_subdomain.present?
       Apartment::Tenant.switch!(@found_subdomain.subdomain)
-      root_path
+      redirect_to root_url(:subdomain => @found_subdomain.subdomain)
     end
   end
 
