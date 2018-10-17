@@ -118,11 +118,6 @@ Rails.application.config.middleware.use Apartment::Elevators::Subdomain, -> (req
       Apartment::Tenant.switch!(@found_subdomain.subdomain)
     end
   end
-
-
-
-  
-
 }
 #Rails.application.config.middleware.use Apartment::Elevators::Generic
 
