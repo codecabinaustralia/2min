@@ -11,7 +11,8 @@ class StaticController < ApplicationController
     end
     
    
-
+    @who = Apartment::Tenant.current
+    
     if user_signed_in?
       sign_out_and_redirect(current_user)
     end
