@@ -1,7 +1,10 @@
 class StaticController < ApplicationController
   def home
     
+    #Everytime the homepage is hit we switch to public tenant
     Apartment::Tenant.switch!('public')
+
+    
 
     if user_signed_in?
       sign_out_and_redirect(current_user)
