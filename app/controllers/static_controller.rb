@@ -6,7 +6,7 @@ class StaticController < ApplicationController
     #Everytime the homepage is hit we switch to public tenant
     if @found_domain.present?
       Apartment::Tenant.switch!(@found_domain.subdomain)
-      sites_url(:subdomain => @found_domain.subdomain)
+      redirect_to sites_url(:subdomain => @found_domain.subdomain)
     else  
       Apartment::Tenant.switch!('public')
     end
