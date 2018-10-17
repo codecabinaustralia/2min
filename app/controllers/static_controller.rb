@@ -1,11 +1,16 @@
 class StaticController < ApplicationController
   def home
     
-    #Everytime the homepage is hit we switch to public tenant
-    Apartment::Tenant.switch!('public')
-
     @found_domain = User.where(domain: request.host).last
-    @myhost = request.host
+
+    #Everytime the homepage is hit we switch to public tenant
+    if @found_domain.present?
+      Apartment::Tenant.switch!(@found_domain.subdomain)
+    else  
+      Apartment::Tenant.switch!('public')
+    end
+    
+   
 
     if user_signed_in?
       sign_out_and_redirect(current_user)
